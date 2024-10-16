@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul.flex-container {
+            background-color: antiquewhite;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: row;         
+        }
+        li {
+            width: 100px;
+            padding: 10px;
+            
+        }
+        ul.flex-container li:nth-child(1) dl {
+            padding-left: 0;
+            border-left:none;
+        }
+        dl {
+            display: none;
+            width: 150px;
+            height: 100;
+            background-color: antiquewhite;
+            border-left: 1px solid gray;
+            padding-left: 20px;
+            margin-right: 20px;
+        }
+        ul.flex-container:hover dl {
+            display: block;
+        }
+        dd {
+            margin: 0;
+            margin-top: 0;
+            /* border: 1px solid red; */
+            font-size: 10pt;
+        }
+        dd.flex-dt {
+            padding: 7px 0px;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    <h2>Definition List</h2>
+    <ul class="flex-container">
+        <li>
+            <a href="">영화</a>
+            <dl>
+                <dd class="flex-dt">영화</dd>
+                <dd>무비차트</dd>
+                <dd>아트하우스</dd>
+            </dl>
+        </li>
+        <li>
+            <a href="">극장</a>
+            <dl>
+                <dd class="flex-dt">극장</dd>
+                <dd>CGV 극장</dd>
+                <dd>특별관</dd>
+            </dl>
+        </li>
+        <li>
+            <a href="">예매</a>
+            <dl>
+                <dd class="flex-dt">예매</dd>
+                <dd>빠른 예매</dd>
+                <dd>상영 스케줄</dd>
+            </dl>
+        </li>
+    </ul>
+</body>
+</html>
