@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Element</title>
+    <script>
+        function loginSubmit() {
+            alert("서버로 전송합니다!!");
+        }
+    </script>
+</head>
+<body>
+    <h1>Form Element or Tag</h1>
+    <!-- 폼태그 ==>> 서버에 전송 -->
+     <form action="#" method="get">
+        <fieldset>
+            <legend>로그인 화면</legend>
+            <!-- get : 소켓의 Head에 쿼리스트링 방식 :: ~~주소?name=value&name=value&... -->
+            <!-- post : 소켓의 Body에 데이터 저장 -->
+            <ul>
+                <li>
+                    <label for="">ID</label>
+                    <input type="text" name="id" placeholder="ID 입력">
+                </li>
+                <li>
+                    <label for="">Password</label>
+                    <input type="password" name="pwd" placeholder="Password 입력">
+                </li>                
+            </ul>
+        </fieldset>
+
+        <fieldset>
+            <legend>옵션 사항</legend>
+            <ul>
+                <li>
+                    <label for="">주소</label>
+                    <select name="address"> 
+                        <option value="선택">선택</option>
+                        <option value="서울시">서울시</option>
+                        <option value="부산시">부산시</option>
+                        <option value="인천시">인천시</option>
+                    </select>
+                </li>
+                <li>
+                    <label for="">직군</label> 
+                    <input type="radio" name="role" value="front">
+                    <span>프론트개발자</span>
+                    <input type="radio" name="role" value="server">
+                    <span>서버개발자</span>
+                    <input type="radio" name="role" value="dba">
+                    <span>DB관리자</span>
+                </li>
+                <li>
+                    <label for="">관심 과목</label>
+                    <input type="checkbox" name="subject" value="html">
+                    <span>HTML</span>
+                    <input type="checkbox" name="subject" value="css">
+                    <span>CSS</span>
+                    <input type="checkbox" name="subject" value="javascript">
+                    <span>JavaScript</span>
+                </li>
+                <li>
+                    <label for="">자기소개</label>
+                    <textarea name="intro" cols="50" rows="10"
+                        placeholder="200자 이내로 작성해주세요"></textarea>
+                </li>
+                <li>
+                    <label for="">파일업로드</label>
+                    <input type="file" name="file"><!-- 쿼리스트링방식X -->
+                </li>
+                <li>
+                    <label for="">URL</label>
+                    <input type="url" name="url">
+                </li>
+                <li>
+                    <label for="">생년월일</label>
+                    <input type="date" name="birth">
+                </li>
+            </ul>
+        </fieldset>
+
+        <div>
+            <!-- 디폴트 type : submit(폼의 주소 서버로 데이터 전송!!) -->
+            <button type="submit">Login</button>
+            <button type="reset">Reset</button>
+            <button type="button">
+                <img src="/html/images/logoRed.png"
+                        width="70px" >
+            </button>
+        </div>
+     </form>
+</body>
+</html>
