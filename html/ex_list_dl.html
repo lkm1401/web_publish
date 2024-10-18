@@ -5,7 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        div.header-top {
+            width: 100%;
+            height: 100px;
+            background-color: powderblue;
+        }
+       
         ul.flex-container {
+            width: 100%;
             background-color: antiquewhite;
             list-style: none;
             margin: 0;
@@ -23,7 +30,9 @@
             border-left:none;
         }
         dl {
+            opacity: 0;
             display: none;
+            transition: opacity 0.5s, display 0.5s;
             width: 150px;
             height: 100;
             background-color: antiquewhite;
@@ -32,6 +41,7 @@
             margin-right: 20px;
         }
         ul.flex-container:hover dl {
+            opacity: 1;
             display: block;
         }
         dd {
@@ -44,35 +54,58 @@
             padding: 7px 0px;
             font-weight: 700;
         }
+        div.header-bottom { 
+            position: relative;
+        }
+        div.header-bottom:after {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 40px;
+            width: 100%;
+            height: 2px;
+            background-color: #fb4357;
+        }
+        @initial {
+            ul.flex-container:hover dl{
+                opacity: 0;
+            } 
+        }
     </style>
 </head>
 <body>
     <h2>Definition List</h2>
-    <ul class="flex-container">
-        <li>
-            <a href="">영화</a>
-            <dl>
-                <dd class="flex-dt">영화</dd>
-                <dd>무비차트</dd>
-                <dd>아트하우스</dd>
-            </dl>
-        </li>
-        <li>
-            <a href="">극장</a>
-            <dl>
-                <dd class="flex-dt">극장</dd>
-                <dd>CGV 극장</dd>
-                <dd>특별관</dd>
-            </dl>
-        </li>
-        <li>
-            <a href="">예매</a>
-            <dl>
-                <dd class="flex-dt">예매</dd>
-                <dd>빠른 예매</dd>
-                <dd>상영 스케줄</dd>
-            </dl>
-        </li>
-    </ul>
+    <header>
+        <div class="header-top">로그인/회원가입/MyCGV/고객센터</div>
+        <div class="header-bottom">
+            <ul class="flex-container">
+                <li>
+                    <a href="">영화</a>
+                    <dl>
+                        <dd class="flex-dt">영화</dd>
+                        <dd>무비차트</dd>
+                        <dd>아트하우스</dd>
+                    </dl>
+                </li>
+                <li>
+                    <a href="">극장</a>
+                    <dl>
+                        <dd class="flex-dt">극장</dd>
+                        <dd>CGV 극장</dd>
+                        <dd>특별관</dd>
+                    </dl>
+                </li>
+                <li>
+                    <a href="">예매</a>
+                    <dl>
+                        <dd class="flex-dt">예매</dd>
+                        <dd>빠른 예매</dd>
+                        <dd>상영 스케줄</dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+    </header>
 </body>
 </html>
