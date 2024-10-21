@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desc selector</title>
+    <style>
+        /*
+            desc syntax : Tag(조상) Tag(자손) { ... }
+                        : Tag(부모) > Tag(자식) { ... }
+                        : Tag(형제) + Tag(인접한 형제) { ... }
+                        : Tag(형제) ~ Tag(같은 형제 중) { ... }
+
+        */
+        ul label {
+            color: greenyellow;
+        }
+        ul.first > li > label {
+            color: tomato;
+        }
+        ul.first > li > ul {
+            color: blueviolet;
+        }
+        ul.first > li.back-end > ul {
+            color: blue;
+        }
+        ul.first ~ ul {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <h1>Desc(자손) selector</h1>
+    <ul class="first">
+        <li>
+            <label for="">Front-end</label>
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>React</li>
+            </ul>
+        </li>
+        <li class="back-end">
+            <label for="">Back-end</label>
+            <ul>
+                <li>NodeJS</li>
+                <li>JSP</li>
+                <li>ASP</li>
+            </ul>
+        </li>
+        <li>
+            <label for="">Database</label>
+            <ul>
+                <li>MySQL</li>
+                <li>Oracle</li>
+                <li>Maria</li>
+            </ul>
+        </li>
+    </ul>
+
+    <hr>
+    <ul>
+        <li>
+            <label for="">Selector list</label>
+            <ul>
+                <li>HTML Tag</li>
+                <li>ID</li>
+                <li>Class</li>
+                <li>Descendant</li>
+            </ul>
+        </li>
+    </ul>
+</body>
+</html>
