@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table, th, td {
+            border: 1px solid silver;
+            border-collapse: collapse;
+        }
+        thead th { background-color: silver;}
+        tbody tr:nth-child(even) td { background-color: silver;}
+        tfoot td { 
+            border: 1px solid white;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>nth-child table</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>제목1</th>
+                <th>제목2</th>
+                <th>제목3</th>
+                <th>제목4</th>
+                <th>제목5</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>test1</td>
+                <td>test1</td>
+                <td>test1</td>
+                <td>test1</td>
+                <td>test1</td>
+            </tr>
+            <tr>
+                <td>test1</td>
+                <td>test1</td>
+                <td>test1</td>
+                <td>test1</td>
+                <td>test1</td>
+            </tr>
+            <tr>
+                <td>test1</td>
+                <td>test1</td>
+                <td>test1</td>
+                <td>test1</td>
+                <td>test1</td>
+            </tr>
+            <tr>
+                <td>test1</td>
+                <td>test1</td>
+                <td>test1</td>
+                <td>test1</td>
+                <td>test1</td>
+            </tr>
+            <tr>
+                <td>test1</td>
+                <td>test1</td>
+                <td>test1</td>
+                <td>test1</td>
+                <td>test1</td>
+            </tr>
+            <tr>
+                <td>test1</td>
+                <td>test1</td>
+                <td>test1</td>
+                <td>test1</td>
+                <td>test1</td>
+            </tr>
+            <tr>
+                <td>test1</td>
+                <td>test1</td>
+                <td>test1</td>
+                <td>test1</td>
+                <td>test1</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="5">1 2 3 4 5</td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Status selector</title>
+    <style>
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            padding: 10px;
+        }
+        input[type="radio"]:checked + label {
+            background-color: powderblue;
+        }
+        input[type="checkbox"]:checked + label {
+            background-color: pink;
+        }
+        .not-selector > li:not(:last-child) {
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+    <h1>Status selectors</h1>
+    <ul>
+        <li>
+            <input type="radio" name="city">
+            <label for="">서울</label>
+            <input type="radio" name="city">
+            <label for="">부산</label>
+            <input type="radio" name="city">
+            <label for="">인천</label>
+        </li>
+        <li>
+            <input type="checkbox" name="subject">
+            <label for="">HTML</label>
+            <input type="checkbox" name="subject">
+            <label for="">CSS</label>
+            <input type="checkbox" name="subject">
+            <label for="">JavaScript</label>
+        </li>
+        <li>
+            <button>사용가능</button>
+            <button class="disable" disabled>사용불가능</button>
+        </li>
+        <li>
+            <ul class="not-selector">
+                <li>list item</li>
+                <li>list item</li>
+                <li>list item</li>
+                <li>list item</li>
+                <li>list item</li>
+            </ul>
+        </li>
+    </ul>
+</body>
+</html>
