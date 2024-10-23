@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>overflow</title>
+    <style>
+        div {
+            width: 400px;
+            border: 1px solid silver;
+        }
+        div p {
+            width: 600px;
+            border: 1px solid green;
+        }
+        .auto { overflow: auto;}
+        .hidden { overflow: hidden;}
+        .scroll { overflow: scroll;}
+        .scroll-x { overflow-x: scroll;}
+        .scroll-y { overflow-y: scroll;}
+        .bg-image {
+            background-image: url("https://img.freepik.com/free-vector/outline-flat-seamless-arabic-geometric-ornament-pattern_1409-4191.jpg?ga=GA1.1.931401831.1729653797&semt=ais_hybrid");
+            background-repeat: repeat;
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+    <h1>Overflow</h1>
+    <div class="auto bg-image">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+            Delectus optio blanditiis animi tenetur reiciendis praesentium 
+            nihil? Aspernatur, quam ad culpa nihil tempora aliquam eum aut, 
+            minus soluta perferendis asperiores labore.</p>
+    </div>
+    <div class="hidden">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+            Delectus optio blanditiis animi tenetur reiciendis praesentium 
+            nihil? Aspernatur, quam ad culpa nihil tempora aliquam eum aut, 
+            minus soluta perferendis asperiores labore.</p>
+    </div>
+    <div class="scroll">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+            Delectus optio blanditiis animi tenetur reiciendis praesentium 
+            nihil? Aspernatur, quam ad culpa nihil tempora aliquam eum aut, 
+            minus soluta perferendis asperiores labore.</p>
+    </div>
+    <div class="scroll-x">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+            Delectus optio blanditiis animi tenetur reiciendis praesentium 
+            nihil? Aspernatur, quam ad culpa nihil tempora aliquam eum aut, 
+            minus soluta perferendis asperiores labore.</p>
+    </div>
+    <div class="scroll-y">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+            Delectus optio blanditiis animi tenetur reiciendis praesentium 
+            nihil? Aspernatur, quam ad culpa nihil tempora aliquam eum aut, 
+            minus soluta perferendis asperiores labore.</p>
+    </div>
+</body>
+</html>

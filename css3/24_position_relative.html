@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position-relative</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+            /*
+                border-box : 패딩, 마진 등 포함하여 width 고정
+                content-box : 태그안의 컨텐츠 width 고정, 패딩등의 값은 추가
+            */
+        }
+        h1 {
+            width: 300px;          
+        }
+        div {
+            width: 500px;
+            border: 1px solid silver;
+        }
+        div > span { 
+            font-size: 1.2em;
+            letter-spacing: 5px;
+        }
+        .relative {
+            position: relative;
+            top: 50px;
+            left: 50px;
+        }
+        .absolute {
+            position: absolute;
+            top: 65px;
+            left: 230px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Position-relative</h1>
+    <div class="relative">
+        <img src="/html/images/logoRed.png" alt="cgv logo">
+        <span class="absolute">DEEP DIVE SPACE</span>
+    </div>
+</body>
+</html>

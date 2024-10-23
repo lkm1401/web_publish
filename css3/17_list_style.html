@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul > li {
+            list-style-type: disc;
+        }
+        h1 + ul h3 + li > ul li {
+            list-style-type: none;
+        }
+        ol li {
+            list-style-type: '- ';
+        }
+        .db li {
+            list-style-type: '\1F600';
+        }
+    </style>
+</head>
+<body>
+    <h1>list style type</h1>
+    <ul>
+        <h3>Front-end</h3>
+        <li>
+            <h5>HTML</h5>
+            <ul>
+                <li>HTML4</li>
+                <li>HTML5</li>
+            </ul>
+        </li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>React</li>
+    </ul>
+    <hr>
+    <ol>
+        <h3>Back-end</h3>
+        <li>NodeJS</li>
+        <li>JSP</li>
+        <li>ASP</li>
+        <li>PHP</li>
+    </ol>
+    <hr>
+    <ul class="db">
+        <h3>Database</h3>
+        <li>MySQL</li>
+        <li>Oracle</li>
+        <li>Tibero</li>
+        <li>Maria</li>
+    </ul>
+</body>
+</html>

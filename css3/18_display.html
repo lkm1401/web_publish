@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display</title>
+    <style>
+        .block { display: block; }
+        .inline { display: inline; }
+        .inline_block { display: inline-block;}
+        .box {
+            width: 50px;
+            height: 50px;
+            display: inline-block;
+            background-color: rgb(217, 0, 255);
+        }
+        span { 
+            background-color: aqua;
+        }
+        ul.subject > li {
+            /* border: 1px solid red; */
+            width: 100px;
+            list-style-type: none;   
+            display: inline-block;
+            /* background-color: aquamarine;          */
+            border-right: 1px solid silver;
+            margin-left: 10px;
+        }
+        ul.subject { padding: 0; }
+        ul.subject li:last-child {
+            border-right: none;
+        }
+        ul.lunch { 
+            display: table;
+            padding: 0;
+            /* border: 1px solid red; */
+        }
+        ul.lunch li {
+            width: 100px;
+            padding: 5px;
+            color: white;
+            display: table-cell;  /* inline-block */
+            border: 1px solid silver;
+            background-color: green;
+        }
+        div.box-group-show { visibility: hidden; /*display: none;*/  }
+        div.box-group-hidden { display: block; }
+        p.show-box:hover + div.box-group-show {
+            visibility: visible;
+            /* display: block; */
+            /* cursor: pointer; */
+        }
+        p.hidden-box:hover + div.box-group-hidden {
+            display: none;
+        }
+        h4:hover {
+            opacity: 0.5;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Display</h1>
+    <header>
+        <h1>Display</h1>
+        <h2>Heading</h2>
+        <h3>Visibility</h3>
+        <h4>Opacity</h4>
+    </header>
+    <p class="show-box">show box</p>
+    <div class="box-group-show">
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+    <p class="hidden-box">hidden box</p>
+    <div class="box-group-hidden">
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+    <span class="block">inline level element</span>
+    <span class="block">inline level element</span>
+    <hr>
+    <img src="/html/images/logoRed.png" alt="cgv logo">
+    <img src="/html/images/logoRed.png" alt="cgv logo">
+    <hr>
+    <ul class="subject">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>React</li>
+    </ul>
+    <ul class="lunch">
+        <li>된장찌개</li>
+        <li>김치찌개</li>
+        <li>돈까스</li>
+        <li>샐러드</li>
+    </ul>
+</body>
+</html>
