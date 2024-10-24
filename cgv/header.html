@@ -4,25 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CGV-header</title>
+    <link rel="stylesheet" href="/cgv/css/commons.css">
+    <link rel="stylesheet" href="/cgv/css/cgv.css">
 </head>
 <body>
-    <header style="background-color: aquamarine;">
-        <div>
-            <div>
+    <header>
+        <div class="header-top">
+            <div class="header-top-logo">
                 <a href="/cgv/index.html" target="_parent">
                     <img src="/cgv/images/logoRed.png" 
                             alt="CGV Logo">
                 </a>
-                <span>DEEP DIVE SPACE</span>
+                <span class="font-color-gray">DEEP DIVE SPACE</span>
             </div>  
             <div>
                 <img src="/cgv/images/header_card_img.png" 
-                          alt="Card Image">
-                
+                        alt="Card Image">
             </div>
             <nav>
                 <ul>
-                    <li><a href="/cgv/login/login.html" target="_parent">로그인</a></li>
+                    <li>
+                        <a href="/cgv/login/login.html" target="_parent">
+                        <img src="https://img.cgv.co.kr/R2014/images/common/ico/loginPassword.png" alt="">    
+                            로그인
+                        </a>
+                    </li>
                     <li><a href="/cgv/join/join.html" target="_parent">회원가입</a></li>
                     <li><a href="/cgv/mycgv/mycgv.html" target="_parent">MyCGV</a></li>
                     <li><a href="/cgv/support/support.html" target="_parent">고객센터</a></li>
@@ -30,7 +36,7 @@
             </nav> 
         </div>
 
-        <div>
+        <div class="header-bottom">
             <ul>
                 <li>
                     <a href="">영화</a>

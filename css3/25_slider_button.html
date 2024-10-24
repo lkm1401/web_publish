@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider</title>
+    <style>
+        .sliderwrapper {
+            width: 600px;
+            height: 400px;
+            margin: 0 auto;
+            background-color: antiquewhite;
+            position: relative;
+        }
+        .btn {
+            padding: 0 20px;
+            line-height: 30px;
+            color: #fff;
+            background-color: #000;
+            display: inline-block;
+            position: absolute;
+            top: 50%;
+            margin-top: -15px;
+        }
+        .next { right: -30px;}
+        .prev { left: -30px;}
+        .slide_img {
+            width: 600px;
+            height: 400px;
+        }
+        h1 { text-align: center;}
+    </style>
+</head>
+<body>
+    <h1>Sliderwrapper</h1>
+    <div class="sliderwrapper">
+        <img class="slide_img" src="https://img.cgv.co.kr/Movie/Thumbnail/StillCut/000088/88526/88526230725_727.jpg" alt="">
+        <button class="btn next">next</button>
+        <button class="btn prev">prev</button>
+    </div>
+</body>
+</html>

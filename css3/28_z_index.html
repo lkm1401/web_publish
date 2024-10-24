@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Z-index</title>
+    <style>
+        div {
+            width: 150px;
+            height: 150px;
+            color: #fff;
+        }
+        .red { background: red;}
+        .blue { background: blue;}
+        .green { background: green;}
+        .child1 {
+            position: relative;
+            top: 20px;
+            left: 50px;
+            z-index: 1;
+        }
+        .child2 {
+            position: relative;
+            left: 20px;
+            z-index: 2;
+        }
+        .child3 {
+            position: relative;
+            top: -230px;
+            left: 10px;
+            z-index: 3;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Z-index</h1>
+    <div class="red child1">child 1</div>
+    <div class="blue child2">child 2</div>
+    <div class="green child3">child 3</div>
+</body>
+</html>
