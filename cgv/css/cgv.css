@@ -4,15 +4,20 @@
 *  final date : 2024/0/24
 ********************************************/
 header {
-    border: 1px solid var(--color-border);
-    width: 1000px;
+    width: 100%;
     height: 150px;
     margin: 0 auto;
+    border-bottom: 2px solid red;
 }
-.header-top, .header-bottom {
+.header-top, .header-bottom-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+.header-top, 
+.header-bottom-content {
+    width: 1000px;
+    margin: 0 auto;
 }
 .header-top-logo {
     /* border: 1px solid blue; */
@@ -40,10 +45,11 @@ header {
 .header-top ul li {
     /* background-color: aqua; */
     /* padding: 25px 10px; */
+    margin-left: 40px;
 }
 .header-top ul li a {
     /* background-color: aqua; */
-    padding: 30px 10px;
+    /* padding: 30px 10px; */
     text-decoration: none;
     color: var(--color-primary);
 }
@@ -51,16 +57,70 @@ header {
     display: none;
 }
 .header-bottom {
-    /* border: 1px solid silver; */
+    width: 100%;
     height: 40px;
+    padding: 5px 0;
+    border-top: 1px solid silver;
+    /* border-bottom: 2px solid tomato;     */
 }
+.header-bottom-content {
+    /* border: 1px solid blue; */
+}
+
 .header-bottom li {
     padding: 10px 25px;
+}
+.header-bottom li:first-child {
+    padding-left: 0;
 }
 .header-bottom li a {
     text-decoration: none;
     font-weight: 700;
     color: var(--color-primary);
+}
+.header-top ul { 
+    /* border: 1px solid tomato; */
+}
+.header-menu-icon {
+    /* border: 1px solid blue; */
+    display: block;
+    width:46px;
+    min-height: 55px;
+    position: relative;
+}
+.header-menu-icon img {
+    width:36px;
+    height: 36px;
+    /* border: 1px solid green; */
+}
+.header-menu-icon span {
+    width:46px;
+    height: 19px;
+    font-size: 11px;
+    /* border: 1px solid red; */
+    position: absolute;
+    bottom: 0;
+    left: -5px;
+    font-weight: 600;
+}
+.header-top-card {
+    /* border: 1px solid red; */
+    position: relative;
+    left: 100px;
+    top: 5px;
+}
+.header-bottom-search {
+    width: 250px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+    border-right: 1px solid silver;
+    border-left: 1px solid silver;
+}
+.header-bottom-search input {
+    width: 80%;
+    border: none;
+    padding: 5px;
 }
 
 /*******************************************
@@ -77,7 +137,7 @@ footer {
     width: 1000px;
     margin: 0 auto;
 }
-.footer-intro + ul {
+.footer-intro > ul {
     width: 100%;
     height: 60px;
     display: flex;
@@ -86,16 +146,16 @@ footer {
     list-style-type: none;
     border-bottom: 1px solid var(--color-silver);
 }
-.footer-intro + ul a {
+.footer-intro > ul a {
     font-size: 12px;
     font-weight: bold;
     color: var(--color-primary);
     text-decoration: none;
 }
-.footer-intro + ul a:hover {
+.footer-intro > ul a:hover {
     text-decoration: underline;
 }
-.footer-intro + ul li:nth-child(8) a {
+.footer-intro > ul li:nth-child(8) a {
     color: var(--color-black);
     font-weight: 600;
     text-decoration: underline;
@@ -109,3 +169,104 @@ footer {
 .p {  margin-top: 20px; }
 .p2 { margin-bottom: 20px;}
 
+/*******************************************
+*  title : content style
+*  author : hong@naver.com
+*  final date : 2024/0/24
+********************************************/
+.content, 
+.content-top,
+.content-moviechart
+{
+    width: 100%;
+}
+.content-top {
+    background-color: #000;
+    position: relative;
+    top: -3px;
+}
+.content-top iframe,
+.content-moviechart > div,
+.content-event-special {
+    display: block;
+    width: 1000px;
+    margin: 0 auto;
+}
+
+/** 무비차트/상영예정작 타이틀 */
+.content-moviechart {
+    background-color: var(--color-moviechart);
+    padding: 40px 0;
+}
+.content-moviechart-title {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+/* 무비차트/상영예정작 텍스트 */
+.content-moviechart .content-title-style > div:first-child  {
+    position: relative;
+    width: 240px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+} 
+/* 무비차트/상영예정작 중간 라인 */
+.content-moviechart .content-title-style > div > span:first-child + span{
+    display: inline-block;
+    width: 1px;
+    height: 12px;
+    background-color: var(--color-silver);
+    position: absolute;
+    top: 10px;
+    left: 45%;
+}
+/* .content-moviechart .content-title-style > div > span:last-child {
+    border: 1px solid red;
+    margin-left: 10px;
+} */
+/* .content-moviechart-title div:last-child button {
+    border: 1px solid var(--color-primary);
+    border-radius: 15px;
+    padding: 7px 15px;
+} */
+
+/** 무비차트/상영예정작 리스트 */
+.content-moviechart-list ul {
+    /* border: 1px solid red; */
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+}
+.content-moviechart-list ul li {
+    /* border: 1px solid blue; */
+    padding: 15px 15px 0 ;
+}
+.content-moviechart-list ul li:first-child {
+    /* border: 1px solid blue; */
+    padding-left: 0px;
+}
+.content-moviechart-list ul li:last-child {
+    /* border: 1px solid blue; */
+    padding-right: 0px;
+}
+.content-moviechart-list ul li img{
+    border-radius: 15px;
+    width: 170px;
+}
+.content-moviechart-list ul li h3{
+    text-align: center;
+    padding: 10px 0;
+    color: var(--color-primary);
+}
+.content-moviechart-list ul li h5{
+    text-align: center;
+    padding-top: 3px;
+    color: var(--color-primary);
+}
+
+/** 이벤트 섹션 */
+.content-event-special section:first-child {
+    border: 1px solid red;
+}

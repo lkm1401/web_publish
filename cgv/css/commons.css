@@ -2,6 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: '나눔바른고딕';
 }
 :root {
     /* color list */
@@ -11,4 +12,35 @@
     --color-border: tomato;
     --color-silver: silver;
     --color-footerbg : rgb(248, 248, 248);
+    --color-moviechart: rgb(251,251,251);
+    --color-buttonbg: rgb(222, 222, 222);
+    --color-gray-222: rgb(102, 102, 127);
+    --color-font-primary: rgb(34, 34, 34);
 }
+
+/* index-total-button style */
+.total-view-button {
+    border: 1px solid var(--color-buttonbg);
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 8px 13px;
+    color: var(--color-primary);
+    font-size: 12px;
+    font-weight: 700;
+}
+/*
+    공통적으로 적용되는 클래스는 직접 셀렉팅하는 경우 부모를 직관적으로 지정함
+*/
+/* moviechart, event, special => title style */
+.content-title-style {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border: 1px solid red;
+}
+.content-title-style-font {
+    font-size: 1.4em;
+    font-weight: 600;
+}
+.font-color-main { color: var(--color-font-primary);}
+.font-color-gray { color: var(--color-gray-222);}

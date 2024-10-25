@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CGV</title>
+    <link rel="stylesheet" href="/cgv/css/commons.css">
+    <link rel="stylesheet" href="/cgv/css/cgv.css">
 </head>
 <body>
     <!-- header -->
@@ -16,9 +18,9 @@
     <div class="content" >
 
         <!--영화 예고편 -->
-        <div style="background-color: black;width:100%">
-            <iframe width="500" 
-                height="300" 
+        <div class="content-top">
+            <iframe width="9000px" 
+                height="400px" 
                 src="https://www.youtube.com/embed/pFsIUVhahr8?si=w19Iy3N7_8LY9BGb" 
                 title="YouTube video player" 
                 frameborder="0" 
@@ -28,26 +30,63 @@
         </div>
 
         <!-- 무비차트 리스트 -->
-        <div style="background-color: bisque;width: 100%;">
+        <div class="content-moviechart">
             <div><!-- 컨텐츠 가운데 정렬-->
-                <article>
+                <article class="content-title-style">
                     <div>
-                        <span>무비차트</span>
-                        <span>상영예정작</span>
+                        <span class="content-title-style-font font-color-main">무비차트</span>
+                        <span>&nbsp;</span>
+                        <span class="content-title-style-font font-color-gray">상영예정작</span>
                     </div>
                     <div>
-                        <button>전체보기</button>
+                        <button class="total-view-button">전체보기 &gt;</button>
                     </div>
                 </article>
-                <article>
+                <article class="content-moviechart-list">
                     <ul>
+                        <li>
+                            <div>
+                                <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000088/88539/88539_320.jpg" 
+                                    alt="Movie-chart1"
+                                    width="200px">
+                            </div>
+                            <div><h3>보통의 가족</h3></div>
+                            <div><h5>예매율 100%</h5></div>
+                        </li>
+                        <li>
+                            <div>
+                                <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000088/88526/88526_320.jpg" 
+                                    alt="Movie-chart1"
+                                    width="200px">
+                            </div>
+                            <div><h3>보통의 가족</h3></div>
+                            <div><h5>예매율 100%</h5></div>
+                        </li>
+                        <li>
+                            <div>
+                                <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000088/88880/88880_320.jpg" 
+                                    alt="Movie-chart1"
+                                    width="200px">
+                            </div>
+                            <div><h3>보통의 가족</h3></div>
+                            <div><h5>예매율 100%</h5></div>
+                        </li>
+                        <li>
+                            <div>
+                                <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000088/88813/88813_320.jpg" 
+                                    alt="Movie-chart1"
+                                    width="200px">
+                            </div>
+                            <div><h3>보통의 가족</h3></div>
+                            <div><h5>예매율 100%</h5></div>
+                        </li>
                         <li>
                             <div>
                                 <img src="/cgv/images/movie-chart1.jpg" 
                                     alt="Movie-chart1"
                                     width="200px">
                             </div>
-                            <div><h3>제목</h3></div>
+                            <div><h3>보통의 가족</h3></div>
                             <div><h5>예매율 100%</h5></div>
                         </li>
                         <!-- 무비차트 리스트 반복 -->
@@ -56,13 +95,12 @@
             </div>
         </div>
 
-       
-        <div> <!-- 이벤트, 특별관 등.. -->
+        <div class="content-event-special"> <!-- 이벤트, 특별관 등.. -->
            <!--이벤트-->
            <section>
-                <div>
-                    <h3>EVENT</h3>
-                    <button>전체보기</button>
+                <div class="content-title-style">
+                    <h3 class="content-title-style-font">EVENT</h3>
+                    <button class="total-view-button">전체보기 &gt;</button>
                 </div>
                 <ul>
                     <li>
@@ -79,9 +117,9 @@
 
             <!-- 특별관 -->
            <section>
-            <div>
+            <div class="content-title-style">
                 <h3>특별관</h3>
-                <button>전체보기</button>
+                <button class="total-view-button">전체보기 &gt;</button>
             </div>
             <div>
                 <div>
