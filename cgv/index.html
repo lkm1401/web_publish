@@ -102,15 +102,24 @@
                     <h3 class="content-title-style-font">EVENT</h3>
                     <button class="total-view-button">전체보기 &gt;</button>
                 </div>
-                <ul>
+                <ul class="content-event-list">
+                    <li>
+                        <div>
+                            <img src="https://img.cgv.co.kr/WebApp/contents/eventV4/42386/17297657794310.jpg" 
+                                alt="Event Image"
+                                width="200px">
+                        </div>
+                        <p class="event-content-title">[CGV]10월 컬처위크</p>
+                        <p class="event-content-title-date">2024.10.24~2024.10.31</p>
+                    </li>
                     <li>
                         <div>
                             <img src="/cgv/images/event1.jpg" 
                                 alt="Event Image"
                                 width="200px">
                         </div>
-                        <p>[콜렉터블 무비머니]Vol.1 맥스 달튼</p>
-                        <p>2024.09.25~2024.10.31</p>
+                        <p class="event-content-title">[콜렉터블 무비머니]Vol.1 맥스 달튼</p>
+                        <p class="event-content-title-date">2024.09.25~2024.10.31</p>
                     </li>
                 </ul>
            </section> 
@@ -121,12 +130,11 @@
                 <h3>특별관</h3>
                 <button class="total-view-button">전체보기 &gt;</button>
             </div>
-            <div>
+            <div class="special-content-list">
                 <div>
                     <img src="/cgv/images/special1.png" 
                             alt="Special Image"
                             width="400px">
-
                 </div>
                 <ul>
                     <li>
@@ -150,11 +158,11 @@
            </section> 
 
            <!-- 패키지, 기프트 등.. -->
-           <section>
-                <div><!-- 패키지 -->
+           <section class="package-content-list">
+                <div class="package-content-border"><!-- 패키지 -->
                     <div>
-                        <span><b>패키지</b></span>
-                        <button>더보기</button>
+                        <span class="package-title-font">패키지</span>
+                        <button class="package-title-button">더보기</button>
                     </div>
                     <ul>
                         <li>
@@ -166,12 +174,21 @@
                                 <p>62,000원</p>
                             </div>
                         </li>
+                        <li>
+                            <img src="/cgv/images/package.jpg" 
+                                alt="package"
+                                width="100px">
+                            <div>
+                                <p>우리 패키지</p>
+                                <p>62,000원</p>
+                            </div>
+                        </li>
                     </ul>
                 </div>
-                <div><!-- 영화관람권 -->
+                <div class="package-content-border"><!-- 영화관람권 -->
                     <div>
-                        <span><b>영화관람권</b></span>
-                        <button>더보기</button>
+                        <span class="package-title-font">영화관람권</span>
+                        <button class="package-title-button">더보기</button>
                     </div>
                     <ul>
                         <li>
@@ -183,14 +200,32 @@
                                 <p>13,000원</p>
                             </div>
                         </li>
+                        <li>
+                            <img src="/cgv/images/ticket.jpg" 
+                                alt="ticket"
+                                width="100px">
+                            <div>
+                                <p>CGV 영화관람권</p>
+                                <p>13,000원</p>
+                            </div>
+                        </li>
                     </ul>
                 </div>
-                <div><!-- 기프트카드 -->
+                <div class="package-content-border"><!-- 기프트카드 -->
                     <div>
-                        <span><b>기프트카드</b></span>
-                        <button>더보기</button>
+                        <span class="package-title-font">기프트카드</span>
+                        <button class="package-title-button">더보기</button>
                     </div>
                     <ul>
+                        <li>
+                            <img src="/cgv/images/giftcard.jpg" 
+                                alt="giftcard"
+                                width="100px">
+                            <div>
+                                <p>PACONNIE A형</p>
+                                <p>금액충전형</p>
+                            </div>
+                        </li>
                         <li>
                             <img src="/cgv/images/giftcard.jpg" 
                                 alt="giftcard"
@@ -205,8 +240,8 @@
            </section>
            
            <!-- 공지사항 등.. -->
-           <section>
-            <div><!-- 공지사항, 앱 다운로드 -->
+           <section class="notice-content-list">
+            <div class="notice-content-border"><!-- 공지사항, 앱 다운로드 -->
                 <div><!-- 공지사항, 고객센터, FAQ등.. -->
                     <div><!-- 공지사항 -->
                         <span><b>공지사항</b></span>
@@ -253,6 +288,6 @@
     <iframe src="/cgv/footer.html" 
             frameborder="0"
             width="100%"
-            height="200px"></iframe>
+            height="500px"></iframe>
 </body>
 </html>

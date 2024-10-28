@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     font-family: '나눔바른고딕';
+    
 }
 :root {
     /* color list */
@@ -15,7 +16,21 @@
     --color-moviechart: rgb(251,251,251);
     --color-buttonbg: rgb(222, 222, 222);
     --color-gray-222: rgb(102, 102, 127);
-    --color-font-primary: rgb(34, 34, 34);
+    --color-font-primary: rgb(137, 137, 135);
+    --color-button: rgb(251, 67, 87);
+    --color-login-font: rgb(137, 137, 135);
+}
+/* 컨텐츠 가운데 정렬 */
+.center-layout {
+    border: 1px solid tomato;
+    width: 1000px;
+    margin: 0 auto;
+    margin-bottom: 80px;
+}
+.center-title {
+    border: 1px solid blue;
+    padding: 40px 15px 10px;
+    margin-bottom: 40px;
 }
 
 /* index-total-button style */
@@ -36,7 +51,7 @@
     display: flex;
     justify-content: space-between;
     padding: 10px 0;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 .content-title-style-font {
     font-size: 1.4em;
@@ -44,3 +59,9 @@
 }
 .font-color-main { color: var(--color-font-primary);}
 .font-color-gray { color: var(--color-gray-222);}
+.btn-main-color { 
+    background-color: var(--color-button);
+    border: 1px solid var(--color-white);
+    color: var(--color-white);
+    font-weight: 700;
+}
