@@ -613,7 +613,7 @@ footer {
 }
 .support-content > div /* 검색 카테고리 */{
     /* border: 1px solid blue; */
-    margin: 20px 0 10px;
+    margin: 20px 0;
 }
 .support-content > div select, 
 .support-content > div input, 
@@ -636,6 +636,8 @@ footer {
     border-bottom: 2px solid rgb(137,137,135);
     display: flex;
     list-style-type: none;
+    /* height: 40px; */
+    overflow: hidden;    
 }
 .support-content > nav ul a{
     width: 90px;
@@ -647,7 +649,7 @@ footer {
     text-decoration: none;
     color: var(--color-white);
     background-color: rgb(137,137,135);  
-    font-family: '맑은고딕';
+    font-family: '맑은 고딕';
     font-size: 12px;
     font-weight: 600;
 }
@@ -655,6 +657,7 @@ footer {
     background-color: var(--color-button);
     border-left: 1px solid var(--color-button);
     border-bottom: 2px solid var(--color-button);
+    /* height: 40px; */
 }
 .support-content > nav + p {
     margin: 40px 0 20px; 
