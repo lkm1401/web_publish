@@ -19,17 +19,18 @@
     --color-font-primary: rgb(137, 137, 135);
     --color-button: rgb(251, 67, 87);
     --color-login-font: rgb(137, 137, 135);
+    --color-join-border: rgb(232, 232, 232);
 }
 /* 컨텐츠 가운데 정렬 */
 .center-layout {
-    border: 1px solid tomato;
+    /* border: 1px solid tomato; */
     width: 1000px;
     margin: 0 auto;
     margin-bottom: 80px;
 }
 .center-title {
-    border: 1px solid blue;
-    padding: 40px 15px 10px;
+    /* border: 1px solid blue; */
+    padding: 40px 15px 10px 50px;
     margin-bottom: 40px;
 }
 

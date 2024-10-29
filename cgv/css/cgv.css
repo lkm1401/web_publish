@@ -155,7 +155,7 @@ footer {
     border-bottom: 1px solid var(--color-silver);
 }
 .footer-intro > ul a {
-    font-size: 12px;
+    font-size: 13px;
     font-weight: bold;
     color: var(--color-primary);
     text-decoration: none;
@@ -170,12 +170,17 @@ footer {
 }
 .footer-intro ~ p {
     color: var(--color-primary);
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 600;
     padding: 3px 0;
 }
 .p {  margin-top: 20px; }
 .p2 { margin-bottom: 20px;}
+.p2 > a {
+    text-decoration: none;
+    color: var(--color-primary);
+    cursor: default;
+}
 
 /*******************************************
 *  title : content style
@@ -422,18 +427,38 @@ footer {
     color: var(--color-login-font);
 }
 .login-form ul {
-    border: 1px solid green;
+    /* border: 1px solid green; */
     list-style-type: none;
     width: 420px;
+    text-align: center;
 }
 .login-form ul li {
     padding: 10px;
 }
+.login-form ul li:first-child p {
+    font-size: 15px;
+    color: var(--color-primary);
+}
 .login-form input:not(input[type="checkbox"]), 
+.login-form ul li:nth-child(5),
 .login-form button {
-    width: 263px;
+    width: 270px;
     padding: 10px;
 }
+.login-form ul li:nth-child(5) {
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 270px;
+    margin: 0 auto;
+    padding: 8px 0;
+}
+/* .login-form ul li:nth-child(5) div {
+    margin: 0;
+    padding: 0;
+  
+} */
 .login-form input[type="text"],
 .login-form input[type="password"] {
     /* border: 1px solid blue; */
@@ -445,7 +470,7 @@ footer {
     outline-width: 1px;
 }
 .login-form ul > li:nth-child(5) {
-    border: 1px solid green;
+    /* border: 1px solid green; */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -457,4 +482,240 @@ footer {
 .login-form ul > li:nth-child(5) div:last-child > a {
     color: var(--color-login-font);
     font-weight: 700;
+}
+
+/*******************************************
+*  title : join form style
+*  author : hong@naver.com
+*  final date : 2024/0/24
+********************************************/
+.join-form form {
+    /* border: 1px solid green; */
+    width: 600px;
+    margin: 0 auto;
+}
+.join-form ul {
+    list-style-type: none;
+}
+.join-form ul li {
+    /* border: 1px solid tomato; */
+    padding-top: 15px;
+    padding-bottom: 10px;
+}
+.join-form ul li div:not(.join-form ul li:nth-child(6) div)
+ {
+    border: 2px solid var(--color-join-border);
+    border-radius: 4px;
+    padding: 5px 10px;
+}
+.join-form ul li:nth-child(6) input,
+.join-form ul li:nth-child(6) select {
+    border: 2px solid var(--color-join-border);
+    border-radius: 4px;
+    padding: 12px 10px;
+}
+.join-form ul li:nth-child(6) select {
+    width: 40%;
+}
+.join-form ul li:nth-child(6) span {
+    margin: 0 20px;
+}
+.join-form ul li:first-child > div,
+.join-form ul li:nth-child(6) > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.join-form ul li label {
+    display: inline-block;
+    font-size: 1em;
+    font-weight: 700;
+    text-indent: 3px;
+    margin: 0 0 6px 10px;
+    /* border: 1px solid red; */
+}
+.join-form ul li label + span {
+    font-size: 0.7em;
+    font-weight: 300;
+    color: red;
+}
+.join-form ul li:first-child input{
+    border: 1px solid white;
+    width: 80%;
+    padding-left: 10px;
+}
+.join-form ul li input {
+    border: 1px solid white;
+    width: 100%;
+    padding: 7px 10px;
+}
+.join-form ul li:first-child input:focus,
+.join-form ul li input:focus {
+    border: none;
+    outline: none;
+}
+.join-form ul li:first-child button,
+.join-form ul li:last-child button{
+    border: 1px solid white;
+    width: 100px;
+    padding: 7px 12px;
+    background-color: var(--color-button);
+    color: var(--color-white);
+    border-radius: 7px;
+    margin-left: 10px;
+}
+.join-form ul li:last-child button {
+    border-radius: 0;
+    width: 150px;
+    padding: 10px 0;
+}
+.join-form ul li:last-child button:last-child {
+    background-color: var(--color-gray-222);
+}
+.join-form ul li:last-child {
+    padding: 30px 0 10px;
+    text-align: center;
+}
+
+/*******************************************
+*  title : mycgv style
+*  author : hong@naver.com
+*  final date : 2024/0/24
+********************************************/
+.mycgv div {
+    /* border: 1px solid green; */
+    display: flex;
+    justify-content: center;
+}
+.mycgv div span {
+    border: 1px solid tomato;
+    display: inline-block;
+    width: 200px;
+    padding: 30px;
+    margin: 30px 20px;
+    text-align: center;
+}
+.mycgv div span:hover {
+    background-color: beige;
+}
+
+/*******************************************
+*  title : notice/news style
+*  author : hong@naver.com
+*  final date : 2024/0/24
+********************************************/
+.support-content {
+    /* border: 1px solid green; */
+    width: 700px;
+    margin: 0 auto;
+    color: var(--color-primary);
+    font-size: 11pt;
+}
+.support-content > div /* 검색 카테고리 */{
+    /* border: 1px solid blue; */
+    margin: 20px 0 10px;
+}
+.support-content > div select, 
+.support-content > div input, 
+.support-content > div button 
+{
+    /* border: 1px solid blue; */
+    padding: 5px 15px;
+}
+.support-content > div select {
+    padding: 5px 25px;
+}
+.support-content > div button {
+    background-color: #000;
+    color: var(--color-white);
+    border: 1px solid var(--color-silver);
+    outline: 1px solid #000;
+    padding: 4px 25px;
+}
+.support-content > nav ul {
+    border-bottom: 2px solid rgb(137,137,135);
+    display: flex;
+    list-style-type: none;
+}
+.support-content > nav ul a{
+    width: 90px;
+    border: 1px solid var(--color-white);
+    border-bottom: 2px solid rgb(137,137,135);
+    display: inline-block;
+    text-align: center;
+    padding: 8px 0;
+    text-decoration: none;
+    color: var(--color-white);
+    background-color: rgb(137,137,135);  
+    font-family: '맑은고딕';
+    font-size: 12px;
+    font-weight: 600;
+}
+.support-content > nav ul li:first-child a{
+    background-color: var(--color-button);
+    border-left: 1px solid var(--color-button);
+    border-bottom: 2px solid var(--color-button);
+}
+.support-content > nav + p {
+    margin: 40px 0 20px; 
+}
+.support-content > table {
+    width: 700px;
+    text-align: center;
+}
+.support-content > table,
+.support-content > table th,
+.support-content > table td
+{
+    border-collapse: collapse;
+}
+.support-content > table th
+ {
+    padding: 10px 0;
+}
+.support-content > table tbody td
+ {
+    padding: 18px 0;
+}
+.support-content > table thead th:first-child
+ {
+    width: 12%;
+}
+.support-content > table thead th:nth-child(2),
+.support-content > table thead th:nth-child(4),
+.support-content > table thead th:nth-child(5)
+ {
+    width: 16%;
+}
+.support-content > table thead th:nth-child(3)
+ {
+    text-align: left;
+    text-indent: 8px;
+}
+.support-content > table thead th
+ {
+    background-color: rgb(234, 234, 234);
+    border-top: 1px solid silver;
+    border-bottom: 1px solid silver;
+}
+.support-content > table tbody td:nth-child(3) a
+ {
+    text-decoration: none;
+    color: var(--color-primary);
+}
+.support-content > table tbody td:nth-child(3) a:hover
+ {
+    text-decoration: underline;
+    font-weight: 700;
+}
+.support-content > table tbody tr:last-child td
+ {
+    border-bottom: 1px solid silver;
+}
+.support-content > table tfoot td
+ {
+    padding: 20px 0;
+    font-size: 1.2em;
+    font-weight: 700;
+    letter-spacing: 5px;
 }
