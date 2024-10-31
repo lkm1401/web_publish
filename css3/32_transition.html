@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transition Style</title>
+    <style>
+        div img {
+            width: 200px;
+            /* transition-property: width;
+            transition-duration: 0.3s;
+            transition-delay: 0s;
+            transition-timing-function: ease-in; */
+            transition: width 0.3s 0s ease-in;
+        }
+        div img:hover {
+            width: 400px;
+        }
+        .frame {
+            width: 300px;
+            height:500px;
+            border: 1px solid gray;
+
+            /* transition: height 5s 0s ease-in-out; */
+        }
+        .frame p {
+            margin: 0;
+            padding: 0;
+            height: 50px;
+            background-color: aquamarine;
+            text-align: center;
+        }
+        .frame div {
+            height: 0;
+            background-color: tomato;
+
+            transition: height 5s 0s ease-in-out;
+        }
+        /* .frame:hover {
+            height: 500px;
+        } */
+        .frame p:hover +div {
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Transition</h1>
+    <div>
+        <img src="/html/images/logoRed.png" alt="cgv logo">
+    </div>
+    <hr>
+    <article class="frame">
+        <p>Frame Title</p>
+        <div></div>
+    </article>
+</body>
+</html>

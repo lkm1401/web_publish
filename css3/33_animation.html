@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            border: 1px solid silver;
+            /* animation-name: changeColor;
+            animation-duration: 3s;
+            animation-delay: 0s;
+            animation-iteration-count: infinite; */
+            animation: changeColor 3s 0s 3;
+        }
+        @keyframes changeColor {
+            from {background-color: green;}
+            50% {background-color: yellow;}
+            to {background-color: blue;}
+        }
+        h1 {
+            opacity: 1;
+            color: blue;
+        }
+        h1:hover {
+            animation: fadeup 3s 0s forwards 2;
+        }
+        @keyframes fadeup {
+            from { opacity: 1;}
+            to { opacity: .3; color: green; }
+        }
+        .box_img {
+            width: 300px;
+            height: 300px;
+            border: 1px solid silver;
+            position: fixed;
+            top: 30px;
+            right: 50px;
+
+            animation: boxImage 10s ease 0s infinite;
+        }
+        @keyframes boxImage {
+            from { background-image: url("/cgv/images/event1.jpg");}
+            30% { background-image: url("/cgv/images/giftcard.jpg");}
+            60% {background-image: url("/cgv/images/logoRed.png");}
+            to { background-image: url("/cgv/images/package.jpg");}
+        }
+    </style>
+</head>
+<body>
+    <h1>Animation</h1>
+    <div class="box">box</div> 
+    <div class="box_img"></div>    
+</body>
+</html>

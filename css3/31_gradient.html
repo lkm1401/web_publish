@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradient Style</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            border: 1px solid silver;
+            margin: 2rem auto;
+        }
+        .linear {
+            /* background:linear-gradient(to bottom, #3112cf 0%, #fff 100%); */
+            /* background:linear-gradient(to right, #3112cf 0%, #fff 100%); */
+            color: #fff;
+            background: #29b60b;
+            background: linear-gradient(74deg,#29b60b 0%, #e188f3 80%);
+            background: -webkit-linear-gradient(74deg,#29b60b 0%, #e188f3 80%);
+            background: -moz-linear-gradient(74deg,#29b60b 0%, #e188f3 80%);
+        }
+        .radial {
+            /* background: radial-gradient(circle at center, #000 0%, #fff 100%); */
+            /* background: #dddc3c;
+            background: radial-gradient(circle farthest-corner at top center, #dddc3c 0%, #8df388 80%);
+            background: -webkit-radial-gradient(circle farthest-corner at top center, #dddc3c 0%, #8df388 80%);
+            background: -moz-radial-gradient(circle farthest-corner at top center, #dddc3c 0%, #8df388 80%); */
+
+            background: #3a87d8;
+            background: radial-gradient(ellipse farthest-side at bottom right, #3a87d8 0%, #8df388 80%);
+            background: -webkit-radial-gradient(ellipse farthest-side at bottom right, #3a87d8 0%, #8df388 80%);
+            background: -moz-radial-gradient(ellipse farthest-side at bottom right, #3a87d8 0%, #8df388 80%);
+                    }
+    </style>
+</head>
+<body>
+    <h1>Gradient Style</h1>
+    <div class="box linear">linear gradient</div>
+    <div class="box radial">radial gradient</div>
+</body>
+</html>

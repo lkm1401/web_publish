@@ -122,7 +122,12 @@ header {
     border: none;
     padding: 5px;
 }
-
+.header-search {
+    /* border: 1px solid red; */
+    font-size: 1.3em;
+    color: var(--color-primary);
+    cursor: pointer;
+}
 /*******************************************
 *  title : footer style
 *  author : hong@naver.com
@@ -427,19 +432,40 @@ footer {
     color: var(--color-login-font);
 }
 .login-form ul {
-    /* border: 1px solid green; */
     list-style-type: none;
     width: 420px;
-    text-align: center;
+    display: flex;
+    flex-direction:column;
+    justify-content: flex-start;
 }
-.login-form ul li {
+.login-form ul li:not(.login-form ul li:first-child,.login-form ul li:nth-child(5) ) {
     padding: 10px;
+    padding-left: 70px;
 }
 .login-form ul li:first-child p {
-    font-size: 15px;
+    font-size: 15px; 
     color: var(--color-primary);
+    margin: 10px;
+    padding-left: 20px;
 }
-.login-form input:not(input[type="checkbox"]), 
+.login-form-input /* icon, input */ {
+    border: 2px solid silver;
+    width: 270px;
+    padding: 7px;
+    display: flex;
+    align-items: center;
+}
+.login-form-input i {
+    padding: 0 15px 0 10px;
+    border-right: 1px solid silver;
+}
+.login-form input:not(input[type="checkbox"]) {
+    width: 230px;
+    padding: 7px;
+    margin-left: 10px;
+    border: none;
+    outline: none;
+}
 .login-form ul li:nth-child(5),
 .login-form button {
     width: 270px;

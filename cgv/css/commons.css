@@ -66,3 +66,20 @@
     color: var(--color-white);
     font-weight: 700;
 }
+/* goto-top 버튼 : 최상위 이동*/
+.btn-goto-top {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    /* background-color: tomato; */
+    border: 1px solid silver;
+    border-radius: 100%;
+}
+.btn-goto-top {
+    /* width: 80%; */
+}
