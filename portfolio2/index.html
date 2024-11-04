@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Judy's Portfolio</title>
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/13d12747ce.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <!-- header -->
+  <header class="header">
+    <div class="header__logo">
+      <img class="header__logo__img" src="images/favicon.ico" alt="logo">
+      <h1 class="header__logo__title">Judy</h1>
+    </div>
+    <nav>
+      <ul class="header__menu">
+        <li><a class="header__menu__item active" href="#home">Home</a></li>
+        <li><a class="header__menu__item" href="#about">About</a></li>
+        <li><a class="header__menu__item" href="#skill">Skills</a></li>
+        <li><a class="header__menu__item" href="#work">My work</a></li>
+        <li><a class="header__menu__item" href="#testimonial">Testimonial</a></li>
+        <li><a class="header__menu__item" href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <button id="menu_toggle" class="header__toggle" aria-label="navigation menu toggle">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  </header>
+
+  <!-- main -->
+  <main>
+    <!-- Home -->
+    <section id="home">
+      <img class="home__avatar" src="images/favicon.ico" alt="portfolio">
+      <h2 class="home__title">Hello <br> I'm 
+        <strong class="home__title--strong">Dream Coder</strong>, Judy</h2>
+      <p class="home__description">A software engineer currently residing in Seoul, South Korea</p>
+      <a class = "home__contact" href="#contact">Contact Me</a>
+    </section>
+
+    <!-- About me -->
+    <section id="about" class="section max-container">
+      <h2 class="title">About me</h2>
+      <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Iure natus, temporibus perspiciatis repudiandae nostrum modi
+        doloremque expedita non eius ipsum! Beatae porro adipisci 
+        omnis architecto dignissimos. Iusto ipsa inventore adipisci.</p>
+      <ul class="majors">
+        <li class="major">
+          <i class="fa-brands fa-html5 major__icon"></i>
+          <p class="major__title">Front-end</p>
+          <p>HTML, CSS, JavaScript, TypeScript, React, WebAPIs</p>
+        </li>
+        <li class="major">
+          <i class="fa-solid fa-mobile major__icon"></i>
+          <p class="major__title">Mobile</p>
+          <p>Android Studio, React Native, iOS, Swift, Java, Kotlin</p>
+        </li>
+        <li class="major">
+          <i class="fa-solid fa-server major__icon"></i>
+          <p class="major__title">Back-end</p>
+          <p>Java, JavaScript, Go, Kotlin, Spring, Spring Boot</p>
+        </li>
+      </ul>
+      <ul class="jobs">
+        <li class="job">
+          <img src="images/jobs/google.png" alt="google">
+          <div>
+            <p class="job__name">Google as Junior Software Engineer</p>
+            <p class="job__period">2019 Oct - Until now</p>
+          </div>
+        </li>
+        <li class="job">
+          <img src="images/jobs/samsung.png" alt="samsung">
+          <div>
+            <p class="job__name">Samsung as Junior Software Engineer</p>
+            <p class="job__period">2010 Oct - 2019 Oct</p>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- My Skills -->
+    <section id="skill" class="section max-container">
+      <h2 class="title">My Skills</h2>
+      <p class="description">Skills & Attributes</p>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+        Nobis beatae, aliquid ratione commodi nam ex voluptate rem 
+        eveniet cupiditate optio natus? Cum, harum eum sint id quod 
+        nulla adipisci. Sunt?</p>
+      <div class="skills">
+        <article class="sklls__coding">
+          <h3 class="skill__title">Coding Skills</h3>
+          <ul>
+            <li class="bar">
+              <div class="bar__metadata"><span>HTML</span><span>98%</span></div>
+              <div class="bar__bg"><div class="bar__value" style="width:98%"></div></div>
+            </li>
+            <li class="bar">
+              <div class="bar__metadata"><span>CSS</span><span>90%</span></div>
+              <div class="bar__bg"><div class="bar__value" style="width:90%"></div></div>
+            </li>
+            <li class="bar">
+              <div class="bar__metadata"><span>JavaScript</span><span>90%</span></div>
+              <div class="bar__bg"><div class="bar__value" style="width:90%"></div></div>
+            </li>
+            <li class="bar">
+              <div class="bar__metadata"><span>TypeScript</span><span>80%</span></div>
+              <div class="bar__bg"><div class="bar__value" style="width:80%"></div></div>
+            </li>
+            <li class="bar">
+              <div class="bar__metadata"><span>React</span><span>79%</span></div>
+              <div class="bar__bg"><div class="bar__value" style="width:79%"></div></div>
+            </li>
+            <li class="bar">
+              <div class="bar__metadata"><span>NodeJS</span><span>68%</span></div>
+              <div class="bar__bg"><div class="bar__value" style="width:68%"></div></div>
+            </li>          
+          </ul>
+        </article>
+        <article class="skills__tools">
+          <h3 class="skill__title">Tools</h3>
+          <ul>
+            <li>Visual Studio Code</li>
+            <li>IntelliJ</li>
+            <li>Android Studio Code</li>
+            <li>iOS development tools</li>
+            <li>Eclipse</li>
+          </ul>
+        </article>
+        <article class="skills__etc">
+          <h3 class="skill__title">Etc</h3>
+          <ul>
+            <li>Git</li>
+            <li>Scrum Master</li>
+            <li>SVN</li>
+          </ul>
+        </article>
+      </div> 
+    </section>
+
+    <!-- My work -->
+    <section id="work" class="section max-container">    
+      <h2 class="title">My work</h2>
+      <p class="description">Projects</p>
+      <ul class="categories">
+        <li><button class="category category--selected">All<span class="category__count">8</span></button></li>
+        <li><button class="category">Front-end<span class="category__count">4</span></button></li>
+        <li><button class="category">Back-end<span class="category__count">2</span></button></li>
+        <li><button class="category">Mobile<span class="category__count">2</span></button></li>
+      </ul>
+      <ul class="projects">
+        <li class="project">
+        <img class="project__img" src="images/projects/project1.webp" alt="project1">
+        <div class="project__metadata">
+            <h3 class="project__metadata__title">Project #1</h3>
+            <p>Clone Coding with HTML, CSS</p>
+          </div>
+        </li>
+        <li class="project">
+        <img class="project__img" src="images/projects/project2.webp" alt="project2">
+        <div class="project__metadata">
+            <h3 class="project__metadata__title">Project #2</h3>
+            <p>Clone Coding with HTML, CSS</p>
+          </div>
+        </li>
+        <li class="project">
+        <img class="project__img" src="images/projects/project3.webp" alt="project3">
+        <div class="project__metadata">
+            <h3 class="project__metadata__title">Project #3</h3>
+            <p>Clone Coding with HTML, CSS</p>
+          </div>
+        </li>
+        <li class="project">
+          <img class="project__img" src="images/projects/project4.webp" alt="project4">
+          <div class="project__metadata">
+            <h3 class="project__metadata__title">Project #4</h3>
+            <p>Clone Coding with HTML, CSS</p>
+          </div>
+        </li>
+        <li class="project">
+          <img class="project__img" src="images/projects/project5.webp" alt="project5">
+          <div class="project__metadata">
+            <h3 class="project__metadata__title">Project #5</h3>
+            <p>Clone Coding with HTML, CSS</p>
+          </div>
+        </li>
+        <li class="project">
+          <img class="project__img" src="images/projects/project6.webp" alt="project6">
+          <div class="project__metadata">
+            <h3 class="project__metadata__title">Project #6</h3>
+            <p>Clone Coding with HTML, CSS</p>
+          </div>
+        </li>
+        <li class="project">
+          <img class="project__img" src="images/projects/project7.webp" alt="project7">
+          <div class="project__metadata">
+            <h3 class="project__metadata__title">Project #7</h3>
+            <p>Clone Coding with HTML, CSS</p>
+          </div>
+        </li>
+        <li class="project">
+          <img class="project__img" src="images/projects/project8.webp" alt="project8">
+          <div class="project__metadata">
+            <h3 class="project__metadata__title">Project #8</h3>
+            <p>Clone Coding with HTML, CSS</p>
+          </div>
+        </li>
+      </ul>    
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonial" class="section max-container">
+      <h2 class="title">Testimonial</h2>
+      <p class="description">See what they say about me</p>
+      <ul class="testimonials">
+        <li class="testimonial">
+          <img class="testimonial__img" src="images/testimonials/people1.webp" alt="people1">
+          <div class="testimonial__bubble">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis similique, unde nam totam quam, nisi odio error amet provident iste modi eos dicta, eum suscipit rem illum inventore sapiente blanditiis?</p>
+            <p><a href="#" class="testimonial__bubble__name">James Kim</a> / Google</p>
+          </div>
+        </li>
+        <li class="testimonial">
+          <img class="testimonial__img" src="images/testimonials/people2.webp" alt="people2">
+          <div class="testimonial__bubble">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore necessitatibus sequi id obcaecati, assumenda quam corrupti. Numquam blanditiis praesentium, similique autem, accusamus debitis cupiditate, tempora officiis sed inventore nihil incidunt.</p>
+            <p><a href="#" class="testimonial__bubble__name">Smith Park</a> / Samsung</p>
+          </div>
+        </li>
+        <li class="testimonial">
+          <img class="testimonial__img" src="images/testimonials/people3.webp" alt="people3">
+          <div class="testimonial__bubble">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Distinctio nulla incidunt autem ullam, commodi in impedit repellat exercitationem provident at recusandae doloremque pariatur temporibus hic blanditiis explicabo voluptatibus neque aliquam.</p>
+            <p><a href="#" class="testimonial__bubble__name">Anna Jin</a> / Samsung</p>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Arrow up -->
+    <aside>
+      <a class="arrow--up" href="#"><i class="fa-solid fa-arrow-up"></i></a>
+    </aside>
+  </main>
+
+  <!-- footer -->
+  <footer id="contact" class="section">
+    <h2 class="title">Let's talk</h2>
+    <p class="description">jeon.developer.judy@gmail.com</p>
+    <ul class="contact__links">
+      <li>
+        <a class="contact__link" href="http://github.com"><i class="fa-brands fa-github"></i></a>
+      </li>
+      <li>
+        <a class="contact__link" href="http://linkedin.com"><i class="fa-brands fa-linkedin"></i></a>
+      </li>
+    </ul>
+    <p>Dream Software Engineer Judy - All right reserved</p>
+  </footer>
+</body>
+</html>
