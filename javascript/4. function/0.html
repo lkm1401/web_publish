@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <script src="2_calculator.js"></script>
+    <script>
+        function dataInput(op) {
+            // 계산기 처리를 위한 데이터 전처리
+            // 데이터가 입력되는 폼에 유효성 체크(validation check)를 
+            // 반드시 진행해야 함!!!
+            let a = document.querySelector("#number1");
+            let b = document.querySelector("#number2");
+            
+            if(a.value === ""){
+                alert("첫번째 숫자를 입력해주세요");
+                a.focus();
+            } else if(b.value === "") {
+                alert("두번째 숫자를 입력해주세요");
+                b.focus();
+            } else {
+                calculator(parseInt(a.value), parseInt(b.value), op);
+            }
+
+        }
+    </script>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;            
+        }
+        .calc-title {
+            color: white;
+            text-align: left;
+            padding: 10px;
+        }
+        .calc-container {
+            width: 300px; 
+            margin: auto;
+            background-color: black;  
+            padding: 1.5rem;   
+            text-align: center;      
+        }
+        .calc-input {
+            width: 100%;
+            padding: 5px;
+            outline: none;
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+            font-size: medium;
+            background-color: beige;
+        }
+        .calc-button-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(5, 1fr);
+            gap: 0.5rem;
+            list-style-type: none;
+        }
+        .calc-button {
+            width: 3rem;
+            height: 3rem;
+            border-radius: 100%;
+            border: none;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="calc-container">
+        <h1 class="calc-title">Calculator</h1>
+        <div>
+            <input type="text" class="calc-input" disabled>
+        </div>
+        <ul class="calc-button-container">        
+            <li><button type="button" class="calc-button">C</button></li>
+            <li><button type="button" class="calc-button">()</button></li>
+            <li><button type="button" class="calc-button">%</button></li>
+            <li><button type="button" class="calc-button">/</button></li>
+            <li><button type="button" class="calc-button">7</button></li>
+            <li><button type="button" class="calc-button">8</button></li>
+            <li><button type="button" class="calc-button">9</button></li>
+            <li><button type="button" class="calc-button">*</button></li>
+            <li><button type="button" class="calc-button">4</button></li>
+            <li><button type="button" class="calc-button">5</button></li>
+            <li><button type="button" class="calc-button">6</button></li>
+            <li><button type="button" class="calc-button">-</button></li>
+            <li><button type="button" class="calc-button">1</button></li>
+            <li><button type="button" class="calc-button">2</button></li>
+            <li><button type="button" class="calc-button">3</button></li>
+            <li><button type="button" class="calc-button">+</button></li>
+            <li><button type="button" class="calc-button">+/-</button></li>
+            <li><button type="button" class="calc-button">0</button></li>
+            <li><button type="button" class="calc-button">.</button></li>
+            <li><button type="button" class="calc-button">=</button></li>
+        </ul>
+    </div>
+</body>
+</html>
