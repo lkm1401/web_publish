@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <script src="2_calculator.js"></script>
+    <script>
+        function dataInput(op) {
+            // 계산기 처리를 위한 데이터 전처리
+            // 데이터가 입력되는 폼에 유효성 체크(validation check)를 
+            // 반드시 진행해야 함!!!
+            let a = document.querySelector("#number1");
+            let b = document.querySelector("#number2");
+            
+            if(a.value === ""){
+                alert("첫번째 숫자를 입력해주세요");
+                a.focus();
+            } else if(b.value === "") {
+                alert("두번째 숫자를 입력해주세요");
+                b.focus();
+            } else {
+                calculator(parseInt(a.value), parseInt(b.value), op);
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <h1>계산기</h1>
+    <form action="#">
+        <ul>
+            <li>
+                <label for="">number1</label>
+                <input type="text" id="number1">
+            </li>
+            <li>
+                <label for="">number2</label>
+                <input type="text" id="number2">
+            </li>
+            <li>
+                <button type="button" onclick="dataInput('+')"> ➕ </button>
+                <button type="button" onclick="dataInput('-')"> ➖ </button>
+                <button type="button" onclick="dataInput('*')"> ✖ </button>
+                <button type="button" onclick="dataInput('/')"> ➗ </button>
+                <button type="button" onclick="dataInput('%')"> % </button>
+            </li>
+        </ul>
+        <div>
+            <span>실행결과 : </span>
+            <span></span>
+        </div>
+    </form>
+</body>
+</html>
