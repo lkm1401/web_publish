@@ -3,7 +3,7 @@ function add(a, b) {
     console.log(a + b);
 }
 
-let sum = add; 
+let sum = add; // call by reference
 console.log(add);
 console.log(sum);
 add(1,3);
