@@ -13,9 +13,5 @@ function calculator(a, b, op) {
     }
 }
 
-// calculator(1, 2, '+');
-// calculator(10, 2, '-');
-// calculator(10, 2, '*');
-// calculator(10, 2, '/');
-// calculator(10, 2, '%');
-// calculator(10, 2, '++');
+
+
