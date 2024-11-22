@@ -4,7 +4,7 @@ initForm();
 
 function initForm() {
     const output = `
-        <h1>일별 박스 오피스</h1>
+        <h1>KOBIS 박스 오피스</h1>
         <div id="search">
             <select id="type">
                 <option value="default">선택</option>
