@@ -18,6 +18,7 @@
     padding: 20px;
     border-radius: 8px;
     width: 70%;
+    height: 600px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
