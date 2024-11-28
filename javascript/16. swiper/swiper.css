@@ -1,0 +1,16 @@
+.swiper {
+    width: 1200px;
+    height: 600px;
+    margin: auto;
+    border: 1px solid red;
+}
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: bisque; */
+}
+.swiper-slide img {
+    width: 30%;
+    /* border: 1px solid blue; */
+}
