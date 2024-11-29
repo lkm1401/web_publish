@@ -564,7 +564,7 @@ footer {
 .join-form ul li label + span {
     font-size: 0.7em;
     font-weight: 300;
-    color: red;
+    color: #797878;
 }
 .join-form ul li:first-child input{
     border: 1px solid white;

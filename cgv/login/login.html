@@ -28,14 +28,22 @@
                     <li>
                         <div class="login-form-input">
                             <i class="fa-regular fa-user"></i>
-                            <input type="text" name="id" id="id" placeholder="아이디를 입력해주세요">
+                            <input type="text" 
+                                    name="id" 
+                                    id="id" 
+                                    oninput="handleChange(event)"
+                                    placeholder="아이디를 입력해주세요">
                         </div>
                         <p id="error-msg-id"></p>
                     </li>
                     <li>
                         <div class="login-form-input">
                             <i class="fa-solid fa-lock"></i>
-                            <input type="password" name="pwd" id="pwd" placeholder="비밀번호를 입력해주세요">
+                            <input type="password" 
+                                    name="pwd" 
+                                    id="pwd" 
+                                    oninput="handleChange(event)"
+                                    placeholder="패스워드를 입력해주세요">
                         </div>
                         <p id="error-msg-pwd"></p>
                     </li>
@@ -50,7 +58,7 @@
                         <div>
                             <a href="#">아이디 찾기</a> 
                             <span>&gt;</span>
-                            <a href="#">비밀번호 찾기</a> 
+                            <a href="#">패스워드 찾기</a> 
                             <span>&gt;</span>
                         </div>
                     </li>

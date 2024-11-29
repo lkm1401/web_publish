@@ -5,6 +5,7 @@ import { kobisBoxOffice, searchMoviePoster } from "./kobisCommons.js";
  **************************************/
 createMovieChartList(1);
 
+
 /**************************************
  * index -> 무비차트 리스트 생성 함수
  **************************************/
