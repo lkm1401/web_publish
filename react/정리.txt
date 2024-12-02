@@ -1,0 +1,38 @@
+1. React(리액트)?
+User Interface(사용자 인터페이스)를 만들기 위한 JavaScript 라이브러리
+- Meta(구,facebook)에서 2013년도 오픈소스로 공개, 2015년도에 React Native 출시
+- 2019년도 함수형태로 업데이트 됨, 그 전에는 클래스 기반이었음
+- 2022년도 서버사이드 렌더링이 가능해짐
+
+2. React 장점
+- 빠른 업데이트와 렌더링 속도 : React DOM
+- 컴포넌트 기반 구조 : 함수기반의 컴포넌트 생성
+- 재 사용성
+- 든든한 지원군 : Meta(구,facebook)에서 support
+- 활발한 지식공유 & 방대한 커뮤니티(NPM)
+- 모바일 앱 개발 가능 : 2015년 React Native 출시
+
+3. React 단점
+- 방대한 학습량 : HTML, CSS, 자바스크립트 기본 + React 문법
+- 높은 상태 관리 복잡도 : React Hooks를 통한 상태 관리
+
+4. React 프로젝트 생성 및 실행
+ 1) NodeJS 설치가 선행되어져야 함 
+ 2) NPM 커뮤니티를 통해 React 앱을 생성함
+ 3) React 앱 생성
+  - npx create-react-app [생성할 앱 이름]
+  예) npx create-react-app my-app
+ 4) React 앱 실행
+   ~    > cd [이동할 앱 이름]
+  my-app> npm start  
+
+5. React 실행 순서  
+ - npm start > src/index.js > App.js 
+
+6. 컴포넌트(Component) 
+- UI를 구성하는 함수 컴포넌트 
+- 첫 글자는 대문자로 정의한다. 
+- return 키워드 다음에는 ()로 묶어준다.
+- 반환되는 컴포넌트는 반드시 하나의 태그로 그룹핑을 한 후
+  반환하도록 한다. (예) <div>, <>
+- 로직을 실행하는 코드는 {} 묶어서 반환코드에 추가한다.
