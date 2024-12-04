@@ -1,0 +1,13 @@
+div.title, div.content {
+    width: 800px;
+    margin: auto;
+}
+div.title p, div.content p {
+    float: left;
+    border: 1px solid lightgray;
+    padding: 5px;
+    margin: 0;
+}
+div.content, div.rank {
+    clear: both;
+}

@@ -1,0 +1,11 @@
+.h_img {
+  width:30%;
+  float : left;
+}
+
+.h_search{
+  width:300px;
+  padding:10px;
+  border:1px solid mediumaquamarine;
+  border-radius: 0.5rem;
+}

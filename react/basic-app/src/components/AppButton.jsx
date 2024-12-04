@@ -1,15 +1,17 @@
 import Button from './Button.jsx';
 import ButtonList from './ButtonList.jsx';
+import { useState, useEffect } from 'react';
 
 export default function AppButton() {
-    const propsList = [
-        {"name":"All", "type":"button"},
-        {"name":"Front-end", "type":"button"},
-        {"name":"Back-end", "type":"button"},
-        {"name":"Mobile", "type":"button"},
-        {"name":"Submit", "type":"submit"},
-        {"name":"Reset", "type":"reset"},
-    ];
+    const [propsList, setPropsList] = useState([]);
+
+    useEffect(() => {
+        fetch("data/button_names.json")
+            .then(data => data.json())
+            .then(json => setPropsList(json))
+            .catch();
+    }, []);
+
     return (
         <>
             <div style={{display: 'flex'}}>
