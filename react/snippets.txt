@@ -1,0 +1,9 @@
+{
+	"reactFunction": {
+		"prefix": "rfc",
+		"body": [
+			"import React from 'react';\n\nexport default function ${1:${TM_FILENAME_BASE}}() {\n\treturn (\n\t\t<div>\n\t\t\t\n\t\t</div>\n\t);\n}\n\n",
+		],
+		"description": "react default function format"
+	}
+}

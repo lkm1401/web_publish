@@ -1,0 +1,26 @@
+.avatar-container {
+    display: flex;
+}
+.container {
+    width: 220px;
+    height: 250px;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    border-radius: 8px;
+    border: 1px solid lightgray;
+    position: relative;
+}
+.container img {
+    width: 200px;
+    border-radius: 100%;
+}
+.new {
+    position: absolute;
+    top: 30px;
+    left: 190px;
+    background-color: aquamarine;
+    border-radius: 4px;
+    padding: 5px 15px;
+    font-style: italic;
+}

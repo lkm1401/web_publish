@@ -1,14 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-// import App from './App';
-import AppAirbnb from './components/airbnb/AppAirbnb';
+import AppBestSeller from './components/yes24/AppBestSeller.jsx';
 // import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <AppAirbnb />
+    <AppBestSeller />
   </React.StrictMode>
 );
 

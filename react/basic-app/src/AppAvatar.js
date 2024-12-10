@@ -27,7 +27,7 @@ export default function App() {
         <Avatar img="/images/people2.webp"  name="james"/>
         <Avatar img="/images/people3.webp"  name="kelly"/>
       </div>
-      <div className="App-container">
+      {/* <div className="App-container">
         <AvatarImage img="/images/people1.webp" />
         <AvatarImage img="/images/people2.webp" />
         <AvatarImage img="/images/people3.webp" />
@@ -37,7 +37,7 @@ export default function App() {
       </div>
       <div className="App-container">
         <AvatarList list={avatarList} />
-      </div>
+      </div> */}
     </div>
   );
 }
