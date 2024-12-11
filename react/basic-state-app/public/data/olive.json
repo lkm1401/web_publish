@@ -1,0 +1,50 @@
+[
+    {
+        "id": "p_0001",
+        "rank": "1",
+        "img": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/400/10/0000/0021/A00000021395913ko.jpg?l=ko",
+        "title": "메디힐",
+        "description": "[1위패드/100+100+14매]메디힐 마데카소사이드 흔적패드",
+        "price": "39000",
+        "sprice": "28900",
+        "isSale": true,
+        "isCoupon": false,
+        "isToday": true
+    },
+    {
+        "id": "p_0002",
+        "rank": "2",
+        "img": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/400/10/0000/0021/A00000021392508ko.jpg?l=ko",
+        "title": "에스트라",
+        "description": "[올영1등크림]에스트라아토베리어",
+        "price": "33000",
+        "sprice": "26000",
+        "isSale": true,
+        "isCoupon": true,
+        "isToday": true
+    },
+    {
+        "id": "p_0003",
+        "rank": "3",
+        "img": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/400/10/0000/0017/A00000017142380ko.jpg?l=ko",
+        "title": "어노브",
+        "description": "[2024어워즈/3년연속1위]어노브딥데미지헤어트리트먼트",
+        "price": "42000",
+        "sprice": "29800",
+        "isSale": true,
+        "isCoupon": false,
+        "isToday": true
+    },
+    {
+        "id": "p_0004",
+        "rank": "4",
+        "img": "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/400/10/0000/0013/A00000013906380ko.jpg?l=ko",
+        "title": "정샘물",
+        "description": "[2024어워즈/올영쿠션1위]정샘물에션셜스킨누더",
+        "price": "45000",
+        "sprice": "36000",
+        "isSale": false,
+        "isCoupon": true,
+        "isToday": false
+    }
+]

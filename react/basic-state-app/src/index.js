@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import AppBestSeller from './components/yes24/AppBestSeller.jsx';
+import AppOlive from './components/olive/AppOlive.jsx';
 // import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <AppBestSeller />
+    <AppOlive />
   </React.StrictMode>
 );
 
