@@ -47,34 +47,30 @@ export default function ProductList({cart}) {
 
     return (
         <>
-        <div>
-            <input type="radio" name="type" value="total"  
-                onClick={handleTypeChange} checked={type==='total'}/>전체
-            <input type="radio" name="type" value="sale"  
-                onClick={handleTypeChange} checked={type==='sale'}/>세일
-            <input type="radio" name="type" value="coupon" 
-                onClick={handleTypeChange} checked={type==='coupon'}/>쿠폰
-            <input type="radio" name="type" value="today" 
-                onClick={handleTypeChange} checked={type==='today'}/>오늘드림
-        </div>
-        <ul className='product-list-container'>
-            {list && list.map(item => 
-                <li>
-                    <Product 
-                        totalCart = {totalCart}
-                        id={item.id}
-                        img={item.img}
-                        title={item.title}
-                        description={item.description}
-                        price={item.price}
-                        sprice={item.sprice}
-                        isSale={item.isSale}
-                        isCoupon={item.isCoupon}
-                        isToday={item.isToday}
-                        />
-                </li>           
-            )}
-        </ul>
+            <div>
+                <input type="radio">전체</input>
+                <input type="radio">세일</input>
+                <input type="radio">쿠폰</input>
+                <input type="radio">오늘드림</input>
+            </div>
+            <ul className='product-list-container'>
+                {list && list.map(item => 
+                    <li>
+                        <Product 
+                            totalCart = {totalCart}
+                            id={item.id}
+                            img={item.img}
+                            title={item.title}
+                            description={item.description}
+                            price={item.price}
+                            sprice={item.sprice}
+                            isSale={item.isSale}
+                            isCoupon={item.isCoupon}
+                            isToday={item.isToday}
+                            />
+                    </li>           
+                )}
+            </ul>
         </>
     );
 }

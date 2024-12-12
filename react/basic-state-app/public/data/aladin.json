@@ -1,0 +1,63 @@
+{
+    "category": [
+        {"name" : "에세이"},
+        {"name" : "소설"},
+        {"name" : "자기계발"},
+        {"name" : "사회과학"},
+        {"name" : "고전"},
+        {"name" : "외국어"}
+    ],
+    "books": [
+        {   "img": "https://image.aladin.co.kr/product/35306/27/cover200/k422035074_1.jpg", 
+            "title": "[국내]타임셀러",
+            "type" : "domestic",
+            "category": "소설"
+        },
+        {
+            "img": "https://image.aladin.co.kr/product/35256/5/cover200/k412934146_1.jpg", 
+            "title": "[국외]스파이 코스트",
+            "type": "overseas",
+            "category": "에세이"
+        },
+        {
+            "img": "https://image.aladin.co.kr/product/35237/81/cover200/k712934846_1.jpg", 
+            "title": "[국내]단순해지는 연습",
+            "type" : "domestic",
+            "category": "자기계발"
+        },
+        {   "img": "https://image.aladin.co.kr/product/35306/27/cover200/k422035074_1.jpg", 
+            "title": "[국내]타임셀러",
+            "type" : "domestic",
+            "category": "사회과학"
+        },
+        {
+            "img": "https://image.aladin.co.kr/product/35256/5/cover200/k412934146_1.jpg", 
+            "title": "[국외]스파이 코스트",
+            "type": "overseas",
+            "category": "고전"
+        },
+        {
+            "img": "https://image.aladin.co.kr/product/35237/81/cover200/k712934846_1.jpg", 
+            "title": "[국내]단순해지는 연습",
+            "type" : "domestic",
+            "category": "외국어"
+        },
+        {   "img": "https://image.aladin.co.kr/product/35306/27/cover200/k422035074_1.jpg", 
+            "title": "[국내]타임셀러",
+            "type" : "domestic",
+            "category": "소설"
+        },
+        {
+            "img": "https://image.aladin.co.kr/product/35256/5/cover200/k412934146_1.jpg", 
+            "title": "[국외]스파이 코스트",
+            "type": "overseas",
+            "category": "고전"
+        },
+        {
+            "img": "https://image.aladin.co.kr/product/35237/81/cover200/k712934846_1.jpg", 
+            "title": "[국내]단순해지는 연습",
+            "type" : "domestic",
+            "category": "에세이"
+        }
+    ]
+}
