@@ -1,15 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import AppAladin from './components/aladin/AppAladin.jsx';
-// import AppCounter2 from './components/counter2/AppCounter2.jsx';
-// import AppOlive from './components/olive/AppOlive.jsx';
+import AppForm from './components/form/AppForm.jsx';
 // import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <AppAladin />
+    <AppForm />
   </React.StrictMode>
 );
 

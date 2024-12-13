@@ -1,3 +1,30 @@
+.cate-container {
+position: relative;
+    z-index: 6;
+    width: 200px;
+    border: solid 1px #d8d8d8;
+    border-top: none;
+    background-color: #fff;
+}
+.cate {
+    height: 21px;
+    line-height: 21px;
+}
+.cate-list {
+    display: block;
+    color: #333;
+}
+.sub-cate-list {
+	position: absolute;
+    left: 148px;
+    top: -9px;
+    z-index: 10;
+    width: 200px;
+    border: solid 2px #196ab3;
+    background-color: #fff;
+}
+
+
 .App-container {
   display: flex;
   gap: 10px;

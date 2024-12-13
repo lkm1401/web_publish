@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 // import './index.css';
 // import App from './App';
-import App from './AppAvatar.js';
+import AppAvatar from './AppAvatar.js';
 // import AppCgv from './components/cgv_layout/AppCgv.jsx';
 import reportWebVitals from './reportWebVitals';
 
@@ -10,7 +10,7 @@ import reportWebVitals from './reportWebVitals';
 const root = ReactDOM.createRoot(document.querySelector('body'));
 root.render(
   <React.StrictMode>
-    <App />
+    <AppAvatar />
   </React.StrictMode>
 );
 
