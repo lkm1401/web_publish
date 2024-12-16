@@ -1,5 +1,6 @@
 import React, {useState, useRef} from 'react';
 import { validateSignup } from '../../apis/validate.js';
+import { errorCheckSignup } from '../../apis/errorCheck.js';
 import './commons.css';
 import './cgv.css';
 
@@ -24,18 +25,29 @@ export default function Signup() {
         'emailName': '',
         'emailDomain': ''
     };
+    const initErrors = {
+        'id': '',
+        'pwd': '',
+        'cpwd': '',
+        'name': '',
+        'phone': '',
+        'emailName': '',
+        'emailDomain': ''
+    };
     const [formData, setFormData] = useState(init);
+    const [errors, setErrors] = useState(initErrors);
 
     //폼의 입력이 변경되는 경우 호출되는 함수
     const handleChangeSignup = (event) => {
         const {name, value} = event.target;
         setFormData({...formData, [name]:value});
+        errorCheckSignup(name, value, errors, setErrors);
     }
 
     //폼의 입력이 종료된 후 Submit 함수
     const handleSubmitSignup = (event) => {
         event.preventDefault();
-        if(validateSignup(refs)) console.log(formData);
+        if(validateSignup(refs, errors, setErrors)) console.log(formData);
     }
 
     return (
@@ -46,7 +58,7 @@ export default function Signup() {
                 <ul>
                     <li>
                         <label for="" ><b>아이디</b></label>
-                        <span id="error-msg-id">아이디를 입력해주세요</span>
+                        <span id="error-msg-id">{errors.id}</span>
                         <div>
                             <input type="text" 
                                     name="id"
@@ -61,7 +73,7 @@ export default function Signup() {
                     </li>
                     <li>
                         <label for=""><b>비밀번호</b></label>
-                        <span id="error-msg-pwd">12자 이내의 비밀번호를 입력해주세요</span>
+                        <span id="error-msg-pwd">{errors.pwd}</span>
                         <div>
                             <input type="password" 
                                     name="pwd"
@@ -74,7 +86,7 @@ export default function Signup() {
                     </li>
                     <li>
                         <label for=""><b>비밀번호 확인</b></label>
-                        <span id="error-msg-cpwd">비밀번호 확인을 입력해주세요</span>
+                        <span id="error-msg-cpwd">{errors.cpwd}</span>
                         <div>
                             <input type="password" 
                                     name="cpwd"
@@ -88,7 +100,7 @@ export default function Signup() {
                     </li>
                     <li>
                         <label for=""><b>이름</b></label>
-                        <span id="error-msg-name">이름을 입력해주세요</span>
+                        <span id="error-msg-name">{errors.name}</span>
                         <div>
                             <input type="text" 
                                     name="name"
@@ -101,7 +113,7 @@ export default function Signup() {
                     </li>
                     <li>
                         <label for=""><b>전화번호</b></label>
-                        <span id="error-msg-phone">전화번호를 입력해주세요</span>
+                        <span id="error-msg-phone">{errors.phone}</span>
                         <div>
                             <input type="text" 
                                     name="phone"
@@ -114,7 +126,7 @@ export default function Signup() {
                     </li>
                     <li>
                         <label for=""><b>이메일 주소</b></label>
-                        <span id="error-msg-emailname">이메일 주소를 입력해주세요</span>
+                        <span id="error-msg-emailname">{errors.emailName}</span>
                         <div>
                             <input type="text" 
                                     name="emailName"

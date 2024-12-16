@@ -511,6 +511,10 @@ footer {
     font-weight: 700;
 }
 
+
+
+
+
 /*******************************************
 *  title : join form style
 *  author : hong@naver.com
@@ -603,6 +607,11 @@ footer {
     padding: 30px 0 10px;
     text-align: center;
 }
+.join-form ul li label +span {
+    color: red;
+    padding-left: 10px;
+}
+
 
 /*******************************************
 *  title : mycgv style

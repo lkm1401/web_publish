@@ -64,34 +64,41 @@ export const validateForm = (refs) => {
 /**
  * Signup 컴포넌트의 유효성체크 함수
  */
-export const validateSignup = (refs) => {
+export const validateSignup = (refs, errors, setErrors) => {
     let checkResult = true;
     if(refs.idRef.current.value === '') {
-        alert("아이디 입력");
+        // alert("아이디 입력");
+        setErrors({...errors, ['id']:'아이디를 입력해주세요'});
+        // refs.idRef.current.style.setProperty('color', 'red');
         refs.idRef.current.focus();
         checkResult = false;
     } else if(refs.pwdRef.current.value === '') {
-        alert("패스워드 입력");
+        // alert("패스워드 입력");
+        setErrors({...errors, ['pwd']:'패스워드를 입력해주세요'});
         refs.pwdRef.current.focus();
         checkResult = false;
     } else if(refs.cpwdRef.current.value === '') {
-        alert("cpwd 입력");
+        // alert("cpwd 입력");
+        setErrors({...errors, ['cpwd']:'패스워드 확인을 입력해주세요'});
         refs.cpwdRef.current.focus();
         checkResult = false;
     } else if(refs.nameRef.current.value === '') {
-        alert("name 입력");
+        // alert("name 입력");
+        setErrors({...errors, ['name']:'이름을 입력해주세요'});
         refs.nameRef.current.focus();
         checkResult = false;
     } else if(refs.phoneRef.current.value === '') {
-        alert("phone 입력");
+        // alert("phone 입력");
+        setErrors({...errors, ['phone']:'전화번호를 입력해주세요'});
         refs.phoneRef.current.focus();
         checkResult = false;
     } else if(refs.emailNameRef.current.value === '') {
-        alert("emailName 입력");
+        // alert("emailName 입력");
+        setErrors({...errors, ['emailName']:'이메일주소를 입력해주세요'});
         refs.emailNameRef.current.focus();
         checkResult = false;
     } else if(refs.emailDomainRef.current.value === 'default') {
-        alert("emailDomain 선택");
+        // alert("emailDomain 선택");
         refs.emailDomainRef.current.focus();
         checkResult = false;
     } 
