@@ -1,9 +1,12 @@
 import React, {useState, useRef} from 'react';
+import { validateForm } from '../../apis/validate.js';
 
 export default function UserInfo() {
-    const nameRef = useRef(null);
-    const addressRef = useRef(null);
-    const ageRef = useRef(null);
+    const refs = {
+        nameRef: useRef(null),
+        addressRef: useRef(null),
+        ageRef: useRef(null)
+    };
 
     const init = {'name':'', 'address':'', 'age':''};
     const [formData, setFormData] = useState(init);
@@ -13,27 +16,9 @@ export default function UserInfo() {
         setFormData({...formData, [name]:value});
     }
 
-    const validateForm = () => {
-        let result = true;
-        if(nameRef.current.value === '') {
-            alert('이름을 입력해주세요');
-            nameRef.current.focus();
-            result = false;
-        } else if(addressRef.current.value === '') {
-            alert('주소를 입력해주세요');
-            addressRef.current.focus();
-            result = false;
-        } else if(ageRef.current.value === '') {
-            alert('나이를 입력해주세요');
-            ageRef.current.focus();
-            result = false;
-        }
-        return result;
-    }
-
     const handleSubmit = (event) => {
         event.preventDefault();        
-        if(validateForm()) console.log(formData);        
+        if(validateForm(refs)) console.log(formData);        
     }
 
     return (
@@ -46,7 +31,7 @@ export default function UserInfo() {
                         <input  type="text"
                                 name="name"
                                 value={formData.name}
-                                ref={nameRef}
+                                ref={refs.nameRef}
                                 onChange={handleChangeForm}
                                 />
                     </li>
@@ -55,7 +40,7 @@ export default function UserInfo() {
                         <input  type="text"
                                 name="address"
                                 value={formData.address}
-                                ref={addressRef}
+                                ref={refs.addressRef}
                                 onChange={handleChangeForm}
                                 />
                     </li>
@@ -64,7 +49,7 @@ export default function UserInfo() {
                         <input  type="text"
                                 name="age"
                                 value={formData.age}
-                                ref={ageRef}
+                                ref={refs.ageRef}
                                 onChange={handleChangeForm}
                                 />
                     </li>
