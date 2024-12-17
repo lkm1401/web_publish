@@ -1,4 +1,41 @@
 /**
+ * Signup2Form 유효성 체크 함수
+ */
+export function validateFormSignup2(refs) { 
+    /** !!! 배열.map() or 배열.forEach() 함수는 배열객체를 순회하는 것이
+     * 목적이므로 if 체크후 focus가 적용되지 않음!!!
+     */
+    const refEntries = Object.entries(refs);
+    console.log(refEntries);
+    const msgs = {
+        'idRef':'아이디', 'passRef': '패스워드',
+
+    };    
+
+    for(const item of refEntries) {
+        const name = item[0];
+        const ref = item[1];
+        if(ref.current.value === '') {
+            alert(`${msgs[name]}를 입력해주세요`);
+            ref.current.focus();            
+            return false;
+        }
+    }    
+
+    // let checkResult = true;
+
+    // if(refs.idRef.current.value === '') {
+    //     alert('아이디 입력');
+    //     refs.idRef.current.focus();
+    //     checkResult = false;
+    // }
+
+    // return checkResult;
+}
+
+
+
+/**
  * CgvLoginForm 유효성 체크 함수
  * @returns 
  */
@@ -104,4 +141,25 @@ export const validateSignup = (refs, errors, setErrors) => {
     } 
 
     return checkResult;
+}
+
+
+/**
+ * Signup 컴포넌트 아이디 중복체크 함수  
+ */
+export const handleIdCheck = (idRef, errorCheckSignup, errors, setErrors, idMsgRef) => {
+    const id = idRef.current;
+    if(id.value === '') {
+        errorCheckSignup('id', id.value, errors, setErrors);
+    } else {
+        const did = 'test';
+        if(did === id.value) {                
+            setErrors({...errors, ['id']:'이미 사용중인 아이디 입니다. 다시 입력해주세요.'});
+            id.focus();
+        } else {
+            setErrors({...errors, ['id']:'사용이 가능한 아이디입니다.'});
+            idMsgRef.current.style.setProperty('color','green');
+            idMsgRef.current.style.setProperty('font-weight', 'bold');
+        }
+    }
 }
