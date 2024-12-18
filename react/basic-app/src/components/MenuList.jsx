@@ -1,5 +1,4 @@
 import Menu from './Menu.jsx';
-import '../css/Menu.css';
 
 export default function MenuList({list}) {
     return (

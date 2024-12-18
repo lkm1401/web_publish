@@ -1,4 +1,3 @@
-import '../css/Menu.css';
 
 export default function Menu({name, href, bg, color}) {
     return (

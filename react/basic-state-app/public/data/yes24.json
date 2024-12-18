@@ -1,0 +1,153 @@
+{
+    "bookList" :[
+        {
+            "rank": "1",
+            "img": "https://image.yes24.com/goods/13137546/L",
+            "suggest": true,
+            "today": true,
+            "type": "도서",
+            "title": "소년이 온다",
+            "author": "한강",
+            "company": "창비",
+            "pubDate": "2014년 05월",
+            "price": "13,500원",
+            "perSale": "10",
+            "point": "750",
+            "category": "realtime"
+        },
+        {
+            "rank": "2",
+            "img": "https://image.yes24.com/goods/108422348/L",
+            "suggest": true,
+            "today": false,
+            "type": "도서",
+            "title": "채식주의자",
+            "author": "한강",
+            "company": "창비",
+            "pubDate": "2014년 05월",
+            "price": "13,500원",
+            "perSale": "10",
+            "point": "750",
+            "category": "hotprice"
+        },
+        {
+            "rank": "3",
+            "img": "https://image.yes24.com/goods/103495056/L",
+            "suggest": false,
+            "today": true,
+            "type": "도서",
+            "title": "작별하지 않는다",
+            "author": "한강",
+            "company": "창비",
+            "pubDate": "2014년 05월",
+            "price": "13,500",
+            "perSale": "10",
+            "point": "750",
+            "category": "day"
+        },
+        {
+            "rank": "4",
+            "img": "https://image.yes24.com/goods/11467936/L",
+            "suggest": true,
+            "today": true,
+            "type": "도서",
+            "title": "서랍에 저녁을 넣어 두었다",
+            "author": "한강",
+            "company": "창비",
+            "pubDate": "2014년 05월",
+            "price": "13,500원",
+            "perSale": "10",
+            "point": "750",
+            "category": "monthweek"
+        },
+        {
+            "rank": "5",
+            "img": "https://image.yes24.com/goods/60524285/L",
+            "suggest": true,
+            "today": true,
+            "type": "도서",
+            "title": "흰",
+            "author": "한강",
+            "company": "문학동네",
+            "pubDate": "2014년 05월",
+            "price": "13,500원",
+            "perSale": "10",
+            "point": "750",
+            "category": "steady"
+        },
+        {
+            "rank": "6",
+            "img": "https://image.yes24.com/goods/140072103/L",
+            "suggest": true,
+            "today": true,
+            "type": "도서",
+            "title": "흔한남매 18",
+            "author": "한강",
+            "company": "창비",
+            "pubDate": "2014년 05월",
+            "price": "14,220원",
+            "perSale": "10",
+            "point": "750",
+            "category": "realtime"
+        },
+        {
+            "rank": "7",
+            "img": "https://image.yes24.com/goods/140072103/L",
+            "suggest": true,
+            "today": true,
+            "type": "도서",
+            "title": "흔한남매 18",
+            "author": "한강",
+            "company": "창비",
+            "pubDate": "2014년 05월",
+            "price": "14,220원",
+            "perSale": "10",
+            "point": "750",
+            "category": "day"
+        }
+    ],
+    "menuList" :[
+        { 
+            "name":"종합",
+            "href": "#",
+            "bg": "white",
+            "color": "#333",
+            "category": "total"
+        },
+        { 
+            "name":"실시간",
+            "href": "#",
+            "bg": "white",
+            "color": "#333",
+            "category": "realtime"
+        },
+        { 
+            "name":"특가",
+            "href": "#",
+            "bg": "white",
+            "color": "#333",
+            "category": "hotprice"
+        },
+        { 
+            "name":"일별",
+            "href": "#",
+            "bg": "white",
+            "color": "#333",
+            "category": "day"
+        },
+        { 
+            "name":"월별/주별",
+            "href": "#",
+            "bg": "white",
+            "color": "#333",
+            "category": "monthweek"
+        },
+        { 
+            "name":"스테디셀러",
+            "href": "#",
+            "bg": "white",
+            "color": "#333",
+            "category": "steady"
+        }
+    ] 
+}

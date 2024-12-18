@@ -1,0 +1,39 @@
+.container {
+    width: 1000px;
+    margin: auto;
+}
+.container-avatar {
+    display: flex;
+    align-items: center;
+    /* width: 300px;
+    border: 1px solid red; */
+}
+.container-avatar p {
+    font-size: 1rem;
+    font-weight: bold;
+    padding:0 15px;
+}
+.container-avatar img {
+    width: 120px;
+}
+.container-content {
+    width: 500px;
+    padding: 0 40px;
+    background-color: rgb(248, 241, 232);
+}
+.container-content-tags {
+    padding: 10px 0;
+}
+.container-content-tags span {
+    border: 1px solid #333;
+    border-radius: 4px;
+    font-size: .8rem;
+    margin: 5px;
+    padding: 2px 5px;
+}
+.container-button {    
+    list-style-type: none;
+    background-color: rgb(251, 196, 125);
+    padding: 30px;
+    margin: 0;
+}

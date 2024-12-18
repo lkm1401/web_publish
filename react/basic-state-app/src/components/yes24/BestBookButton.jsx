@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 
 
-export default function BestBookButton({qtyChange}) {
+export default function BestBookButton() {
     const [qty, setQty] = useState(1);
 
     const handleClick = (type) => {
@@ -13,7 +13,7 @@ export default function BestBookButton({qtyChange}) {
     }
 
     return (
-        <ul>
+        <ul className='container-button'>
             <li>
                 <input type="checkbox"></input>
                 <button type="button" onClick={()=>{handleClick('-')}}>-</button>
@@ -21,8 +21,7 @@ export default function BestBookButton({qtyChange}) {
                 <button type="button" onClick={()=>{handleClick('+')}}>+</button>
             </li>
             <li>
-                <button type="button" 
-                        onClick={()=>{qtyChange(qty)}}>카트에 넣기</button>
+                <button type="button">카트에 넣기</button>
             </li>
             <li>
                 <button type="button">바로구매</button>
