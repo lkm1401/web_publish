@@ -1,0 +1,69 @@
+npm install react-router-dom
+
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Layout from './Layout.jsx';
+import AppBestSeller from '../yes24/AppBestSeller.jsx';
+import Login from '../form/CgvLoginForm.jsx';
+import Signup from '../form/Signup.jsx';
+
+export default function AppBestSellerRouter() {
+    return (
+        <div>
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/" element={<Layout />}>
+                    <Route index element={<Home />} />
+                    <Route path="bestseller" element={<AppBestSeller />} />
+                    <Route path="login" element={<Login />} />
+                    <Route path="signup" element={<Signup />} />
+                    <Route path="about" element={<About />} />
+                    </Route>
+                </Routes>
+            </BrowserRouter>
+        </div>
+    );
+}
+
+function Home() {
+    return <h2 style={{'width':'1000px', 'margin':'auto', 'padding':'40px'}}>Home Page</h2>;
+}
+function About() {
+    return <h2 style={{'width':'1000px', 'margin':'auto' , 'padding':'40px'}}>About Page</h2>;
+}
+
+////////////////////////////
+import React from 'react';
+import { Outlet, Link } from 'react-router-dom';
+import Header from './Header.jsx';
+import Footer from './Footer.jsx';
+
+export default function Layout() {
+    return (
+        <div>
+            <Header>                
+                <Link to="" style={{'padding':'20px'}}>Home</Link>
+                <Link to="bestseller" style={{'padding':'20px'}}>BestSeller</Link>
+                <Link to="login" style={{'padding':'20px'}}>Login</Link>
+                <Link to="signup" style={{'padding':'20px'}}>Signup</Link>
+                <Link to="about" style={{'padding':'20px'}}>About</Link>
+            </Header>
+            <Outlet />
+            {/* <Footer /> */}
+        </div>
+    );
+}
+
+///////////////////
+import React from 'react';
+
+export default function Header({children}) {
+    return (
+        <div style={{'width':'1000px', 'margin':'auto'}}>
+            {children}
+        </div>
+    );
+}
+
+
+
