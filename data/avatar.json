@@ -1,0 +1,13 @@
+{
+   "imageList": [
+        { "img": "/images/people1.webp" },
+        { "img": "/images/people2.webp" },
+        { "img": "/images/people3.webp" }
+    ],
+   "avatarList":
+    [
+        { "img": "/images/people1.webp", "name": "smith" },
+        { "img": "/images/people2.webp", "name": "james" },
+        { "img": "/images/people3.webp", "name": "kelly" }
+    ]
+}
