@@ -9,28 +9,27 @@ export function validateFormSignup2(refs) {
     console.log(refEntries);
     const msgs = {
         'idRef':'아이디', 'passRef': '패스워드',
-
+        'jobRef': '직업'
     };    
 
     for(const item of refEntries) {
         const name = item[0];
         const ref = item[1];
-        if(ref.current.value === '') {
-            alert(`${msgs[name]}를 입력해주세요`);
-            ref.current.focus();            
-            return false;
+
+        if(name !== 'jobRef') {
+            if(ref.current.value === '') {
+                alert(`${msgs[name]}를 입력해주세요`);
+                ref.current.focus();            
+                return false;
+            }
+        } else {
+            if(ref.current.value === 'default') {
+                alert(`${msgs[name]}를 선택해주세요`);
+                ref.current.focus();            
+                return false;
+            }
         }
     }    
-
-    // let checkResult = true;
-
-    // if(refs.idRef.current.value === '') {
-    //     alert('아이디 입력');
-    //     refs.idRef.current.focus();
-    //     checkResult = false;
-    // }
-
-    // return checkResult;
 }
 
 

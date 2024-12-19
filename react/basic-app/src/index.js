@@ -1,16 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 // import './index.css';
-// import App from './App';
-import AppAvatar from './AppAvatar.js';
-// import AppCgv from './components/cgv_layout/AppCgv.jsx';
+import App from './App';
+// import AppAvatar from './AppAvatar.js';
+// import AppCGV from './components/cgv_layout/AppCgv.jsx';
 import reportWebVitals from './reportWebVitals';
 
 // const root = ReactDOM.createRoot(document.getElementById('root'));
 const root = ReactDOM.createRoot(document.querySelector('body'));
 root.render(
   <React.StrictMode>
-    <AppAvatar />
+    <App />
   </React.StrictMode>
 );
 

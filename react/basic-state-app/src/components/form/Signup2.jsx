@@ -1,6 +1,6 @@
-import React, {useState, useRef, useMemo} from 'react';
+import React, {useState, useRef} from 'react';
 import { validateFormSignup2 } from '../../apis/validate.js';
-import { initFormNames, test } from '../../apis/initial.js';
+import { initFormNames} from '../../apis/initial.js';
 
 export default function Signup2() {
     const initArray = [
@@ -8,11 +8,6 @@ export default function Signup2() {
         'address', 'birth1', 'birth2', 'birth3', 'job', 
         'gender', 'email', 'intro'
     ];
-    //React 전용 useRef 함수는 custom hook 등을 활용
-    // const refs2 = refArray.reduce((acc, key)=>{  
-    //     acc[key] = useRef(null);
-    //     return acc;
-    // }, {});
 
     const refs = {
         idRef:useRef(null), 
