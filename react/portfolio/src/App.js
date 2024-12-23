@@ -22,23 +22,6 @@ import ContactLinks from './components/footer/ContactLinks.jsx';
 import Bottom from './components/footer/Bottom.jsx';
 
 function App() {
-  const sectionList = [
-    {
-      "id": "about",
-      "title": "About me",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure natus, temporibus perspiciatis repudiandae nostrum modi doloremque expedita non eius ipsum! Beatae porro adipisci omnis architecto dignissimos. Iusto ipsa inventore adipisci.",
-      "children": ["Majors", "Jobs"]
-    },
-    {
-      "id": "skill",
-      "title": "My Skills",
-      "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis beatae, aliquid ratione commodi nam ex voluptate rem eveniet cupiditate optio natus? Cum, harum eum sint id quod nulla adipisci. Sunt?",
-      "children": ["Skills"]
-    }
-  ];
-
-
-
 
   return (
     <>
