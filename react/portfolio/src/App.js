@@ -22,7 +22,7 @@ import ContactLinks from './components/footer/ContactLinks.jsx';
 import Bottom from './components/footer/Bottom.jsx';
 
 function App() {
-
+  
   return (
     <>
       <Header>
@@ -33,8 +33,9 @@ function App() {
       </Header>
       <Content>
         <Home img="images/favicon.ico" name="Judy"/>
+
         {/* About me */}
-        <SectionWrap
+            <SectionWrap
             id="about"
             title="About me"
             description="Lorem ipsum dolor sit amet consectetur adipisicing elit. 
@@ -77,7 +78,7 @@ function App() {
             description="See what they say about me"
         >
           <Testimonials />
-        </SectionWrap>
+        </SectionWrap>  
 
         {/* Arrow up */}
         <Arrow />

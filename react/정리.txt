@@ -96,4 +96,108 @@ export default function MenuList() {
         </nav>
     );
 }
+        {/* About me */}
+        <SectionWrap
+            id="about"
+            title="About me"
+            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Iure natus, temporibus perspiciatis repudiandae nostrum modi
+        doloremque expedita non eius ipsum! Beatae porro adipisci 
+        omnis architecto dignissimos. Iusto ipsa inventore adipisci.">
+              <Majors />
+              <Jobs />
+        </SectionWrap>
 
+        {/* My Skills */}
+        <SectionWrap
+            id="skill"
+            title="My Skills"
+            description="Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+        Nobis beatae, aliquid ratione commodi nam ex voluptate rem 
+        eveniet cupiditate optio natus? Cum, harum eum sint id quod 
+        nulla adipisci. Sunt?">
+              <Skills>
+                <Coding />
+                <Ariticle type="Tools" />
+                <Ariticle type="Etc" />
+              </Skills>
+        </SectionWrap>
+
+        {/* My Work */}
+        <SectionWrap
+            id="work"
+            title="My work"
+            description="Projects"
+        >
+          <Categories />
+          <Projects />
+        </SectionWrap>
+
+        {/* Testimonials */}
+        <SectionWrap
+            id="testimonial"
+            title="Testimonial"
+            description="See what they say about me"
+        >
+          <Testimonials />
+        </SectionWrap>
+
+
+-------------------------------------------
+# react & github deploy
+
+1. 깃허브 deploy 레파지토리 생성 : public 
+2. (1) 번의 레파지토리를 git remote 저장소로 추가
+
+git remote -v   : 추가된 레파지토리 확인
+
+git remote remove origin : 등록된 레파지토리 삭제
+
+레파지토리 추가
+
+git remote add origin https://github.com/<username>/<repository>.git
+
+1. gh-pages 패키지 설치
+- gh-pages는 빌드된 파일을 GitHub Pages에 배포하기 위한 npm 패키지이다.
+
+npm install gh-pages --save-dev
+
+1. package.json 설정
+
+```jsx
+{
+  "name": "react_deploy",
+  "version": "0.1.0",
+  "private": true,
+  **"homepage": "https://lkm1401.github.io/react_deploy",**
+  "dependencies": {
+    "cra-template": "1.2.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-scripts": "5.0.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    **"predeploy": "npm run build",
+    "deploy": "gh-pages -d build"**
+  },
+```
+
+1. 배포 실행
+
+```jsx
+npm run deploy
+```
+
+1. GitHub Pages 설정
+- GitHub 저장소의 **Settings** 탭으로 이동합니다.
+- **Pages** 섹션을 찾습니다.
+- 배포 브랜치를 `gh-pages`로 설정:
+    - **Source**: `gh-pages` 브랜치를 선택하고 저장.
+
+1. 배포된 react 앱에 접속
+
+배포가 완료되면 `https://<username>.github.io/<repository>`에서 React 앱에 접속할 수 있습니다.
