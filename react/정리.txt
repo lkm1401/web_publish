@@ -36,3 +36,64 @@ User Interface(사용자 인터페이스)를 만들기 위한 JavaScript 라이�
 - 반환되는 컴포넌트는 반드시 하나의 태그로 그룹핑을 한 후
   반환하도록 한다. (예) <div>, <>
 - 로직을 실행하는 코드는 {} 묶어서 반환코드에 추가한다.
+
+
+메뉴 클릭 이벤트 적용
+--------------------------------------
+  /* .header__menu li:first-child {
+    border: 1px solid var(--color-accent);
+    border-radius: 4px;
+  } */
+  .header__menu__selected {
+    border: 1px solid var(--color-accent);
+    border-radius: 4px;
+  }
+
+--------------------------------------
+import React from 'react';
+
+export default function Menu({href, menuName, click, style}) {
+
+    return (
+        <a  className={style} 
+            href={href}
+            onClick={()=>{ click(menuName) }}>{menuName}</a>
+    );
+}
+-----------------------------------------
+import React, {useState} from 'react';
+import Menu from './Menu.jsx';
+
+export default function MenuList() {
+    const [selected, setSelected] = useState('Home');
+    const list = [
+        {"href": "#home", "name":"Home"},
+        {"href": "#about", "name":"About"},
+        {"href": "#skill", "name":"Skills"},
+        {"href": "#work", "name":"My work"},
+        {"href": "#testimonial", "name":"Testimonial"},
+        {"href": "#contact", "name":"Contact"}
+    ];
+
+    const handleClick = (name) => {
+        setSelected(name);
+    }
+
+    return (
+        <nav>
+            <ul className="header__menu">
+                {list && list.map((menu) => 
+                    <li>
+                        <Menu href={menu.href} 
+                                menuName={menu.name}
+                                click={handleClick}
+                                style= {menu.name === selected ? 'header__menu__item header__menu__selected' 
+                                        : 'header__menu__item'}
+                                />
+                    </li>                
+                )}
+            </ul>
+        </nav>
+    );
+}
+
