@@ -1,0 +1,85 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: '나눔바른고딕';
+    
+}
+:root {
+    /* color list */
+    --color-primary: rgb(77, 77, 77);
+    --color-black: #050a13;
+    --color-white: #fff;
+    --color-border: tomato;
+    --color-silver: silver;
+    --color-footerbg : rgb(248, 248, 248);
+    --color-moviechart: rgb(251,251,251);
+    --color-buttonbg: rgb(222, 222, 222);
+    --color-gray-222: rgb(102, 102, 127);
+    --color-font-primary: rgb(137, 137, 135);
+    --color-button: rgb(251, 67, 87);
+    --color-login-font: rgb(137, 137, 135);
+    --color-join-border: rgb(232, 232, 232);
+}
+/* 컨텐츠 가운데 정렬 */
+.center-layout {
+    /* border: 1px solid tomato; */
+    width: 1000px;
+    margin: 0 auto;
+    margin-bottom: 80px;
+}
+.center-title {
+    /* border: 1px solid blue; */
+    padding: 40px 15px 10px 50px;
+    margin-bottom: 40px;
+}
+
+/* index-total-button style */
+.total-view-button {
+    border: 1px solid var(--color-buttonbg);
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 8px 13px;
+    color: var(--color-primary);
+    font-size: 12px;
+    font-weight: 700;
+}
+/*
+    공통적으로 적용되는 클래스는 직접 셀렉팅하는 경우 부모를 직관적으로 지정함
+*/
+/* moviechart, event, special => title style */
+.content-title-style {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    /* border: 1px solid red; */
+}
+.content-title-style-font {
+    font-size: 1.4em;
+    font-weight: 600;
+}
+.font-color-main { color: var(--color-font-primary);}
+.font-color-gray { color: var(--color-gray-222);}
+.btn-main-color { 
+    background-color: var(--color-button);
+    border: 1px solid var(--color-white);
+    color: var(--color-white);
+    font-weight: 700;
+}
+/* goto-top 버튼 : 최상위 이동*/
+.btn-goto-top {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    /* background-color: tomato; */
+    border: 1px solid silver;
+    border-radius: 100%;
+}
+.btn-goto-top {
+    /* width: 80%; */
+}
