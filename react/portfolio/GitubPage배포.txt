@@ -1,0 +1,36 @@
+1. Github 레파지토리 생성 - public
+    Repository name : react-sample-1
+
+2. 로컬의 Git Remote 경로를 (1)에서 생성한 경로로 변환
+    리모트 주소 확인 : git remote -v 
+    리모트 주소 삭제 : git remote remove origin
+    리모트 주소 추가 : git remote add origin [깃레파지토리 주소]
+
+3. deploy 패키지 설치 : gh-pages
+    npm install gh-pages --save-dev
+
+4. deploy 프로젝트의 package.json 파일 배포페이지 추가 및 설정
+    "name": "portfolio",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "https://lkm1401.github.io/react-sample-1",
+  "dependencies": { ...}
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  }
+
+5. 터미널에서 배포 실행
+    npm run deploy
+
+6. Git Repository react-sample-1의 브랜치 확인  
+    gh-pages 브랜치 선택
+    setting > pages > 배포 브랜치 gh-pages 선택
+
+7. 배포 확인
+    https://lkm1401.github.io/react-sample-1    
+    

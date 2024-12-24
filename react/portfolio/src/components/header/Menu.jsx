@@ -1,10 +1,11 @@
 import React from 'react';
 
-export default function Menu({href, menuName}) {
+export default function Menu({href, menuName, style, click}) {
 
     return (
-        <a  className='header__menu__item'
-            href={href}>{menuName}</a>
+        <a  className={style}
+            href={href}
+            onClick={()=> { click(menuName) }}>{menuName}</a>
     );
 }
 

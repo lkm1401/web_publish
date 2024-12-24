@@ -111,10 +111,10 @@
     display: flex;
     gap: 4px;
   }
-  .header__menu li:first-child {
+  /* .header__menu li:first-child {
     border: 1px solid var(--color-accent);
     border-radius: 4px;
-  }
+  } */
   .header__menu__item {
     padding: 8px 16px;
     color: var(--color-text);
