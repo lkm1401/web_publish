@@ -52,47 +52,28 @@ SELECT * FROM DEPARTMENT;
 SHOW TABLES;
 DESC EMPLOYEE;
 -- 사원테이블에서 사원아이디, 사원명, 성별, 입사일 조회
-SELECT EMP_ID, EMP_NAME, GENDER, HIRE_DATE
-FROM EMPLOYEE;
+
 
 -- 사원테이블에서 사원명, 부서명, 입사일, 폰번호, 연봉 조회
-DESC EMPLOYEE;
-SELECT EMP_NAME, DEPT_ID, HIRE_DATE, PHONE, SALARY
-	FROM EMPLOYEE;
+
 
 -- 부서테이블의 모든 컬럼을 조회
-SELECT * FROM DEPARTMENT;
+
 
 -- [조회한 컬럼명을 ALIAS(별칭)으로 출력]
 -- 형식 : SELECT [컬럼명 AS '별칭', 컬럼명 AS '별칭'...] FROM [테이블명];
 -- 사원테이블에서 아이디, 성명, 입사일, 부서명, 연봉 이름으로 컬럼을 조회
-SELECT 
-	EMP_ID AS '아이디',
-    EMP_NAME AS '성명',
-    HIRE_DATE AS '입사일',
-    DEPT_ID AS '부서명',
-    SALARY AS '연봉'
-	FROM EMPLOYEE;
-    
-SELECT 
-	EMP_ID '사원 아이디',
-    EMP_NAME 성명,
-    HIRE_DATE 입사일,
-    DEPT_ID 부서명,
-    SALARY 연봉
-	FROM EMPLOYEE;
+
+
     
 -- 사원테이블에서 사원명, 부서, 연봉을 조회
 -- 별칭으로 컬럼명을 수정
 -- 기존 컬럼을 이용하여 가상컬럼 생성 - 연봉 10% 인센티브 컬럼, 물리적x
 -- 타입이 숫자인 컬럼은 수식 연산이 가능함
-DESC EMPLOYEE;
-SELECT EMP_NAME 사원명, DEPT_ID 부서, SALARY 연봉, SALARY*0.1 인센티브
-	FROM EMPLOYEE;
+
 
 -- 현재의 날짜를 조회, 컬럼명을 'DATE'로 변경
-SELECT CURDATE();
-SELECT CURDATE() AS 'DATE';
+
 
 /**
 	테이블 조회(단순) : SELECT ~ FROM ~ WHERE 
@@ -102,55 +83,35 @@ SELECT CURDATE() AS 'DATE';
             WHERE [조건절];
 */
 -- 사원테이블에서 SYS 부서에 근무하는 모든 사원을 조회
-SELECT * FROM EMPLOYEE
-	WHERE DEPT_ID = 'SYS';
+
 
 -- 사원 테이블에서 사원명이 '정주고'인 사원을 조회
-SELECT *
-	FROM EMPLOYEE
-    WHERE EMP_NAME = '정주고';
+
     
 -- 사원테이블에서 사원아이디가 S0011 인 사원의 정보를 모두 조회
-SELECT *
-	FROM EMPLOYEE
-    WHERE EMP_ID = 'S0011';
+
 
 -- 사원테이블에서 연봉이 5800인 사원의 모든 정보 조회
-SELECT *
-	FROM EMPLOYEE
-	WHERE SALARY = 5800;
+
     
 -- 사원테이블에서 여성사원들의 아이디, 이름, 입사일, 이메일 정보를 조회
-SELECT	EMP_ID, EMP_NAME, HIRE_DATE, EMAIL
-	FROM EMPLOYEE
-    WHERE GENDER = 'F';
+
 
 -- 사원테이블에서 부서명이 SYS인 사원들의 아이디, 사원명, 입사일을 조회
 -- 출력되는 아이디 컬럼명을 '사원 번호' 별칭 사용   
-SELECT EMP_ID '사원 번호', EMP_NAME, HIRE_DATE
-	FROM EMPLOYEE
-    WHERE DEPT_ID = 'SYS';
+
     
 -- WHERE절 조건에 별칭으로 조회가 가능할까요???
-SELECT EMP_ID '사원 번호', EMP_NAME, HIRE_DATE, DEPT_ID '부서 번호'
-	FROM EMPLOYEE
-    WHERE DEPT_ID = 'SYS';
-    -- WHERE '부서 번호' = 'SYS'; 
+
     
 -- 사원테이블에서 마케팅 부서의 모든 사원 정보를 조회
-SELECT	*
-	FROM EMPLOYEE
-		WHERE DEPT_ID = 'MKT';
+
 
 -- 사원테이블에서 입사일이 2014년 8월 1일인 모든 사원 조회
-SELECT *
-	FROM EMPLOYEE
-		WHERE HIRE_DATE = '2014-08-01';  -- DATE 타입은 표현은 문자처럼, 처리는 숫자 
+
 
 -- 연봉이 5000인 사원 정보 조회
-SELECT *
-	FROM EMPLOYEE
-		WHERE SALARY = 5000;
+
 
 
 -- NULL 타입?? :: 미지수
@@ -158,39 +119,23 @@ SELECT *
 -- NULL은 논리적인 의미를 가지므로 IS 키워드를 비교 연산을 수행
 
 -- 사원테이블에서 ENG_NAME이 NULL인 모든 사원의 정보 조회
-SELECT *
-	FROM EMPLOYEE 
-    WHERE ENG_NAME IS NULL;
-    -- WHERE ENG_NAME = NULL;
+
 
 -- 연봉이 정해지지 않은 모든 사원 조회       
-SELECT *
-	FROM EMPLOYEE
-    WHERE SALARY IS NULL;
+
 
 -- ifnull() : NULL 값을 다른 값은 대체해주는 함수
 -- 형식 : ifnull(null포함 컬럼명, 대체할 값);
 -- 컬럼리스트에서 호출
-SELECT EMP_NAME, SALARY, IFNULL(SALARY, 0) AS SALARY2
-	FROM EMPLOYEE;
+
     
 -- ENG_NAME이 NULL인 사원들은 'SMITH' 이름으로 변경 후 조회
 -- 출력되는 컬럼명은 ENG_NAME으로 변경
-SELECT 
-		EMP_ID,
-        EMP_NAME,
-        IFNULL(ENG_NAME, 'SMITH') AS 'ENG_NAME',
-        HIRE_DATE
-	FROM EMPLOYEE;
+
 
 -- 모든 사원의 아이디, 사원명, 입사일, 퇴사일을 조회
 -- 현재 근무중인 사원인 퇴사일에 현재의 날짜를 출력해주세요
-SELECT
-		EMP_ID,
-        EMP_NAME,
-        HIRE_DATE,
-        IFNULL(RETIRE_DATE, CURDATE()) AS RETIRE_DATE
-	FROM EMPLOYEE;
+
 
 
 
