@@ -1,0 +1,11 @@
+1. 오라클 사이트 가입 후 로그인
+
+2. MySQL 서버 다운로드 
+    https://www.mysql.com 접속 > Downloads > Mysql Community Server(LTS 버전)
+
+    root/mysql1234
+
+3. MySQL 툴 다운로드 : Workbench
+    https://www.mysql.com 접속 > Downloads > MySQL Workbench
+
+
