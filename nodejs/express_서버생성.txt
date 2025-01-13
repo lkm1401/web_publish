@@ -1,0 +1,4 @@
+1. 서버역할 폴더 생성 : 예) mkdir express-server
+2. 서버 폴더로 이동 : cd express-server
+3. express 라이브러리 설치 : npm i(install) express
+4. nodemon 라이브러리 설치 : npm i(install) nodemon --save-dev
