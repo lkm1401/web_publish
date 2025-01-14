@@ -6,7 +6,7 @@ import Footer from '../components/Footer.jsx';
 export default function Layout() {
     return (
         <div>
-            <Header />
+            <Header/>
             <Outlet />
             <Footer />
         </div>
