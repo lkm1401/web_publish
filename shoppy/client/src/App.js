@@ -7,7 +7,7 @@ import Products from './pages/Products.jsx';
 import Carts from './pages/Carts.jsx';
 import Login from './pages/Login.jsx';
 import Signup from './pages/Signup.jsx';
-
+import DetailProduct from './pages/DetailProduct.jsx';
 
 export default function App() {
 
@@ -21,7 +21,7 @@ export default function App() {
                   <Route path='/cart' element={<Carts />} />
                   <Route path='/login' element={<Login />} />
                   <Route path='/signup' element={<Signup />} />
-                  <Route path='/signup' element={<Signup />} />                
+                  <Route path='/products/:pid' element={<DetailProduct />} />                  
               </Route>
           </Routes>            
       </BrowserRouter>

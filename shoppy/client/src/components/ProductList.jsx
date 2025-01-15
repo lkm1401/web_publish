@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ProductAvata from './ProductAvata.jsx';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 export default function ProductList() {
     const [list, setList] = useState([]); // list변경시 실시간 업데이트
@@ -23,7 +24,9 @@ export default function ProductList() {
                 rows.map((rowArray, index) => 
                     <div key={index} className='product-list'>
                         {rowArray.map((product) => 
+                            <Link key={product.pid} to={`/products/${product.pid}`}>
                                 <ProductAvata img={product.image}/>
+                            </Link>
                         )
                         }
                     </div>
