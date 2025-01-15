@@ -1,0 +1,112 @@
+/*******************************************
+*  title : signup form style
+*  author : hong@naver.com
+*  final date : 2024/0/24
+********************************************/
+:root {
+    /* color list */
+    /* --color-primary: rgb(77, 77, 77);
+    --color-black: #050a13;
+    --color-white: #fff; */
+    --color-border: tomato;
+    --color-silver: silver;
+    --color-footerbg : rgb(248, 248, 248);
+    --color-moviechart: rgb(251,251,251);
+    --color-buttonbg: rgb(222, 222, 222);
+    --color-gray-222: rgb(102, 102, 127);
+    --color-font-primary: rgb(137, 137, 135);
+    --color-button: rgb(251, 67, 87);
+    --color-signup-font: rgb(78, 78, 76);
+    --color-signup-border: rgb(232, 232, 232);
+}
+.signup-form {
+    /* border: 1px solid green; */
+    width: 850px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    color: var(--color-signup-font);
+}
+.signup-form ul {
+    list-style-type: none;
+}
+.signup-form ul li {
+    /* border: 1px solid tomato; */
+    padding-top: 15px;
+    padding-bottom: 10px;
+}
+.signup-form ul li div:not(.signup-form ul li:nth-child(6) div)
+ {
+    border: 2px solid var(--color-signup-border);
+    border-radius: 4px;
+    padding: 5px 10px;
+}
+.signup-form ul li:nth-child(6) select {
+    width: 40%;
+}
+.signup-form ul li:nth-child(6) input,
+.signup-form ul li:nth-child(6) select {
+    border: 2px solid var(--color-signup-border);
+    border-radius: 4px;
+    padding: 12px 10px;
+}
+.signup-form ul li:nth-child(6) span {
+    margin: 0 20px;
+}
+.signup-form ul li:first-child > div,
+.signup-form ul li:nth-child(6) > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.signup-form ul li label {
+    display: inline-block;
+    font-size: 1em;
+    font-weight: 700;
+    text-indent: 3px;
+    margin: 0 0 6px 10px;
+    /* border: 1px solid red; */
+}
+.signup-form ul li label + span {
+    /* border: 1px solid red; */
+    font-size: 0.7em;
+    font-weight: 300;
+    color: #797878;
+    margin-left: 10px;
+}
+.signup-form ul li:first-child input{
+    border: 1px solid white;
+    width: 80%;
+    padding-left: 10px;
+}
+.signup-form ul li input {
+    border: 1px solid white;
+    width: 100%;
+    padding: 7px 10px;
+}
+.signup-form ul li:first-child input:focus,
+.signup-form ul li input:focus {
+    border: none;
+    outline: none;
+}
+.signup-form ul li:first-child button,
+.signup-form ul li:last-child button{
+    border: 1px solid white;
+    width: 100px;
+    padding: 7px 12px;
+    background-color: var(--color-button);
+    color: var(--color-white);
+    border-radius: 7px;
+    margin-left: 10px;
+}
+.signup-form ul li:last-child button {
+    border-radius: 0;
+    width: 150px;
+    padding: 10px 0;
+}
+.signup-form ul li:last-child button:last-child {
+    background-color: var(--color-gray-222);
+}
+.signup-form ul li:last-child {
+    padding: 30px 0 10px;
+    text-align: center;
+}

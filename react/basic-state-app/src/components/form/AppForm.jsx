@@ -1,11 +1,13 @@
 import React from 'react';
 import Signup2 from './Signup2.jsx';
-import CgvLoginForm from './CgvLoginForm.jsx';
+import Login2 from './Login2.jsx';
+
+
 
 export default function AppForm() {
     return (
         <div>
-            <Signup2 />
+            <Login2 />
         </div>
     );
 }

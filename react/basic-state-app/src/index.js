@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import AppRouter2 from './components/router2/AppRouter2.jsx';
+import AppAirbnb from './components/airbnb/AppAirbnb.jsx';
+import AppForm from './components/form/AppForm.jsx';
+// import AppRouter2 from './components/router2/AppRouter2.jsx';
 // import AppForm from './components/form/AppForm.jsx';
 // import AppBestSeller from './components/yes24/AppBestSeller.jsx';
 // import reportWebVitals from './reportWebVitals';
@@ -9,7 +11,7 @@ import AppRouter2 from './components/router2/AppRouter2.jsx';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <AppRouter2 />
+    <AppForm />
   </React.StrictMode>
 );
 
