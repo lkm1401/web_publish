@@ -1,13 +1,36 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import '../styles/login.css';
 import { FaUser } from "react-icons/fa";
 import { FaLock } from "react-icons/fa";
+import { validateLogin } from '../utils/funcValidate.js';
 
 export default function Login() {
+    const refs = {
+        "idRef" : useRef(null),
+        "pwdRef" : useRef(null) 
+    }  
+
+    const [formData, setFormData] = useState({'id':'', 'pwd':''});
+
+    /** form 데이터 입력 함수 */
+    const handleChangeForm = (event) => {
+        const {name, value} = event.target; 
+        setFormData({...formData, [name] : value}); 
+    }
+
+    /** Submit 함수 */
+    const handleLoginSubmit = (event) => {
+        event.preventDefault();        
+        if(validateLogin(refs)) {
+            console.log('send data -->> ', formData);        
+            //리액트 ---> 노드서버(express) 데이터 전송
+        }
+    }
+
     return (
         <div className="content">
             <h1 className="center-title">LOGIN</h1>
-            <form action="#" method="post" className="login-form">
+            <form className="login-form" onSubmit={handleLoginSubmit}>
                 <ul>
                     <li>
                         <p className="login-form-message">✔ 아이디와 비밀번호를 입력하신 후, 로그인을 진행해주세요.</p>
@@ -18,6 +41,8 @@ export default function Login() {
                             <input type="text" 
                                     name="id" 
                                     id="id" 
+                                    ref={refs.idRef}
+                                    onChange={handleChangeForm}
                                     placeholder="아이디를 입력해주세요" />
                         </div>
                         <p id="error-msg-id"></p>
@@ -28,12 +53,14 @@ export default function Login() {
                             <input type="password" 
                                     name="pwd" 
                                     id="pwd" 
+                                    ref={refs.pwdRef}
+                                    onChange={handleChangeForm}
                                     placeholder="패스워드를 입력해주세요" />
                         </div>
                         <p id="error-msg-pwd"></p>
                     </li>
                     <li>
-                        <button type="button" className="login-button">로그인</button>
+                        <button type="submit" className="login-button">로그인</button>
                     </li>
                     <li>
                         <div  className="login-form-checkbox">
