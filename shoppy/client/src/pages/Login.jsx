@@ -9,6 +9,9 @@ export default function Login() {
         "idRef" : useRef(null),
         "pwdRef" : useRef(null) 
     }  
+    const msgRefs = {
+        "msgRef" : useRef(null)
+    }
 
     const [formData, setFormData] = useState({'id':'', 'pwd':''});
 
@@ -21,7 +24,7 @@ export default function Login() {
     /** Submit 함수 */
     const handleLoginSubmit = (event) => {
         event.preventDefault();        
-        if(validateLogin(refs)) {
+        if(validateLogin(refs, msgRefs)) {
             console.log('send data -->> ', formData);        
             //리액트 ---> 노드서버(express) 데이터 전송
         }
@@ -35,7 +38,7 @@ export default function Login() {
                     <li>
                         <p className="login-form-message">✔ 아이디와 비밀번호를 입력하신 후, 로그인을 진행해주세요.</p>
                     </li>
-                    <li>
+                    <li>                        
                         <div className="login-form-input">
                             <span className="login-form-input-icons"><FaUser/></span>
                             <input type="text" 
@@ -59,6 +62,8 @@ export default function Login() {
                         </div>
                         <p id="error-msg-pwd"></p>
                     </li>
+                    <li><span style={{fontSize: "0.7em", color:"white"}}
+                                ref={msgRefs.msgRef}>아이디 또는 패스워드를 입력해주세요</span></li>
                     <li>
                         <button type="submit" className="login-button">로그인</button>
                     </li>
