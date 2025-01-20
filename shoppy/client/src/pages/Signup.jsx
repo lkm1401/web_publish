@@ -11,9 +11,7 @@ export default function Signup() {
     const [formData, setFormData] = useState(initFormData);
     const [idCheckResult, setIdCheckResult] = useState('default');
 
-    console.log('------------>>>  ', formData);
     
-
     const handleChangeForm = (e) => {
         const {name, value} = e.target;
         setFormData({...formData, [name]:value});       
@@ -22,15 +20,13 @@ export default function Signup() {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        console.log('Submit ------------>>>  ', formData);
-        // const formData = new FormData(event.target);
-
         if(validateSignup(refs, msgRefs, formData)) {    
             if(idCheckResult === "default") {
                 alert("중복 확인을 진행해 주세요");
                 return false;
             } else {
                 console.log('submit ---->> ', formData);                
+                // 회원가입 성공 후 ==> setIdCheckResult("default");
             }   
         } 
     }
