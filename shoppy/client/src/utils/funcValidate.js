@@ -24,7 +24,7 @@ export const validateLogin = ({idRef, pwdRef}, {msgRef}) => {
 /**
  * title : 회원가입 폼 체크
  */
-export const validateSignup = (refs, msgRefs) => { 
+export const validateSignup = (refs, msgRefs, formData) => { 
     const refEntries = Object.entries(refs.current); 
     const msgRefEntries = Object.entries(msgRefs.current);
     
@@ -49,10 +49,11 @@ export const validateSignup = (refs, msgRefs) => {
                 return false;
             }
         } else { 
-            if(ref.current.value === 'default') {
+            
+            if(ref.current.value === "default") {
                 ref.current.focus();
                 return false;
-            }
+            } 
         }         
     } 
     return true;
