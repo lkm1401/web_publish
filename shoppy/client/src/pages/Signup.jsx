@@ -1,12 +1,15 @@
 import React, { useState, useRef } from 'react';
 import '../styles/signup.css';
-import { validateSignup } from '../utils/funcValidate.js';
+import { validateSignup, 
+            handleDuplicateIdCheck, 
+            handlePasswordCheck} from '../utils/funcValidate.js';
 import { initSignup, useInitSignupRefs } from '../utils/funcInitialize.js';
 
 export default function Signup() {   
     const {names, placeholders, labels, initFormData} = initSignup();
     const {refs, msgRefs} = useInitSignupRefs(names);
     const [formData, setFormData] = useState(initFormData);
+    const [idCheckResult, setIdCheckResult] = useState('default');
 
     const handleChangeForm = (e) => {
         const {name, value} = e.target;
@@ -15,10 +18,17 @@ export default function Signup() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if(validateSignup(refs, msgRefs)) {
-            console.log('submit ---->> ', formData);        
-        }
+
+        if(validateSignup(refs, msgRefs)) {    
+            if(idCheckResult === "default") {
+                alert("중복 확인을 진행해 주세요");
+                return false;
+            } else {
+                console.log('submit ---->> ', formData);                
+            }   
+        } 
     }
+    
 
     return (
         <div className="content">
@@ -54,12 +64,31 @@ export default function Signup() {
                                                 name={name}
                                                 ref={refs.current[name.concat("Ref")]}
                                                 onChange={handleChangeForm}
+                                                onBlur={(name === 'cpwd') ? ()=>{
+                                                        handlePasswordCheck(
+                                                            refs.current["pwdRef"],
+                                                            refs.current["cpwdRef"],
+                                                            refs.current["nameRef"],
+                                                            msgRefs.current["pwdMsgRef"],
+                                                            msgRefs.current["cpwdMsgRef"]
+                                                        )
+                                                    } : null}
                                                 placeholder = {placeholders[name]} />
                                             {  name === "id" &&
                                                 <> 
                                                     <button type="button"
+                                                            onClick={()=>{
+                                                                handleDuplicateIdCheck(
+                                                                                refs.current["idRef"],
+                                                                                refs.current["pwdRef"],
+                                                                                msgRefs.current["idMsgRef"],
+                                                                                setIdCheckResult
+                                                                )
+                                                            }}
                                                             >중복확인</button>
-                                                    <input type="hidden" id="idCheckResult" value="default" />
+                                                    <input type="hidden"                                                             
+                                                            value={idCheckResult}
+                                                            />
                                                 </> 
                                             } 
                                         </>

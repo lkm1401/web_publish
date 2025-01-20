@@ -5,13 +5,13 @@ import AppAirbnb from './components/airbnb/AppAirbnb.jsx';
 import AppForm from './components/form/AppForm.jsx';
 // import AppRouter2 from './components/router2/AppRouter2.jsx';
 // import AppForm from './components/form/AppForm.jsx';
-// import AppBestSeller from './components/yes24/AppBestSeller.jsx';
+import AppBestSeller from './components/yes24/AppBestSeller.jsx';
 // import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <AppForm />
+    <AppBestSeller />
   </React.StrictMode>
 );
 
