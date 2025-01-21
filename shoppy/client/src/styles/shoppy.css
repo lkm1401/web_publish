@@ -145,15 +145,18 @@ p {
   margin: 7px 5px;
 }
 
-/********************************************/
+/********************************************
+  product-detail
+********************************************/
 .product-detail-image-top {
   /* border: 1px solid red; */
   width: 550px;
 }
 .product-detail-image-top img {
   /* border: 1px solid green; */
-  width: 550px;
-  height: 600px;
+  /* width: 90%; */
+  width:520px;
+  
 }
 .product-detail-image-top-list {
   /* border: 1px solid rgb(115, 0, 255); */
@@ -213,15 +216,21 @@ p {
   justify-content: space-between;
 }
 .product-detail-button {
-  background-color: var(--color-tomato);
   width: 42%;
   height: 70px;
-  /* padding: 20px; */
   font-size: 15pt;
   font-weight: bold;
   color: var(--color-white);
-  margin-top: 15px 5px 0 5px;
+  margin-top: 20px 5px 0 5px;
+}
+.size {
+  background-color: var(--color-tomato);
+  width: 42%;
+  height: 40px;
+  font-size: 1rem;
+  font-weight: bold;
   border: none;
+  margin-right: 5px;
 }
 .order {
   background-color: var(--color-white);
@@ -264,14 +273,158 @@ p {
 }
 
 .product-detail-tab {
-  border: 3px solid green;
+  /* border: 3px solid green; */
   width: 1200px;
-  height: 200px;
-  display: flex;
-  gap: 2rem;
+  /* height: 200px; */
   margin: auto;
   margin-top: 40px;
-  /* padding-left: 300px; */
-  justify-content: space-between;
 }
-/********************************************/
+
+/********************************************
+  product-detail-tabs
+********************************************/
+.tabs {
+  /* border: 1px solid red; */
+  width: 100%;
+  border-bottom: 2px solid #000;
+  list-style-type: none;
+}
+.tabs:after {
+  display: block;
+  clear: both;
+  content: '';
+}
+.tabs li {
+  height: 80px;
+  border: 1px solid #b5b5b5;
+  border-bottom: none;
+  border-left-width: 0;
+  background-color: #fff;
+  float: left;
+}
+.tabs li {
+  width: 25%;
+}
+.tabs li:first-child {
+  border-left-width: 1px;
+}
+.tabs li button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  color: #333;
+  font-size: 18px;
+  font-family: "Noto Sans KR";
+  outline: none;
+  border: none;
+  background-color: var(--color-white);
+}
+.tabs li button:hover {
+  cursor: pointer;
+}
+
+.tabs li.active {
+  border: 2px solid #000;
+  border-bottom: none;
+  height: 82px;
+  margin-bottom: -2px;
+}
+
+.tabs li.active label {
+  color: #000;
+} 
+
+.tabs_contents {
+  margin-top: 50px;
+  /* height: 100%; */
+  /* overflow: hidden; */
+}
+
+/**
+  tabs - detail
+**/
+.detail-images {
+  /* border : 1px solid blue; */
+  text-align: center;
+  /* height: 100%;
+  overflow: hidden; */
+}
+.detail-images.holidays-notice { margin-bottom: 80px;}
+.detail-images.img {
+  width : 40%;
+  margin: 20px 0;
+}
+.detail-info {
+  /* border: 1px solid red; */
+  padding: 40px 100px;
+  font-family: "나눔고딕";
+  font-size: .8rem;
+}
+.detail-info-title-top {
+  font-size: .9rem;
+}
+.detail-info-title {
+  font-size: .8rem;
+  margin: 0;
+  padding: 0;
+}
+.nolist {
+  /* border: 1px solid blue; */
+  list-style-type: none;
+  margin: 5px 0 20px 0;
+  padding: 0;
+  line-height: 2;
+}
+.list li:before{
+  content: '-'; 
+  margin-right: 8px;
+  line-height: 2;
+}
+.detail-info-notice {
+  /* border: 1px solid tomato; */
+  font-family: "나눔바른고딕";
+  padding: 10px 0 50px 0;
+  color: var(--color-black);
+}
+.detail-info-notice h3 {
+  font-family: "나눔바른고딕";
+}
+.detail-info-notice.notice-list {
+  /* border: 1px solid blue; */
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  letter-spacing: 0.5px;
+}
+.detail-info-notice.notice-list li {
+  display: flex;
+  padding: 18px 0;
+  border-bottom: 1px solid lightgrey;
+}
+.detail-info-notice.notice-list li:first-child {
+  border-top: 1px solid #333;
+}
+.detail-info-notice.notice-list li:last-child {
+  border-bottom: 1px solid #333;
+}
+.detail-info-notice.notice-list label{
+  display: block;
+  width: 30%;
+  padding-left: 50px;
+  font-family: "나눔바른고딕";
+  font-size: .8rem;
+}
+.detail-info-notice.notice-list li>p{
+  font-family: "나눔바른고딕";
+  font-size: .8rem;
+}
+.detail-info-notice.p{
+  /* border: 1px solid blue; */
+  display: block;
+  /* width: 30%; */
+  font-size: 14px;
+  font-weight: bold;
+  color: #999;
+}

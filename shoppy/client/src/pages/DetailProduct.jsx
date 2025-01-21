@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { PiGiftThin } from "react-icons/pi";
+import Detail from "../components/detail_tabs/Detail.jsx";
 import axios from "axios";
 
 export default function DetailProduct({ addCart }) {
@@ -33,6 +34,13 @@ export default function DetailProduct({ addCart }) {
     addCart(cartItem); // App.js의 addCart 함수 호출
   };
 
+  //Tabs event
+  const [tabName, setTabName] = useState('detail');
+  const handleChangeTabs = (text) => {
+    console.log('tab name===>>', text);
+    setTabName(text);
+  }
+
   return (
     <div className="content">
       <div className="product-detail-top">
@@ -61,7 +69,7 @@ export default function DetailProduct({ addCart }) {
             <p className="product-detail-box">신규회원, 무이자 할부 등</p>
           </li>
           <li className="flex">
-            <label className="product-detail-label">사이즈 </label>
+            <button className="product-detail-button size">사이즈 </button>
             <select
               className="product-detail-select2"
               onChange={(e) => setSize(e.target.value)}
@@ -99,7 +107,24 @@ export default function DetailProduct({ addCart }) {
 
       {/* DETAIL / REVIEW / Q&A / RETURN & DELIVERY  */}
       <div className="product-detail-tab">
-        DETAIL / REVIEW / Q&A / RETURN & DELIVERY
+        {/* DETAIL / REVIEW / Q&A / RETURN & DELIVERY */}
+        <ul className="tabs">
+          <li className="active">
+            <button type="button" onClick={(e)=> handleChangeTabs("detail")}>DETAIL</button>
+          </li>
+          <li >
+            <button type="button" onClick={(e)=> handleChangeTabs("review")}>REVIEW</button>
+          </li>
+          <li>
+            <button type="button" onClick={(e)=> handleChangeTabs("qna")}>Q&A</button>
+          </li>
+          <li>
+            <button type="button" onClick={(e)=> handleChangeTabs("return")}>RETURN & DELIVERY</button>
+          </li>
+        </ul>
+        <div className="tabs_contents">
+          { tabName === "detail" && <Detail /> }
+        </div>
       </div>
     </div>
   );
