@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { PiGiftThin } from "react-icons/pi";
 import Detail from "../components/detail_tabs/Detail.jsx";
+import Review from "../components/detail_tabs/Review.jsx";
 import axios from "axios";
 
 export default function DetailProduct({ addCart }) {
@@ -124,6 +125,7 @@ export default function DetailProduct({ addCart }) {
         </ul>
         <div className="tabs_contents">
           { tabName === "detail" && <Detail /> }
+          { tabName === "review" && <Review /> }
         </div>
       </div>
     </div>
