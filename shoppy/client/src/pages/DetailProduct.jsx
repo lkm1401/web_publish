@@ -110,16 +110,16 @@ export default function DetailProduct({ addCart }) {
       <div className="product-detail-tab">
         {/* DETAIL / REVIEW / Q&A / RETURN & DELIVERY */}
         <ul className="tabs">
-          <li className="active">
+          <li className={tabName==="detail" ? "active": ''}>
             <button type="button" onClick={(e)=> handleChangeTabs("detail")}>DETAIL</button>
           </li>
-          <li >
+          <li className={tabName==="review" ? "active": ''}>
             <button type="button" onClick={(e)=> handleChangeTabs("review")}>REVIEW</button>
           </li>
-          <li>
+          <li className={tabName==="qna" ? "active": ''}>
             <button type="button" onClick={(e)=> handleChangeTabs("qna")}>Q&A</button>
           </li>
-          <li>
+          <li className={tabName==="return" ? "active": ''}>
             <button type="button" onClick={(e)=> handleChangeTabs("return")}>RETURN & DELIVERY</button>
           </li>
         </ul>
