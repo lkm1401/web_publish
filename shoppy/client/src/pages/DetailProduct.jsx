@@ -3,11 +3,14 @@ import { useParams } from "react-router-dom";
 import { PiGiftThin } from "react-icons/pi";
 import Detail from "../components/detail_tabs/Detail.jsx";
 import Review from "../components/detail_tabs/Review.jsx";
+import ImageList from "../components/ImageList.jsx";
+import StarRating from "../components/detail_tabs/StarRating.jsx";
 import axios from "axios";
 
 export default function DetailProduct({ addCart }) {
   const { pid } = useParams();
   const [product, setProduct] = useState({});
+  const [imgList, setImgList] = useState([]);
   const [size, setSize] = useState("XS");
 
   useEffect(() => {
@@ -15,7 +18,10 @@ export default function DetailProduct({ addCart }) {
       .get("/data/products.json") // http://localhost:3000/data/products.json
       .then((res) => {
         res.data.filter((product) => {
-          if (product.pid === pid) setProduct(product);
+          if (product.pid === pid) {
+            setProduct(product);
+            setImgList(product.imgList);
+          }
         });
       })
       .catch((error) => console.log(error));
@@ -46,18 +52,9 @@ export default function DetailProduct({ addCart }) {
     <div className="content">
       <div className="product-detail-top">
         <div className="product-detail-image-top">
-          <img src={product.image} />
-          <ul className="product-detail-image-top-list">
-            <li>
-              <img src={product.image} alt="" />
-            </li>
-            <li>
-              <img src={product.image} alt="" />
-            </li>
-            <li>
-              <img src={product.image} alt="" />
-            </li>
-          </ul>
+          <img src={product.image}   />
+          <ImageList className="product-detail-image-top-list"
+                      imgList={imgList}/>
         </div>
 
         <ul className="product-detail-info-top">
@@ -66,6 +63,9 @@ export default function DetailProduct({ addCart }) {
             product.price
           ).toLocaleString()}원`}</li>
           <li className="product-detail-subtitle">{product.info}</li>
+          <li className="product-detail-subtitle-star">
+            <StarRating totalRate={5} className="star-coral"/> <span>572개 리뷰 &nbsp;&nbsp; {">"}</span>
+          </li>
           <li>
             <p className="product-detail-box">신규회원, 무이자 할부 등</p>
           </li>
@@ -124,7 +124,7 @@ export default function DetailProduct({ addCart }) {
           </li>
         </ul>
         <div className="tabs_contents">
-          { tabName === "detail" && <Detail /> }
+          { tabName === "detail" && <Detail imgList={imgList} /> }
           { tabName === "review" && <Review /> }
         </div>
       </div>
