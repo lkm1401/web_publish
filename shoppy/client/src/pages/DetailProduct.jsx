@@ -13,6 +13,8 @@ export default function DetailProduct({ addCart }) {
   const [imgList, setImgList] = useState([]);
   const [size, setSize] = useState("XS");
   const [tabName, setTabName] = useState('detail');
+  const tabLabels = ['DETAIL', 'REVIEW', 'Q&A', 'RETURN & DELIVERY'];
+  const tabEventNames = ['detail', 'review', 'qna', 'return'];
 
   useEffect(() => {
     axios
@@ -43,7 +45,6 @@ export default function DetailProduct({ addCart }) {
   };
 
   //Tabs event
-
   // const handleChangeTabs = (text) => {
   //   console.log('tab name===>>', text);
   //   //text를 처리하는 로직
@@ -110,8 +111,20 @@ export default function DetailProduct({ addCart }) {
 
       {/* DETAIL / REVIEW / Q&A / RETURN & DELIVERY  */}
       <div className="product-detail-tab">
+
         {/* DETAIL / REVIEW / Q&A / RETURN & DELIVERY */}
         <ul className="tabs">
+          {
+            tabLabels.map((label, i) => 
+                <li className={tabName === tabEventNames[i] ? "active": ''}>
+                  <button type="button" onClick={(e)=> setTabName(tabEventNames[i])}>{ label }</button>
+                </li>
+            )
+          }
+        </ul>      
+        
+
+        {/* <ul className="tabs">
           <li className={tabName==="detail" ? "active": ''}>
             <button type="button" onClick={(e)=> setTabName("detail")}>DETAIL</button>
           </li>
@@ -124,7 +137,7 @@ export default function DetailProduct({ addCart }) {
           <li className={tabName==="return" ? "active": ''}>
             <button type="button" onClick={(e)=> setTabName("return")}>RETURN & DELIVERY</button>
           </li>
-        </ul>
+        </ul> */}
         <div className="tabs_contents">
           { tabName === "detail" && <Detail imgList={imgList} /> }
           { tabName === "review" && <Review /> }
