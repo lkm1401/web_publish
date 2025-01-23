@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaRegCircleQuestion } from "react-icons/fa6";
 import ReviewListItem from './ReviewListItem.jsx';
-import StarRating from './StarRating.jsx';
+import StarRating from '../commons/StarRating.jsx';
 
 export default function ReviewList() {
   return (

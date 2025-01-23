@@ -1,7 +1,7 @@
 import React from "react";
-import StarRating from "./StarRating.jsx";
+import StarRating from "../commons/StarRating.jsx";
 import ReviewType from "./ReviewType.jsx";
-import ImageList from "../ImageList.jsx";
+import ImageList from "../commons/ImageList.jsx";
 
 export default function ReviewTop() {
   const list = [

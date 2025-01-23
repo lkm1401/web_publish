@@ -3,8 +3,8 @@ import { useParams } from "react-router-dom";
 import { PiGiftThin } from "react-icons/pi";
 import Detail from "../components/detail_tabs/Detail.jsx";
 import Review from "../components/detail_tabs/Review.jsx";
-import ImageList from "../components/ImageList.jsx";
-import StarRating from "../components/detail_tabs/StarRating.jsx";
+import ImageList from "../components/commons/ImageList.jsx";
+import StarRating from "../components/commons/StarRating.jsx";
 import axios from "axios";
 
 export default function DetailProduct({ addCart }) {
