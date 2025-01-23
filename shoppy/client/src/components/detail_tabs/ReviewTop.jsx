@@ -42,7 +42,7 @@ export default function ReviewTop() {
             <p className="review-top-text">
               구매하신 분들의 상품에 대한 평점입니다.
             </p>
-            <StarRating totalRate={5} className="star-black-big" />
+            <StarRating totalRate={4.2} className="star-black-big" />
           </div>
         </li>
         {list &&

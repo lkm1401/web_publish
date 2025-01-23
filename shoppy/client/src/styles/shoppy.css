@@ -322,7 +322,7 @@ p {
   width: 100%;
   color: #333;
   font-size: 18px;
-  font-family: "Noto Sans KR";
+  font-family: "나눔바른고딕";
   outline: none;
   border: none;
   background-color: var(--color-white);
@@ -366,13 +366,13 @@ p {
   /* border: 1px solid red; */
   padding: 40px 100px;
   font-family: "나눔고딕";
-  font-size: 0.8rem;
+  font-size: 0.9rem;
 }
 .detail-info-title-top {
   font-size: 0.9rem;
 }
 .detail-info-title {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   margin: 0;
   padding: 0;
 }
@@ -420,17 +420,17 @@ p {
   width: 30%;
   padding-left: 50px;
   font-family: "나눔바른고딕";
-  font-size: 0.8rem;
+  font-size: 0.9rem;
 }
 .detail-info-notice.notice-list li > p {
   font-family: "나눔바른고딕";
-  font-size: 0.8rem;
+  font-size: 0.9rem;
 }
 .detail-info-notice.p {
   /* border: 1px solid blue; */
   display: block;
   /* width: 30%; */
-  font-size: 14px;
+  font-size: 0.9rem;
   font-weight: bold;
   color: #999;
 }
@@ -463,12 +463,21 @@ p {
   /* border: 2px solid blue; */
 }
 
-/*** stat rating ****/
+/*** stat rating start ****/
 .star-rating {
   /* border: 2px solid red; */
   /* display: flex;
   align-items: center; */
   line-height: 20px;
+}
+.black {
+  color: black; 
+}
+.coral {
+  color: coral; 
+}
+.empty-star {
+  color: lightgray; 
 }
 .star-black-big {
   color: var(--color-black);
@@ -504,6 +513,9 @@ p {
   font-weight: 600;
   padding-left: 10px;
 }
+/*** stat rating end ****/
+
+
 
 .review-type {
   width: 250px;

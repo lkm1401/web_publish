@@ -15,7 +15,7 @@ export default function ReviewList() {
       <table className="review-list-content">
           <tbody>
               <tr>
-                <td className="review-list-star"><StarRating totalRate={5} className="star-black-review"/></td>
+                <td className="review-list-star"><StarRating totalRate={3.4} className="star-black-review"/></td>
                 <td><ReviewListItem /></td>
               </tr>
               <tr>
@@ -23,7 +23,7 @@ export default function ReviewList() {
                 <td><ReviewListItem /></td>
               </tr>
               <tr>
-                <td className="review-list-star"><StarRating totalRate={5} className="star-black-review"/></td>
+                <td className="review-list-star"><StarRating totalRate={2.1} className="star-black-review"/></td>
                 <td><ReviewListItem /></td>
               </tr>
               <tr>

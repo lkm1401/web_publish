@@ -12,6 +12,7 @@ export default function DetailProduct({ addCart }) {
   const [product, setProduct] = useState({});
   const [imgList, setImgList] = useState([]);
   const [size, setSize] = useState("XS");
+  const [tabName, setTabName] = useState('detail');
 
   useEffect(() => {
     axios
@@ -42,11 +43,12 @@ export default function DetailProduct({ addCart }) {
   };
 
   //Tabs event
-  const [tabName, setTabName] = useState('detail');
-  const handleChangeTabs = (text) => {
-    console.log('tab name===>>', text);
-    setTabName(text);
-  }
+
+  // const handleChangeTabs = (text) => {
+  //   console.log('tab name===>>', text);
+  //   //text를 처리하는 로직
+  //   setTabName(text);
+  // }
 
   return (
     <div className="content">
@@ -64,7 +66,7 @@ export default function DetailProduct({ addCart }) {
           ).toLocaleString()}원`}</li>
           <li className="product-detail-subtitle">{product.info}</li>
           <li className="product-detail-subtitle-star">
-            <StarRating totalRate={5} className="star-coral"/> <span>572개 리뷰 &nbsp;&nbsp; {">"}</span>
+            <StarRating totalRate={4.2} className="star-coral"/> <span>572개 리뷰 &nbsp;&nbsp; {">"}</span>
           </li>
           <li>
             <p className="product-detail-box">신규회원, 무이자 할부 등</p>
@@ -111,16 +113,16 @@ export default function DetailProduct({ addCart }) {
         {/* DETAIL / REVIEW / Q&A / RETURN & DELIVERY */}
         <ul className="tabs">
           <li className={tabName==="detail" ? "active": ''}>
-            <button type="button" onClick={(e)=> handleChangeTabs("detail")}>DETAIL</button>
+            <button type="button" onClick={(e)=> setTabName("detail")}>DETAIL</button>
           </li>
           <li className={tabName==="review" ? "active": ''}>
-            <button type="button" onClick={(e)=> handleChangeTabs("review")}>REVIEW</button>
+            <button type="button" onClick={(e)=> setTabName("review")}>REVIEW</button>
           </li>
           <li className={tabName==="qna" ? "active": ''}>
-            <button type="button" onClick={(e)=> handleChangeTabs("qna")}>Q&A</button>
+            <button type="button" onClick={(e)=> setTabName("qna")}>Q&A</button>
           </li>
           <li className={tabName==="return" ? "active": ''}>
-            <button type="button" onClick={(e)=> handleChangeTabs("return")}>RETURN & DELIVERY</button>
+            <button type="button" onClick={(e)=> setTabName("return")}>RETURN & DELIVERY</button>
           </li>
         </ul>
         <div className="tabs_contents">
