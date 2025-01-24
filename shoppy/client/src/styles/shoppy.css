@@ -30,6 +30,10 @@ p {
   padding: 0;
 }
 
+button {
+  cursor: pointer;
+}
+
 .header,
 .footer,
 .content {
@@ -221,6 +225,7 @@ p {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 10px 0;
 }
 .product-detail-button {
   width: 42%;
@@ -283,7 +288,7 @@ p {
   width: 1200px;
   /* height: 200px; */
   margin: auto;
-  margin-top: 40px;
+  margin-top: 120px;
 }
 
 /********************************************
@@ -352,18 +357,32 @@ p {
 .detail-images {
   /* border : 1px solid blue; */
   text-align: center;
+  width: 100%;
   /* height: 100%;
   overflow: hidden; */
 }
 .detail-images.holidays-notice {
-  margin-bottom: 80px;
+  width: 60%;
+  margin-bottom: 50px;
 }
-.detail-images.img {
-  width: 40%;
+.detail-images-list {
+  /* border : 2px solid blue; */
+  list-style-type: none;
+  width: 100%;
+  margin-bottom: 50px;
+}
+.detail-images-list.img {
+  /* border : 2px solid blue; */
+  width: 70%;
   margin: 20px 0;
 }
+/* .detail-images.img {
+  border: 2px solid red;
+  width: 50%;
+  margin: 20px 0;
+} */
 .detail-info {
-  /* border: 1px solid red; */
+  /* border: 1px solid green; */
   padding: 40px 100px;
   font-family: "나눔고딕";
   font-size: 0.9rem;
@@ -646,7 +665,7 @@ p {
   border-top: 2px solid #333;
 }
 .review-list-content tr:last-child {
-  border-bottom: 1px solid #333;
+  border-top: 1px solid #333;
   text-align: center;
 }
 .review-list-content tr:last-child td{
@@ -764,3 +783,4 @@ p {
   justify-content: center;
   margin-top: 20px;
 }
+

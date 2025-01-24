@@ -1,7 +1,7 @@
 import React from 'react';
 import ImageList from '../commons/ImageList.jsx';
 
-export default function DetailImages({imgList, className}) {
+export default function DetailImages({imgList}) {
     return (
         <div className="detail-images">
             <img className="detail-images holidays-notice"
@@ -15,7 +15,7 @@ export default function DetailImages({imgList, className}) {
                 ))
             } */}
             
-            <ImageList className={className}
+            <ImageList className="detail-images-list"
                                 imgList={imgList}/>
         </div>
     );

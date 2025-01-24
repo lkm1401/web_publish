@@ -6,7 +6,7 @@ import DetailInfoNotice from './DetailInfoNotice.jsx';
 export default function Detail({imgList}) {
     return (
         <div>
-            <DetailImages imgList={imgList} className="detail-images img"/>
+            <DetailImages imgList={imgList} />
             <DetailInfo />
             <DetailInfoNotice />
         </div>

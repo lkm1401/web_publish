@@ -90,9 +90,7 @@ export default function Signup() {
                                                                 )
                                                             }}
                                                             >중복확인</button>
-                                                    <input type="text"                                                             
-                                                            value={idCheckResult}
-                                                            />
+                                                    {/* <input type="text" value={idCheckResult}  /> */}
                                                 </> 
                                             } 
                                         </>
