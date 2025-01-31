@@ -64,3 +64,15 @@ components/
 3. 협업 팁
 README 파일 작성: 프로젝트 시작 시 프로젝트 구조, 기술 스택, 파일명 규칙, 작업 방식 등을 정리하여 공유
 Git 브랜치 전략: Git Flow나 GitHub Flow 같은 브랜치 전략을 활용해 효율적으로 협업 진행
+
+
+4. 웹서버 세팅
+(1) 서버 종류 : NodeJS
+/** 
+ * 익스프레스 서버의 요청/응답 처리하는 미들웨어 
+ * 요청/응답 메소드 : GET, POST, PUT, DELETE
+ * MVC 패턴을 적용하여 작업을 분리시킴
+ * --> 역할에 맞추어 작업을 분리하는 용도 
+ * --> M(Model), V(View), C(Controller)
+ * --> M(Repository), V(Router), C(Controller)
+*/

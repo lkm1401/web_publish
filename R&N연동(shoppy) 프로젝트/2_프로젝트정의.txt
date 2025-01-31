@@ -11,10 +11,10 @@
     npm i react-icons       # 리액트 제공 아이콘 패키지 설치
 
 3. NodeJS 서버 생성 : server
-   shoppy>mkdir server
+   mkdir server
 
-   shoppy/server>npm init --yes         : 프로젝트 초기화 - Node모듈 설치
-   shoppy/server>npm i express --save   : 익스프레스 서버 라이브러리 설치
-   shoppy/server>npm i mysql2           : mysql 연동 라이브러리 설치
-   shoppy/server>npm i cors             : 리액트 연동 시 특정 도메인 허용 라이브러리 설치
-   shoppy/server>npm i nodemon --save-dev  
+   npm init --yes         : 프로젝트 초기화 - Node모듈 설치
+   npm i express --save   : 익스프레스 서버 라이브러리 설치
+   npm i mysql2           : mysql 연동 라이브러리 설치
+   npm i cors             : 리액트 연동 시 특정 도메인 허용 라이브러리 설치
+   npm i nodemon -g --save-dev  
