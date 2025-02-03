@@ -8,6 +8,7 @@ import Carts from './pages/Carts.jsx';
 import Login from './pages/Login.jsx';
 import Signup from './pages/Signup.jsx';
 import DetailProduct from './pages/DetailProduct.jsx';
+import Employees from './pages/Employees.jsx';
 
 export default function App() {
   const [cartList, setCartList] = useState([]);   /** 장바구니 아이템 저장 : 배열 */
@@ -32,6 +33,7 @@ export default function App() {
                   <Route path='/cart' element={<Carts cartList={cartList} />} />
                   <Route path='/login' element={<Login />} />
                   <Route path='/signup' element={<Signup />} />
+                  <Route path='/employees' element={<Employees />} />
                   <Route path='/products/:pid' element={<DetailProduct  addCart={addCart} />} />                  
               </Route>
           </Routes>            

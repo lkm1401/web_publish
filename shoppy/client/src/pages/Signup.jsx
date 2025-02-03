@@ -26,7 +26,7 @@ export default function Signup() {
                 return false;
             } else {
                 console.log('submit ---->> ', formData);                
-                // 회원가입 성공 후 ==> setIdCheckResult("default");
+                // 회원가입 성공 후 ==> setIdCheckResult("default");                
             }   
         } 
     }
