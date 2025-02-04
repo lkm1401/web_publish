@@ -1,3 +1,5 @@
+import axios from "axios";
+
 /*************************
     title : 로그인 폼 체크
 **************************/
@@ -47,7 +49,7 @@ export const validateSignup = (refs, msgRefs, formData) => {
                 msgRef.current.style.setProperty('color', 'red');
                 ref.current.focus();
                 return false;
-            }
+            } 
         } else { 
             
             if(ref.current.value === "default") {
@@ -68,17 +70,22 @@ export const handleDuplicateIdCheck = (idRef, pwdRef, idMsgRef, setIdCheckResult
         idRef.current.focus();
         return false;
     } else {
-        const did = "test";
-        if(idRef.current.value === did) {
-            alert("이미 사용중인 아이디 입니다. 새로운 아이디를 입력해주세요.");
-            idRef.current.focus();
-            return false;
-        } else {
-            alert("사용이 가능한 아이디 입니다.");
-            setIdCheckResult("complete");
-            pwdRef.current.focus();
-            return false;
-        }
+        /** 아이디 중복 체크 <--> 서버 연동 */
+        axios
+            .post('http://localhost:9000/member/idcheck', {"id":idRef.current.value})
+            .then(res => {
+                if(res.data.result === 1) {
+                    alert("이미 사용중인 아이디 입니다. 새로운 아이디를 입력해주세요.");
+                    idRef.current.focus();
+                    return false;
+                } else {
+                    alert("사용이 가능한 아이디 입니다.");
+                    setIdCheckResult("complete");
+                    pwdRef.current.focus();
+                    return false;
+                }
+            })
+            .catch(error => console.log(error));        
     }
 }
 

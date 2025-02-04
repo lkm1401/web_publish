@@ -1,4 +1,6 @@
 import React, { useState, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import '../styles/signup.css';
 import { validateSignup, 
             handleDuplicateIdCheck, 
@@ -6,6 +8,7 @@ import { validateSignup,
 import { initSignup, useInitSignupRefs } from '../utils/funcInitialize.js';
 
 export default function Signup() {   
+    const navigate = useNavigate();
     const {names, placeholders, labels, initFormData} = initSignup();
     const {refs, msgRefs} = useInitSignupRefs(names);
     const [formData, setFormData] = useState(initFormData);
@@ -25,13 +28,32 @@ export default function Signup() {
                 alert("중복 확인을 진행해 주세요");
                 return false;
             } else {
-                console.log('submit ---->> ', formData);                
-                // 회원가입 성공 후 ==> setIdCheckResult("default");                
+                console.log('submit ---->> ', formData); 
+                //서버 --> DB 테이블에 insert
+                //GET : URL 통해 호출 및 데이터 전달 => 패킷의 Header => req.params, 보안필요X, 작은데이터
+                //POST : URL 주소로 경로 호출, 데이터 전달 => 패킷의 Body => req.body, 보안필요O, 큰데이터
+                axios.post('http://localhost:9000/member/signup', formData)
+                        .then(res => {
+                            if(res.data.result_rows === 1){
+                                alert("회원가입에 성공하셨습니다.");
+                                // window.location.href = '/login';
+
+                                //1초후에 로그인 페이지 이동 --> useNavigate
+                                setTimeout(()=>{
+                                    navigate('/login');
+                                }, 1000);
+                            } else {
+                                alert("회원가입에 실패하셨습니다.");
+                            }
+                        })
+                        .catch(error => {
+                            alert("회원가입에 실패하셨습니다.");
+                            console.log(error);
+                        });            
+
             }   
         } 
     }
-
-
 
     return (
         <div className="content">
