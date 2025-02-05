@@ -1,12 +1,15 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useContext } from 'react';
 import '../styles/login.css';
 import { FaUser } from "react-icons/fa";
 import { FaLock } from "react-icons/fa";
 import { validateLogin } from '../utils/funcValidate.js';
 import axios from 'axios';
-import * as cookie from '../utils/cookies.js';
+import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../auth/AuthContext.js';
 
 export default function Login() {
+    const { isLoggedIn, setIsLoggedIn } = useContext(AuthContext);
+    const navigate = useNavigate();
     const refs = {
         "idRef" : useRef(null),
         "pwdRef" : useRef(null) 
@@ -27,27 +30,26 @@ export default function Login() {
     const handleLoginSubmit = (event) => {
         event.preventDefault();        
         if(validateLogin(refs, msgRefs)) {
-            console.log('send data -->> ', formData);  
-            
-            // 브라우저 쿠키와 로컬 스토리지 테스트
-            //쿠키에 토큰 저장
-            // cookie.setCookie('x-auth-jwt', formData.id);
+            console.log('send data -->> ', formData); 
 
-            //토큰에서 userInfo 정보를 로컬스토리지에 저장
-            // const userInfo = formData.id;
-            // alert(JSON.stringify(userInfo));
-            // localStorage.setItem("userInfo", JSON.stringify(userInfo));
-
-            // alert("로그인 성공!!"); 
-            
-
-
-            //리액트 ---> 노드서버(express) 데이터 전송
-            // axios
-            //     .post('http://localhost:9000/member/login', formData)
-            //     .then(res => console.log('login result --> ', res.data))
-            //     .catch(error => console.log(error));      
-            
+            //리액트 ---> 노드서버(express) 데이터 전송 로그인
+            axios
+                .post('http://localhost:9000/member/login', formData)
+                .then(res => {
+                    // console.log('res.data-->', res.data) 
+                    if(res.data.result_rows === 1) {
+                        alert("로그인 성공!!");
+                        localStorage.setItem("token", res.data.token);
+                        setIsLoggedIn(true);
+                        navigate('/');
+                    } else {
+                        alert("로그인 실패!!");
+                    }
+                })
+                .catch(error => {
+                    alert("로그인 실패!!");
+                    console.log(error);
+                });    
             
         }
     }

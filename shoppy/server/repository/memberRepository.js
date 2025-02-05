@@ -1,14 +1,15 @@
 import { db } from './db.js';
 
 /**
- * 로그인 체크 - select
+ * 로그인 - select
  */
-export const checkLogin = async({id, pwd}) => {  // {id: 'test1', pwd: '1111'}
+export const checkLogin = async({id, pwd}) => {   // {id:'test', pwd:'1234'}
     const sql = `
-        select count(id) as result from shoppy_member where id = ? and pwd =?
+        select count(*) as result_rows from shoppy_member 
+	        where id = ? and pwd = ?
     `;
-    const [result] = await db.execute(sql, [id, pwd]);
-    
+    const [ result ] = await db.execute(sql, [id, pwd]); // [[], []]
+    // [{result_rows : 1}]
     return result[0];
 }
 
