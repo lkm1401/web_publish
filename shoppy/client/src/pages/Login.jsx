@@ -57,7 +57,8 @@ export default function Login() {
     return (
         <div className="content">
             <h1 className="center-title">LOGIN</h1>
-            <form className="login-form" onSubmit={handleLoginSubmit}>
+            
+            <form className="login-form" onSubmit={handleLoginSubmit}>            
                 <ul>
                     <li>
                         <p className="login-form-message">✔ 아이디와 비밀번호를 입력하신 후, 로그인을 진행해주세요.</p>
