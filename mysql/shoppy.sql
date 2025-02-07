@@ -29,6 +29,35 @@ select * from shoppy_member;
 select count(id) as result from shoppy_member where id = 'test9';
 -- {result: 0}
 
+USE HRDB2019;
+SELECT * FROM INFORMATION_SCHEMA.TABLES 
+	WHERE TABLE_NAME LIKE 'SHOPPY%';
+    
+-- SHOPPY_PRODUCT
+CREATE TABLE SHOPPY_PRODUCT(
+	PID		INT 	PRIMARY KEY		AUTO_INCREMENT,
+    PNAME 	VARCHAR(50)		NOT NULL,
+    PRICE 	INT,
+    DESCRIPTION		VARCHAR(200),
+    UPLOAD_FILE		VARCHAR(100),
+    SOURCE_FILE		VARCHAR(100),
+    PDATE			DATETIME
+);
+
+DESC SHOPPY_PRODUCT;
+SELECT * FROM SHOPPY_PRODUCT;
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
