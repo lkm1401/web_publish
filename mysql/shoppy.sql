@@ -34,21 +34,44 @@ SELECT * FROM INFORMATION_SCHEMA.TABLES
 	WHERE TABLE_NAME LIKE 'SHOPPY%';
     
 -- SHOPPY_PRODUCT
+use hrdb2019;
+drop table shoppy_product;
 CREATE TABLE SHOPPY_PRODUCT(
 	PID		INT 	PRIMARY KEY		AUTO_INCREMENT,
     PNAME 	VARCHAR(50)		NOT NULL,
     PRICE 	INT,
     DESCRIPTION		VARCHAR(200),
-    UPLOAD_FILE		VARCHAR(100),
-    SOURCE_FILE		VARCHAR(100),
+    UPLOAD_FILE		json,
+    SOURCE_FILE		json,
     PDATE			DATETIME
 );
 
 DESC SHOPPY_PRODUCT;
 SELECT * FROM SHOPPY_PRODUCT;
 
+SET SQL_SAFE_UPDATES = 0;   -- 해제: 0, 설정: 1
+delete from shoppy_product;
+commit;
+select * from shoppy_product;
+select source_file from shoppy_product;
 
+--
+select  pid,
+		pname as name,
+		price,
+		description as info,
+		concat('http://localhost:9000/', upload_file->>'$[0]') as image,
+		source_file,
+		pdate
+from shoppy_product;
 
+-- http://localhost:9000/["upload_files\\1739163158340-849078071-1.webp", "upload_files\\1739163158340-911632745-2.webp", "upload_files\\1739163158340-462908659-3.webp", "upload_files\\1739163158341-81325715-4.webp", "upload_files\\1739163158342-709014159-5.webp", "upload_files\\1739163158342-110372512-6.webp", "upload_files\\1739163158342-207791282-7.webp"]
+--
+-- http://localhost:9000/upload_files\\1739163158340-849078071-1.webp
+
+delete from shoppy_product where pid in (6, 7, 8);
+select * from shoppy_product;
+commit;
 
 
 
