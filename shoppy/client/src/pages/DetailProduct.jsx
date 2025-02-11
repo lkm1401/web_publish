@@ -11,6 +11,7 @@ export default function DetailProduct({ addCart }) {
   const { pid } = useParams();
   const [product, setProduct] = useState({});
   const [imgList, setImgList] = useState([]);
+  const [detailImgList, setDetailImgList] = useState([]);
   const [size, setSize] = useState("XS");
   const [tabName, setTabName] = useState('detail');
   const tabLabels = ['DETAIL', 'REVIEW', 'Q&A', 'RETURN & DELIVERY'];
@@ -18,17 +19,17 @@ export default function DetailProduct({ addCart }) {
 
   useEffect(() => {
     axios
-      .get("/data/products.json") // http://localhost:3000/data/products.json
+      .post("http://localhost:9000/product/detail", {"pid":pid}) 
       .then((res) => {
-        res.data.filter((product) => {
-          if (product.pid === pid) {
-            setProduct(product);
-            setImgList(product.imgList);
-          }
-        });
-      })
+          setProduct(res.data);
+          setImgList(res.data.imgList);
+          setDetailImgList(res.data.detailImgList);
+        })
       .catch((error) => console.log(error));
   }, []);
+
+  
+
 
   //장바구니 추가 버튼 이벤트
   const addCartItem = () => {
@@ -43,13 +44,6 @@ export default function DetailProduct({ addCart }) {
     };
     addCart(cartItem); // App.js의 addCart 함수 호출
   };
-
-  //Tabs event
-  // const handleChangeTabs = (text) => {
-  //   console.log('tab name===>>', text);
-  //   //text를 처리하는 로직
-  //   setTabName(text);
-  // }
 
   return (
     <div className="content">
@@ -121,25 +115,9 @@ export default function DetailProduct({ addCart }) {
                 </li>
             )
           }
-        </ul>      
-        
-
-        {/* <ul className="tabs">
-          <li className={tabName==="detail" ? "active": ''}>
-            <button type="button" onClick={(e)=> setTabName("detail")}>DETAIL</button>
-          </li>
-          <li className={tabName==="review" ? "active": ''}>
-            <button type="button" onClick={(e)=> setTabName("review")}>REVIEW</button>
-          </li>
-          <li className={tabName==="qna" ? "active": ''}>
-            <button type="button" onClick={(e)=> setTabName("qna")}>Q&A</button>
-          </li>
-          <li className={tabName==="return" ? "active": ''}>
-            <button type="button" onClick={(e)=> setTabName("return")}>RETURN & DELIVERY</button>
-          </li>
-        </ul> */}
+        </ul>
         <div className="tabs_contents">
-          { tabName === "detail" && <Detail imgList={imgList} /> }
+          { tabName === "detail" && <Detail imgList={detailImgList} /> }
           { tabName === "review" && <Review /> }
         </div>
       </div>
