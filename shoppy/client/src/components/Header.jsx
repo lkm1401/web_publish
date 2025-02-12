@@ -21,6 +21,7 @@ export default function Header({cartCount}) {
         }
     }   
 
+
     return (
         <div className='header-outer'>
             <div className='header'>

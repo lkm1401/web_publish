@@ -1,6 +1,17 @@
 import * as repository from '../repository/productRepository.js';
 
 /**
+ * 장바구니 상품 정보 조회
+ */
+export const getCartItems = async(req, res) => {
+    const result = await repository.getCartItems(req.body);
+    res.json(result);
+    res.end();
+}
+
+
+
+/**
  * 상품 상세 정보 조회
  */
 export const getProduct = async(req, res) => {

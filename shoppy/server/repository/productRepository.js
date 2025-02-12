@@ -1,6 +1,30 @@
 import { db } from './db.js';
 
 /**
+ * 장바구니 상품 정보 조회
+ */
+export const getCartItems = async({pids}) => {
+    const strArray = [];
+    pids.forEach(pid => strArray.push("?"));
+    // pids.sort((a, b) => a - b);
+
+    const sql = `
+        select  pid,
+                pname,
+                price,
+                description,
+                concat('http://localhost:9000/',upload_file->>'$[0]') as image
+        from shoppy_product
+        where pid in (${strArray.join(",")})
+    `;    
+console.log(pids, sql);
+    
+    const [result] = await db.execute(sql, pids);
+    return result;
+}
+
+
+/**
  * 상품 상세 정보 조회
  */
 export const getProduct = async(pid) => {
@@ -28,7 +52,7 @@ export const getProduct = async(pid) => {
         group by pid
     `;
     const [result] = await db.execute(sql, [pid]);  // result = [ [{pid:4,~~}], [컬럼명 fields] ]
-    console.log('result --> ', result[0]);
+    // console.log('result --> ', result[0]);
     
     return result[0];
 }
@@ -50,7 +74,7 @@ export const getList = async() => {
         from shoppy_product
     `;
     const [result] = await db.execute(sql);
-    console.log('result--> ', result);
+    // console.log('result--> ', result);
     
     return result;  // [ {} ,{} ,{}]
 }

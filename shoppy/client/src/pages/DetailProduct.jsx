@@ -33,14 +33,11 @@ export default function DetailProduct({ addCart }) {
 
   //장바구니 추가 버튼 이벤트
   const addCartItem = () => {
-    //장바구니 추가 항목 : { pid, size, count, price }
-    // alert(`${pid} --> 장바구니 추가 완료!`);
-    // console.log(product.pid, product.price, size, 1);
+    //장바구니 추가 항목 : { pid, size, qty }
     const cartItem = {
       pid: product.pid,
       size: size,
       qty: 1,
-      price: product.price,
     };
     addCart(cartItem); // App.js의 addCart 함수 호출
   };
