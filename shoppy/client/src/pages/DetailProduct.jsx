@@ -29,8 +29,6 @@ export default function DetailProduct({ addCart }) {
   }, []);
 
   
-
-
   //장바구니 추가 버튼 이벤트
   const addCartItem = () => {
     //장바구니 추가 항목 : { pid, size, qty }

@@ -136,7 +136,37 @@ select  pid,
         description,
         concat('http://localhost:9000/',upload_file->>'$[0]') as image
 from shoppy_product
-where pid in (?,?,?);        
+where pid in (4, 4);      
+
+
+-- 
+show tables; 
+select * from shoppy_member;
+select * from shoppy_product;
+-- 어떤 회원(pk:id)이 어떤 상품(pk:pid)을 장바구니에 넣었는지 명확, 간단하게!!
+
+-- shoppy_cart 
+-- 컬럼리스트 : cid(pk), id(shoppy_member:fk), pid(shoppy_product:fk), size, qty, cdate(장바구니 등록날짜)
+desc shoppy_member;
+desc shoppy_product;
+
+CREATE TABLE SHOPPY_CART(
+	CID		INT			PRIMARY KEY		AUTO_INCREMENT,
+    SIZE	VARCHAR(10)	NOT NULL,
+    QTY		INT			NOT NULL,
+    CDATE	DATETIME,
+    ID		VARCHAR(30)	NOT NULL,
+    PID		INT			NOT NULL,
+    CONSTRAINT FK_ID_SHOPPY_MEMBER_ID	FOREIGN KEY(ID)
+					REFERENCES SHOPPY_MEMBER(ID),
+	CONSTRAINT FK_PID_SHOPPY_PRODUCT_PID FOREIGN KEY(PID)
+					REFERENCES SHOPPY_PRODUCT(PID)
+);
+SHOW TABLES;
+DESC SHOPPY_CART;
+SELECT * FROM SHOPPY_CART;
+
+
 
 
 

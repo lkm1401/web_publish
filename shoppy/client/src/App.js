@@ -13,24 +13,24 @@ import { AuthProvider } from './auth/AuthContext.js';
 
 export default function App() {
    /** 장바구니 아이템 저장 : 배열 */
-  const [cartList, setCartList] = useState(()=> {
+  const [cartList, setCartList] = useState(()=>{
     try {
       const initCartList = localStorage.getItem("cartItems");
       return initCartList ? JSON.parse(initCartList) : [];
     } catch (error) {
-      console.error("로컬스토리지 JSON 파싱 오류:", error);
-      return []; // 오류 발생 시 빈 배열 반환
+      console.log('로컬스토리지 데이터 작업도중 에러 발생~');
+      console.log(error);      
     }
   });
   
   /** 장바구니 상품 갯수 */
-  const [cartCount, setCartCount] = useState(()=> {
+  const [cartCount, setCartCount] = useState(()=>{
     try {
       const initCartList = localStorage.getItem("cartItems");
-      return initCartList ? JSON.parse(initCartList).length : 0;
+      return initCartList? JSON.parse(initCartList).length : 0;
     } catch (error) {
-      console.error("로컬스토리지 JSON 파싱 오류:", error);
-      return 0; 
+      console.log('로컬스토리지 데이터 작업도중 에러 발생~');
+      console.log(error);      
     }
   });  
 
@@ -42,35 +42,22 @@ export default function App() {
 
   /** 장바구니 추가 */
   const addCart = (cartItem) => {
-    //입력받은 cartItem이 cartList에 존재하면 qty+1, 존재하지 않으면 새로 추가
-    // const updateCartList = cartList.some(checkItem => checkItem.pid === cartItem.pid && checkItem.size === cartItem.size) 
-                            // ?  cartList.map(item => 
-                            //     item.pid === cartItem.pid && item.size === cartItem.size ?
-                            //       {...item, qty:item.qty+1 } // item의 qty+1
-                            //     : item        
-                            //     ) 
-                            // : [...cartList, cartItem] ;
-    
-    const isCheck =  cartList.some(checkItem => checkItem.pid === cartItem.pid && checkItem.size === cartItem.size);
+    const isCheck =  cartList.some(checkItem => checkItem.pid === cartItem.pid && 
+                                                checkItem.size === cartItem.size);  
     let updateCartList = [];
-    // let count = 0;
     if(isCheck) {
       updateCartList =  cartList.map(item => 
             item.pid === cartItem.pid && item.size === cartItem.size ?
-              {...item, qty:item.qty+1 } // item의 qty+1
+              {...item, qty:item.qty+1 } 
             : item        
             ) 
     } else {
       updateCartList = [...cartList, cartItem];
       setCartCount(cartCount + 1);  
-    }                           
-    const sortUpdateCartList = updateCartList.sort((a, b) => a.pid - b.pid);
-                
-    setCartList(sortUpdateCartList);
-  }    
-
-  console.log('cartList---------->', cartList);
-  console.log('cartCount---------->', cartCount);  
+    }                      
+    // const sortUpdateCartList = updateCartList.sort((a, b) => a.pid - b.pid);                
+    setCartList(updateCartList);
+  } //addCart    
 
   return (
     <div>
