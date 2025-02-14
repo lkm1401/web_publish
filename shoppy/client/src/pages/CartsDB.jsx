@@ -136,10 +136,10 @@ export default function Carts({refreshStorage}) {
                             <td>
                                 <img src={item.image} alt="" style={{width:"100px"}}/>
                             </td>  
-                            <td>
+                            {/* <td>
                                 <button 
                                     onClick={()=>{ handleOrder("each", item.pid, item.size) }}> 계속담아두기 </button>
-                            </td>                          
+                            </td>                           */}
                         </tr>
                     )
                 }
@@ -148,4 +148,6 @@ export default function Carts({refreshStorage}) {
         </div>
     );
 }
+
+
 

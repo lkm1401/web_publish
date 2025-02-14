@@ -170,6 +170,8 @@ select * from shoppy_member;
 
 SELECT * FROM SHOPPY_CART;
 
+truncate table shoppy_cart;
+
 
 
 

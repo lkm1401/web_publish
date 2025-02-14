@@ -9,6 +9,7 @@ import Login from './pages/Login.jsx';
 import Signup from './pages/Signup.jsx';
 import DetailProduct from './pages/DetailProduct.jsx';
 import NewProduct from './pages/NewProduct.jsx';
+import CartsDB from './pages/CartsDB.jsx';
 import { AuthProvider } from './auth/AuthContext.js';
 
 export default function App() {
@@ -33,6 +34,14 @@ export default function App() {
       console.log(error);      
     }
   });  
+
+  /** 로컬스토리지 재호출 --> cartList, cartCount 업데이트 */
+  const refreshStorage = (updateCart, updateCount) => {
+      setCartList(updateCart);
+      setCartCount(updateCount);
+  }
+
+
 
   /** cartCount가 업데이트가 되면 localStorage에 cartList를 저장 */
   useEffect(()=>{
@@ -67,11 +76,12 @@ export default function App() {
               <Route path='/' element={<Layout cartCount={cartCount}/>} >
                   <Route index element={<Home />} />
                   <Route path='/all' element={<Products />} />
-                  <Route path='/cart' element={<Carts />} />
+                  <Route path='/cart' element={<Carts refreshStorage={refreshStorage} />} />
                   <Route path='/login' element={<Login />} />
                   <Route path='/signup' element={<Signup />} />
                   <Route path='/products/:pid' element={<DetailProduct  addCart={addCart} />} />                  
                   <Route path='/products/new' element={<NewProduct />} />                  
+                  <Route path='/cartdb' element={<CartsDB />} />                  
               </Route>
           </Routes>            
       </BrowserRouter>
