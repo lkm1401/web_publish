@@ -59,13 +59,6 @@ export default function App() {
     setCartList(updateCartList);
   } //addCart    
 
-
-  const refreshStorage = (updateCartList, updateCartCount) => {
-    alert("refresh");
-    setCartList(updateCartList);
-    setCartCount(updateCartCount);
-  };
-
   return (
     <div>
       <AuthProvider>
@@ -74,7 +67,7 @@ export default function App() {
               <Route path='/' element={<Layout cartCount={cartCount}/>} >
                   <Route index element={<Home />} />
                   <Route path='/all' element={<Products />} />
-                  <Route path='/cart' element={<Carts refreshStorage={refreshStorage}/>} />
+                  <Route path='/cart' element={<Carts />} />
                   <Route path='/login' element={<Login />} />
                   <Route path='/signup' element={<Signup />} />
                   <Route path='/products/:pid' element={<DetailProduct  addCart={addCart} />} />                  

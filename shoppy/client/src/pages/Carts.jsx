@@ -3,7 +3,7 @@ import axios from "axios";
 import { AuthContext } from "../auth/AuthContext.js";
 import { useNavigate } from "react-router-dom";
 
-export default function Carts({ refreshStorage }) {
+export default function Carts() {
     const navigate = useNavigate();
     const { isLoggedIn } = useContext(AuthContext);
 
@@ -47,11 +47,10 @@ export default function Carts({ refreshStorage }) {
     }, [cartList]);
 
     /** 주문하기 이벤트 처리*/
-    const handleOrder = (type, pid, size) => {
+    const handleOrder = () => {
         const id = localStorage.getItem("user_id");
         let formData = [];
         formData = { id: id, cartList: cartList };
-        console.log("formData--------->>", type, formData);
 
         //1. 로그인 여부 체크
         if (isLoggedIn) {
@@ -75,7 +74,7 @@ export default function Carts({ refreshStorage }) {
     return (
         <div className="content">
             <h1>MyCart!!</h1>
-            <button onClick={()=> {handleOrder("all")}}>주문하기</button>
+            <button onClick={ handleOrder}>주문하기</button>
             <table border="1">
                 <tr>
                     <th>Pid</th>
@@ -97,11 +96,7 @@ export default function Carts({ refreshStorage }) {
                                 <img src={item.image} alt="" style={{width:"100px"}}/>
                             </td>  
                             <td>
-                                <button
-                                onClick={() => {handleOrder("each", item.pid, item.size); }}
-                                >
-                                계속담아두기
-                                </button>
+                                <button> 계속담아두기 </button>
                             </td>                          
                         </tr>
                     )

@@ -165,6 +165,10 @@ CREATE TABLE SHOPPY_CART(
 SHOW TABLES;
 DESC SHOPPY_CART;
 SELECT * FROM SHOPPY_CART;
+truncate table shoppy_cart;
+select * from shoppy_member;
+
+SELECT * FROM SHOPPY_CART;
 
 
 
