@@ -50,27 +50,72 @@ export default function Carts({ refreshStorage }) {
     const handleOrder = (type, pid, size) => {
         const id = localStorage.getItem("user_id");
         let formData = [];
+        if (type === "all") {
         formData = { id: id, cartList: cartList };
+        } else {
+        const filterItem = cartList.filter(
+            (item) => item.pid === pid && item.size === size
+        );
+        formData = { id: id, cartList: filterItem };
+        }
         console.log("formData--------->>", type, formData);
 
         //1. 로그인 여부 체크
         if (isLoggedIn) {
-            axios
-                .post("http://localhost:9000/cart/add", formData)
-                .then((res) => {
-                    // console.log(res.data)
-                    if (res.data.result_rows) {
-                        alert("장바구니에 추가되었습니다.");
-                    }
-                })
-                .catch((error) => console.log(error));
+        axios
+            .post("http://localhost:9000/cart/add", formData)
+            .then((res) => {
+            // console.log(res.data)
+            if (res.data.result_rows) {
+                alert("장바구니에 추가되었습니다.");
+
+                if (type === "all") {
+                console.log("all");
+                clearCart();
+                refreshStorage([], 0);
+                } else {
+                console.log("each");
+                const updatedCart = clearCartEach(pid, size);
+                refreshStorage(updatedCart, updatedCart.length);
+                }
+            }
+            })
+            .catch((error) => console.log(error));
         } else {
         //로그인 X --> 로그인 > DB 연동 후 저장
         window.confirm("로그인이 필요한 서비스입니다.") && navigate("/login");
         }
     };
 
-    
+    const clearCart = () => {
+        console.log("장바구니 초기화");
+        localStorage.removeItem("cartItems");
+        setTimeout(() => {
+            setCartList([]);
+            }, 0);
+            console.log("장바구니 초기화 완료");
+        };
+        
+        const clearCartEach = (pid, size) => {
+            console.log("개별 삭제 장바구니 초기화");
+            const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+            console.log("cartItems :: ", cartItems);
+        
+            const updatedCart = cartItems.filter(
+            (item) => !(item.pid === pid && item.size === size)
+            );
+            console.log("ucartItems :: ", updatedCart);
+        
+            localStorage.removeItem("cartItems");
+            localStorage.setItem("cartItems", JSON.stringify(updatedCart));
+        
+            setTimeout(() => {
+            setCartList(updatedCart);
+            }, 0);
+            console.log("개별 삭제 장바구니 초기화 완료");
+        
+            return updatedCart;
+        };
 
     return (
         <div className="content">
