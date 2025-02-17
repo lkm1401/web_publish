@@ -1,13 +1,20 @@
-import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import React, { useState, useEffect, useContext } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 import { PiGiftThin } from "react-icons/pi";
 import Detail from "../components/detail_tabs/Detail.jsx";
 import Review from "../components/detail_tabs/Review.jsx";
 import ImageList from "../components/commons/ImageList.jsx";
 import StarRating from "../components/commons/StarRating.jsx";
 import axios from "axios";
+import { CartContext } from "../context/CartContext.js";
+import { AuthContext } from "../auth/AuthContext.js";
+import { useCart } from "../hooks/useCart.js";
 
-export default function DetailProduct({ addCart }) {
+export default function DetailProduct() {
+  const { getCartList, saveToCartList, updateCartList } = useCart();
+  const navigate = useNavigate();
+  const { isLoggedIn, setLoggedIn } = useContext(AuthContext);
+  const {cartList, setCartList, cartCount, setCartCount} = useContext(CartContext);
   const { pid } = useParams();
   const [product, setProduct] = useState({});
   const [imgList, setImgList] = useState([]);
@@ -31,14 +38,80 @@ export default function DetailProduct({ addCart }) {
   
   //장바구니 추가 버튼 이벤트
   const addCartItem = () => {
-    //장바구니 추가 항목 : { pid, size, qty }
-    const cartItem = {
-      pid: product.pid,
-      size: size,
-      qty: 1,
-    };
-    addCart(cartItem); // App.js의 addCart 함수 호출
+    if(isLoggedIn) {
+      //장바구니 추가 항목 : { pid, size, qty }
+      const cartItem = {
+        pid: product.pid,
+        size: size,
+        qty: 1,
+      };
+      const id = localStorage.getItem("user_id");
+      
+// console.log('formData--> ',formData);
+
+      //cartItem에 있는 pid, size를 cartList(로그인 성공시 준비)의 item과 비교해서 있으면, qty+1, 없으면 새로추가
+console.log('Detail :: cartList---> ', cartList);
+
+      const findItem = cartList && cartList.find(item => item.pid === product.pid 
+                                          && item.size === size);
+      //some --> boolean
+      //find --> item 요소                                    
+      if(findItem !== undefined) {        
+        console.log('update--------------------------');
+        const result = updateCartList(findItem.cid);
+        result && alert("장바구니에 추가되었습니다."); 
+
+          axios 
+          .put("http://localhost:9000/cart/updateQty", {"cid":findItem.cid})
+          .then(res => {
+            // console.log('res.data--->', res.data)
+              if(res.data.result_rows) {
+                alert("장바구니에 추가되었습니다.");                
+                // const updateCartList = cartList.map((item)=>
+                // (item.cid === findItem.cid) ?
+                //     {
+                //       ...item, qty: item.qty+1
+                //     } : item                   
+                // );
+                // setCartList(updateCartList);
+              }              
+            }
+          )
+          .catch(error => console.log(error));  
+          
+          //  /** DB 연동 --> cartList 재호출!!!! */ 
+          // console.log('update :: cartList --> ',cartList);
+        
+      } else {
+        console.log('insert');  
+        const formData = {id:id, cartList:[cartItem]};
+
+        axios 
+          .post("http://localhost:9000/cart/add", formData)
+          .then(res => {
+            // console.log('res.data--->', res.data)
+              if(res.data.result_rows) {
+                alert("장바구니에 추가되었습니다."); 
+                // setCartCount(cartCount+1);
+                // setCartList([...cartList, cartItem]);
+              }              
+            }
+          )
+          .catch(error => console.log(error)); 
+
+        /** DB 연동 --> cartList 재호출!!!! */ 
+        console.log('insert :: cartList --> ',cartList);
+      }                                                
+
+
+    } else {
+      const select = window.confirm("로그인 서비스가 필요합니다. \n로그인 하시겠습니까?");
+      if(select) {
+          navigate('/login');
+      }    
+    }
   };
+  
 
   return (
     <div className="content">

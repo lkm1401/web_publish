@@ -1,5 +1,31 @@
 import { db } from './db.js';
 
+/**
+ * 장바구니 상품 수량 업데이트
+ */
+export const updateQty = async({cid}) => {
+    const sql = `
+        update shoppy_cart 
+            set qty=qty+1
+            where cid = ?
+    `;
+    const [result] = await db.execute(sql, [cid]);  
+    return {"result_rows" : result.affectedRows}; 
+}
+
+/**
+ * 장바구니 전체 카운트 조회
+ */
+export const getCount = async({id}) => {
+    const sql = `
+        select count(*) as count from shoppy_cart
+            where id= ?
+    `;
+    const [result] = await db.execute(sql, [id]);  // [[{count: 2}] [count필드정보]]
+    return result[0]; 
+}
+
+
 
 /**
  * 장바구니 전체 조회
@@ -15,6 +41,7 @@ export const getItems = async({id}) => {
                     sp.pid,
                     sp.pname,
                     sp.price,
+
                     sp.description as info,
                     concat('http://localhost:9000/', sp.upload_file->>'$[0]') as image
                 from shoppy_cart sc,
@@ -25,6 +52,8 @@ export const getItems = async({id}) => {
                         and sm.id = ?
     `;
     const [result] = await db.execute(sql, [id]);
+    console.log('result--->>',result);
+    
     return result; 
 }
 

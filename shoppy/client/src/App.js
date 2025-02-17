@@ -11,8 +11,10 @@ import DetailProduct from './pages/DetailProduct.jsx';
 import NewProduct from './pages/NewProduct.jsx';
 import CartsDB from './pages/CartsDB.jsx';
 import { AuthProvider } from './auth/AuthContext.js';
+import { CartProvider } from './context/CartContext.js';
 
 export default function App() {
+
    /** 장바구니 아이템 저장 : 배열 */
   const [cartList, setCartList] = useState(()=>{
     try {
@@ -35,18 +37,17 @@ export default function App() {
     }
   });  
 
-  /** 로컬스토리지 재호출 --> cartList, cartCount 업데이트 */
+  // /** 로컬스토리지 재호출 --> cartList, cartCount 업데이트 */
   const refreshStorage = (updateCart, updateCount) => {
       setCartList(updateCart);
       setCartCount(updateCount);
   }
 
 
-
-  /** cartCount가 업데이트가 되면 localStorage에 cartList를 저장 */
-  useEffect(()=>{
-    localStorage.setItem("cartItems", JSON.stringify(cartList));
-  }, [cartList]);
+  // /** cartCount가 업데이트가 되면 localStorage에 cartList를 저장 */
+  // useEffect(()=>{
+  //   localStorage.setItem("cartItems", JSON.stringify(cartList));
+  // }, [cartList]);
 
 
   /** 장바구니 추가 */
@@ -70,10 +71,11 @@ export default function App() {
 
   return (
     <div>
+      <CartProvider>
       <AuthProvider>
       <BrowserRouter>
           <Routes>
-              <Route path='/' element={<Layout cartCount={cartCount}/>} >
+              <Route path='/' element={<Layout />} >
                   <Route index element={<Home />} />
                   <Route path='/all' element={<Products />} />
                   <Route path='/cart' element={<Carts refreshStorage={refreshStorage} />} />
@@ -86,6 +88,7 @@ export default function App() {
           </Routes>            
       </BrowserRouter>
       </AuthProvider>
+      </CartProvider>
     </div>
   );
 }
