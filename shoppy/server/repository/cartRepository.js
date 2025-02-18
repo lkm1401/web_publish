@@ -1,14 +1,27 @@
 import { db } from './db.js';
 
 /**
+ * 장바구니 아이템 삭제
+ */
+export const deleteItem = async({cid}) => {
+    const sql = `
+        delete from shoppy_cart where cid = ?
+    `;
+    const [result] = await db.execute(sql, [cid]);
+    return {"result_rows": result.affectedRows};
+}
+
+/**
  * 장바구니 상품 수량 업데이트
  */
-export const updateQty = async({cid}) => {
+export const updateQty = async({cid, type}) => {
+    const str = type === "increase" ? "qty=qty+1" : "qty=qty-1";    
     const sql = `
         update shoppy_cart 
-            set qty=qty+1
+            set ${str}
             where cid = ?
     `;
+    
     const [result] = await db.execute(sql, [cid]);  
     return {"result_rows" : result.affectedRows}; 
 }
@@ -52,21 +65,9 @@ export const getItems = async({id}) => {
                         and sm.id = ?
     `;
     const [result] = await db.execute(sql, [id]);
-    console.log('result--->>',result);
     
     return result; 
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 /**
@@ -74,18 +75,7 @@ export const getItems = async({id}) => {
  */
 export const addCart = async({id, cartList}) => {
     let result_rows = 0;
-    console.log('---------> ', cartList);
-    // try{
-    // if(cartList.length === 1) {
-    //     const {size, qty, pid} = cartList[0];
-    //     const values = [size, qty, id, pid];                   
-    //             const sql = `
-    //                 insert into shoppy_cart(size, qty, id, pid, cdate)
-    //                     values(?, ?, ?, ?, now())
-    //             `;
-    //             const [result] = await db.execute(sql, values); //Promise형태로 실행
-    //             result_rows = result.affectedRows;            
-    // }else{
+    
     const result = await Promise.all(  
         cartList.map(async(item) => {
                 const values = [item.size, item.qty, id, item.pid];   
@@ -100,11 +90,6 @@ export const addCart = async({id, cartList}) => {
         })   
     )
     result_rows = result.reduce((acc, cur) => acc + cur, 0);
-//     } 
-// }catch(error){
-//     console.log('error --> ', error);
-    
-// }
             
     return {"result_rows": result_rows};
 }

@@ -30,7 +30,6 @@ export default function Login() {
     const handleLoginSubmit = (event) => {
         event.preventDefault();        
         if(validateLogin(refs, msgRefs)) {
-            console.log('send data -->> ', formData); 
 
             //리액트 ---> 노드서버(express) 데이터 전송 로그인
             axios

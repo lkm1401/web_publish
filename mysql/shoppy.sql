@@ -214,6 +214,9 @@ select * from shoppy_cart
 select * from shoppy_cart
 	where id='test1';
 
+use hrdb2019;
+
+select * from shoppy_cart;
 
 
 
