@@ -190,14 +190,38 @@ select  sc.cid,
         sp.pname,
         sp.price,
         sp.description as info,
-        concat('http://localhost:9000/', sp.upload_file->>'$[0]') as image
+        concat('http://localhost:9000/', sp.upload_file->>'$[0]') as image        
 	from shoppy_cart sc,
 		 shoppy_member sm,
          shoppy_product sp
 	where sc.id = sm.id 
 			and sc.pid = sp.pid
-            and sm.id = 'test1'
-    ;
+            and sm.id = 'test1'  ;
+            
+-- VIEW 생성 - 아이디별 장바구니 리스트 조회            
+create view shoppy_cart_list
+as
+select  sc.cid,
+		sc.size,
+        sc.qty,
+        sm.id,
+        sm.zipcode,
+        sm.address,
+        sp.pid,
+        sp.pname,
+        sp.price,
+        format(sp.price,0) as sprice,
+        sp.description as info,
+        concat('http://localhost:9000/', sp.upload_file->>'$[0]') as image        
+	from shoppy_cart sc,
+		 shoppy_member sm,
+         shoppy_product sp
+	where sc.id = sm.id 
+			and sc.pid = sp.pid;
+            
+drop view shoppy_cart_list;
+select * from shoppy_cart_list;
+
    
 -- 
 use hrdb2019;
@@ -216,7 +240,11 @@ select * from shoppy_cart
 
 use hrdb2019;
 
+select * from shoppy_member;
 select * from shoppy_cart;
+select * from shoppy_product;
+delete from shoppy_product where pid=15;
+commit;
 
 
 
