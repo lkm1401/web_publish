@@ -78,9 +78,7 @@ export const addCart = async({id, cartList}) => {
     
     const result = await Promise.all(  
         cartList.map(async(item) => {
-                const values = [item.size, item.qty, id, item.pid];   
-                console.log('---------> ', values);
-                
+                const values = [item.size, item.qty, id, item.pid];                   
                 const sql = `
                     insert into shoppy_cart(size, qty, id, pid, cdate)
                         values(?, ?, ?, ?, now())
