@@ -246,7 +246,32 @@ select * from shoppy_product;
 delete from shoppy_product where pid=15;
 commit;
 
+-- 
+use hrdb2019;
+select * from shoppy_cart where id='test1';
 
+-- 주문/결제페이지 : 출력 
+-- shoppy_cart, shoppy_member, shoppy_product 조인
+select * from shoppy_member where id='test1';
+select  sc.cid,
+		sc.size,
+        sc.qty,
+        sm.id,
+        sm.phone,
+        concat(sm.emailname,'@',sm.emaildomain) as email,
+        sm.zipcode,
+        sm.address,
+        sp.pid,
+        sp.pname,
+        sp.price,
+        sp.description as info,
+        concat('http://localhost:9000/', sp.upload_file->>'$[0]') as image        
+	from shoppy_cart sc,
+		 shoppy_member sm,
+         shoppy_product sp
+	where sc.id = sm.id 
+			and sc.pid = sp.pid
+            and sm.id = 'test1'  ;
 
 
 

@@ -5,6 +5,7 @@ import memberRouter from './router/memberRouter.js';
 import uploadRouter from './router/uploadRouter.js';
 import productRouter from './router/productRouter.js';
 import cartRouter from './router/cartRouter.js';
+import orderRouter from './router/orderRouter.js';
 
 // 서버 생성 및 포트 정의
 const server = express();
@@ -22,6 +23,7 @@ server.use('/member', memberRouter);
 server.use('/uploads', uploadRouter);
 server.use('/product', productRouter);
 server.use('/cart', cartRouter);
+server.use('/order', orderRouter);
 
 
 

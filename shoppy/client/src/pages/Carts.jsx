@@ -72,10 +72,12 @@ export default function Carts() {
                         <p className="cart-total"><label>총 배송비 :</label><span>+0원</span> </p>
                     </div>
                     <p className="cart-total2"><label>총 금액 :</label><span>{totalPrice.toLocaleString()}원</span></p>
-                    {/* <button className="checkout-btn">결제하기</button> */}
                 </div>
                 <div className="cart-actions">                      
-                    <button>주문하기</button>
+                    {/* <Link to="/checkout"> */}
+                        <button onClick={()=>{ navigate("/checkout") }}>주문하기</button>                    
+                        {/* <button onClick={navigate("/checkout")}>주문하기</button>                     */}
+                    {/* </Link> */}
                 </div>
             </> 
             : 

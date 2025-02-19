@@ -8,7 +8,9 @@ export const CartProvider = ({children}) => {
     const [ totalPrice, setTotalPrice] = useState(0);
 
     return (
-        <CartContext.Provider value={{ cartList, setCartList, cartCount, setCartCount, totalPrice, setTotalPrice }}>
+        <CartContext.Provider value={{  cartList, setCartList, 
+                                        cartCount, setCartCount, 
+                                        totalPrice, setTotalPrice }}>
             {children}
         </CartContext.Provider>
     );

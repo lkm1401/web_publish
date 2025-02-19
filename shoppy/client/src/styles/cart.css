@@ -90,11 +90,12 @@
 .cart-actions button {
   background: #ff4040;
   color: white;
-  font-size: 18px;
-  padding: 10px 20px;
-  border: none;
-  cursor: pointer;
+  padding: 10px 25px;
+  font-size: 16px;
+  font-weight: bold;
   border-radius: 5px;
+  cursor: pointer;
+  border: none;
 }
 
 .cart-actions button:hover {
@@ -102,7 +103,7 @@
 }
 
 .cart-summary {
-  border:1px solid #9e9d9dbd;
+  border: 1px solid #9e9d9dbd;
   margin-top: 20px;
   text-align: center;
   padding: 15px;
@@ -119,13 +120,16 @@
   display: flex;
   justify-content: space-between;
   /* border: 1px solid red; */
-  color : rgb(97, 97, 97);
+  color: rgb(97, 97, 97);
   font-size: 16px;
   /* font-weight: bold; */
   /* margin: auto; */
 }
-.cart-total2 {   padding-top: 20px; }
-.cart-total2 label, .cart-total2 span {
+.cart-total2 {
+  padding-top: 20px;
+}
+.cart-total2 label,
+.cart-total2 span {
   font-size: 22px;
   font-weight: bold;
 }
