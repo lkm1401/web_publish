@@ -11,6 +11,7 @@ import orderRouter from './router/orderRouter.js';
 const server = express();
 const port = 9000;
 
+
 /** 서버의 공통적인 작업 */
 server.use(express.json());
 server.use(express.urlencoded());

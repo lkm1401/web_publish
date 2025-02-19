@@ -4,6 +4,7 @@ import { useOrder } from '../hooks/useOrder.js';
 import { AuthContext } from '../auth/AuthContext.js';
 import { OrderContext } from "../context/OrderContext.js";
 import { CartContext } from "../context/CartContext.js";
+import axios from "axios";
 
 import "../styles/cart.css";
 import "../styles/checkoutinfo.css";
@@ -15,6 +16,7 @@ export default function CheckoutInfo() {
     const { isLoggedIn } = useContext(AuthContext);
     const { orderList, member } = useContext(OrderContext);
     const { getOrderList } = useOrder();
+    const [ qrUrl, setQrUrl] = useState('');
 
     useEffect(()=>{
         if(isLoggedIn) {
@@ -22,39 +24,43 @@ export default function CheckoutInfo() {
         }
     }, [isLoggedIn]);
 
-        const [isOpen, setIsOpen] = useState(false);    /** 주소검색 버튼Toggle */
-        const handleToggle = () => {    /** 주소 검색 버튼 */
-            setIsOpen(!isOpen);
-        };
+    const [isOpen, setIsOpen] = useState(false);    /** 주소검색 버튼Toggle */
+    const handleToggle = () => {    /** 주소 검색 버튼 */
+        setIsOpen(!isOpen);
+    };
 
-        //---- DaumPostcode 관련 디자인 및 이벤트 시작 ----//
-        const themeObj = {
-            bgColor: "#FFFFFF",
-            pageBgColor: "#FFFFFF",
-            postcodeTextColor: "#C05850",
-            emphTextColor: "#222222",
-        };
+    
 
-        const postCodeStyle = {
-            width: "360px",
-            height: "480px",
-        };
 
-        const completeHandler = (data) => {
-            setZipcode(data.zonecode);
-            setAddress(data.address);
-        };
+    //---- DaumPostcode 관련 디자인 및 이벤트 시작 ----//
+    const themeObj = {
+        bgColor: "#FFFFFF",
+        pageBgColor: "#FFFFFF",
+        postcodeTextColor: "#C05850",
+        emphTextColor: "#222222",
+    };
 
-        const closeHandler = (state) => {
-            if (state === "FORCE_CLOSE") {
-            setIsOpen(false);
-            } else if (state === "COMPLETE_CLOSE") {
-            setIsOpen(false);
-            // refs.detailAddressRef.current.value = "";
-            // refs.detailAddressRef.current.focus();
-            }
-        };
-        //---- DaumPostcode 관련 디자인 및 이벤트 종료 ----//
+    const postCodeStyle = {
+        width: "360px",
+        height: "480px",
+    };
+
+    const completeHandler = (data) => {
+        setZipcode(data.zonecode);
+        setAddress(data.address);
+    };
+
+    const closeHandler = (state) => {
+        if (state === "FORCE_CLOSE") {
+        setIsOpen(false);
+        } else if (state === "COMPLETE_CLOSE") {
+        setIsOpen(false);
+        // refs.detailAddressRef.current.value = "";
+        // refs.detailAddressRef.current.focus();
+        }
+    };
+    //---- DaumPostcode 관련 디자인 및 이벤트 종료 ----//
+    
 
 return (
     <div className="cart-container">
@@ -212,7 +218,7 @@ return (
         <label for="privacy">개인정보 국외 이전 동의</label>
     </div>
 
-    <button className="pay-button">결제하기</button>
+    <button className="pay-button" >결제하기</button>
     </div>
 );
 }
