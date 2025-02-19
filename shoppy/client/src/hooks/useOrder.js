@@ -1,10 +1,14 @@
 import React, { useContext } from 'react';
 import { OrderContext } from '../context/OrderContext';
+import { useCart } from '../hooks/useCart.js';
 import axios from 'axios';
 
 export function useOrder() {
-    const {orderList, setOrderList,
-        orderPrice, setOrderPrice } = useContext(OrderContext);
+    const { calculateTotalPrice } = useCart();
+    const { orderList, setOrderList,
+            orderPrice, setOrderPrice,
+            member, setMember
+        } = useContext(OrderContext);
 
     /** useContext로 관리되는 객체들의 CRUD 함수 정의 */
     /**
@@ -12,10 +16,11 @@ export function useOrder() {
      */
     const getOrderList = async() => {
         const id = localStorage.getItem("user_id");
-        const result = await axios.post("http://localhost:9000/order/all", {"id": id});
-        console.log('result.data-->', result.data);
-        
+        const result = await axios.post("http://localhost:9000/order/all", {"id": id});  
+        console.log('order list-->', result.data);
         setOrderList(result.data);
+        setMember(result.data[0]);
+        calculateTotalPrice(result.data);
     }
     
 

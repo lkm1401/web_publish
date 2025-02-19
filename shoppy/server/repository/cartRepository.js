@@ -45,24 +45,8 @@ export const getCount = async({id}) => {
  */
 export const getItems = async({id}) => {
     const sql = `
-            select  sc.cid,
-                    sc.size,
-                    sc.qty,
-                    sm.id,
-                    sm.zipcode,
-                    sm.address,
-                    sp.pid,
-                    sp.pname,
-                    sp.price,
-
-                    sp.description as info,
-                    concat('http://localhost:9000/', sp.upload_file->>'$[0]') as image
-                from shoppy_cart sc,
-                    shoppy_member sm,
-                    shoppy_product sp
-                where sc.id = sm.id 
-                        and sc.pid = sp.pid
-                        and sm.id = ?
+            select * from view_cart_list 
+            where id = ?
     `;
     const [result] = await db.execute(sql, [id]);
     
