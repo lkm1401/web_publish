@@ -97,6 +97,12 @@
   border: 1px solid #ddd;
   border-radius: 4px;
 }
+.zipcode {
+  width:70px;
+  background:lightgray;
+  opacity:0.7;
+  text-align: center;
+}
 
 /* 해외배송 정보 */
 .customs {

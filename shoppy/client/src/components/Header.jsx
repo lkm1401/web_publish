@@ -4,12 +4,15 @@ import { FiShoppingBag } from "react-icons/fi";
 import { AuthContext } from '../auth/AuthContext.js';
 import { CartContext } from '../context/CartContext.js';
 import { useCart } from "../hooks/useCart.js";
+import { LuShoppingCart } from "react-icons/lu";
+import { IoPersonOutline } from "react-icons/io5";
 
 export default function Header() {
     const { getCount, setCount } = useCart(); 
     const { cartCount } = useContext(CartContext);
     const { isLoggedIn, setIsLoggedIn } = useContext(AuthContext);
     const navigate = useNavigate();
+    const id = localStorage.getItem("user_id");
 
     //로그인 상태에 따라 cartCount 값 변경
     useEffect(()=>{
@@ -38,8 +41,15 @@ export default function Header() {
                     <span>Shoppy</span>
                 </Link>
                 <nav className='header-right'>
+                    
                     <Link to='/all'>Products</Link>
-                    <Link to='/cart'>MyCart({cartCount})</Link>
+                    <Link to='/cart' className="header-icons-cart-link">
+                        <LuShoppingCart className='header-icons'/>
+                        <span className='header-icons-cart'>{cartCount}</span>
+                    </Link>
+                    { isLoggedIn && 
+                        <Link to='/mypage'>MyPage</Link>
+                    }
                     <button type="button" onClick={handleLoginToggle}>
                         { isLoggedIn ? "Logout" : "Login" }
                     </button>
@@ -52,7 +62,7 @@ export default function Header() {
                             <button type="button">New Product</button>
                         </Link> 
                     }
-                                        
+                    { isLoggedIn &&   <Link>[{id}]님</Link> }                    
                 </nav>
             </div>
         </div>

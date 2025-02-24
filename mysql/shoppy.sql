@@ -324,6 +324,78 @@ where sc.id = sm.id
 select * from view_cart_list 
 where id='test1';
 
+-- shoppy_order
+-- oid(pk), pid, id, odate, total_price, tid, type, size, qty
+USE HRDB2019;
+CREATE TABLE SHOPPY_ORDER(
+	OID		INT			PRIMARY KEY		AUTO_INCREMENT,
+    SIZE	VARCHAR(10)	NOT NULL,
+    QTY		INT			NOT NULL,
+    TPRICE	INT			NOT NULL,
+    ODATE	DATE,
+    TYPE	VARCHAR(30)	NOT NULL,
+    TID		VARCHAR(50)	NOT NULL,
+    ID		VARCHAR(30)	NOT NULL,
+    PID		INT			NOT NULL,
+    CONSTRAINT FK_ORDER_ID_SHOPPY_MEMBER_ID	FOREIGN KEY(ID)
+					REFERENCES SHOPPY_MEMBER(ID),
+	CONSTRAINT FK_ORDER_PID_SHOPPY_PRODUCT_PID FOREIGN KEY(PID)
+					REFERENCES SHOPPY_PRODUCT(PID)
+);
+DESC SHOPPY_ORDER;
+use hrdb2019;
+SELECT * FROM SHOPPY_ORDER;
+truncate table shoppy_order; 
+
+show tables;
+desc product_kurly;
+-- drop table product_kurly;
+select * from product_kurly;
+
+CREATE TABLE product_kurly (
+    pid INT PRIMARY KEY,
+    brand VARCHAR(255),
+    cate_depth1 INT,
+    cate_depth2 INT,
+    subject TEXT,
+    sub_desc TEXT,
+    price DECIMAL(10,2),
+    dc INT,
+    delivery VARCHAR(50),
+    event_label INT,
+    upload_img JSON,         -- JSON 형식
+    org_img JSON,            -- JSON 형식
+    info_imgs JSON,          -- JSON 형식
+    info_org_imgs JSON,      -- JSON 형식
+    detail_imgs JSON,        -- JSON 형식
+    detail_org_imgs JSON,    -- JSON 형식
+    pdate DATETIME NULL
+);
+truncate table product_kurly;
+select * from product_kurly;
+select pid, brand, subject, price, upload_img, detail_imgs
+from product_kurly;
+
+select pid, brand, subject, price, upload_img, detail_imgs,
+        concat('http://localhost:9000/', detail_imgs->>'$[0]') as image
+from product_kurly;
+
+
+
+
+-- Starting...
+-- Prepare Import...
+-- Prepare Import done
+-- Import data file....
+-- - Prepare Import
+-- - Begin Import
+-- - Row import failed with error: ('Invalid JSON text: "Invalid value." at position 0 in value for column \'product_kurly.upload_img\'.', 3140)
+-- - Row import failed with error: ('Invalid JSON text: "The document root must not be followed by other values." at position 22 in value for column \'product_kurly.upload_img\'.', 3140)
+-- - Import finished
+-- Import data file finished
+-- Finished performing tasks.
+
+
 
 
 

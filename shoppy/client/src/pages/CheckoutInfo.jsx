@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext, useRef } from "react";
 import DaumPostcode from "react-daum-postcode";
 import { useOrder } from '../hooks/useOrder.js';
 import { AuthContext } from '../auth/AuthContext.js';
@@ -15,8 +15,13 @@ export default function CheckoutInfo() {
     const { totalPrice } = useContext(CartContext);
     const { isLoggedIn } = useContext(AuthContext);
     const { orderList, member } = useContext(OrderContext);
-    const { getOrderList } = useOrder();
+    const { getOrderList, paymentKakaoPay } = useOrder();
     const [ qrUrl, setQrUrl] = useState('');
+    const   zipcodeRef = useRef(null), 
+            addressRef = useRef(null), 
+            detailAddressRef = useRef(null),
+            terms1Ref = useRef(null),
+            terms2Ref = useRef(null);
 
     useEffect(()=>{
         if(isLoggedIn) {
@@ -26,11 +31,49 @@ export default function CheckoutInfo() {
 
     const [isOpen, setIsOpen] = useState(false);    /** 주소검색 버튼Toggle */
     const handleToggle = () => {    /** 주소 검색 버튼 */
+        detailAddressRef.current.value = '';
         setIsOpen(!isOpen);
     };
 
-    
+    /** 결제하기 버튼 이벤트 처리 */
+    const handlePayment = async() => {
+        console.log(terms1Ref.current.checked);
+        console.log(terms2Ref.current.checked);
+        if(!(terms1Ref.current.checked && terms2Ref.current.checked)) {
+            alert("약관 동의 후 결제가 진행됩니다.");
+        } else {
+            await paymentKakaoPay();
+            
+            // const id = localStorage.getItem("user_id");        
+            // try {
+            //     const response = await axios.post("http://localhost:9000/payment/qr", {
+            //         id:id,
+            //         item_name: "테스트 상품",
+            //         total_amount: 1000, // 결제 금액 (KRW)
+            //     });
+            //     // window.location.href = response.data.next_redirect_pc_url;
 
+            //     if ( response.data.next_redirect_pc_url) {
+            //         // setQrUrl(response.data.next_redirect_mobile_url);
+
+            //         window.location.href = response.data.next_redirect_pc_url;
+            //     }
+            // } catch (error) {
+            //     console.error("QR 결제 요청 실패:", error);
+            // }
+        }//if
+    }//handlePayment
+
+    /** 배송지 변경 */
+    const addressUpdate = () => {        
+        const zipcode = zipcodeRef.current.value;
+        const address = addressRef.current.value;
+        const detail = detailAddressRef.current.value;
+        const formData = {zipcode:zipcode, address:address, detail:detail};
+        
+        //배송지 변경 - 서버연동 코드 추가        
+        
+    }
 
     //---- DaumPostcode 관련 디자인 및 이벤트 시작 ----//
     const themeObj = {
@@ -55,8 +98,6 @@ export default function CheckoutInfo() {
         setIsOpen(false);
         } else if (state === "COMPLETE_CLOSE") {
         setIsOpen(false);
-        // refs.detailAddressRef.current.value = "";
-        // refs.detailAddressRef.current.focus();
         }
     };
     //---- DaumPostcode 관련 디자인 및 이벤트 종료 ----//
@@ -102,14 +143,14 @@ return (
                 <div className="value">
                     { zipcode ? (
                         <>
-                            <input type="text" value={zipcode} style={{width:'70px', background:'lightgray', opacity:'0.7'}}/>
-                            <input type="text" value={address} />
-                            <input type="text" placeholder="상세정보 입력" />
+                            <input type="text" value={zipcode} className="zipcode" ref={zipcodeRef}/>
+                            <input type="text" value={address} ref={addressRef}/>
+                            <input type="text" placeholder="상세정보 입력" ref={detailAddressRef}/>
+                            <button className="btn" onClick={addressUpdate}>주소 변경</button>
                         </>
                     ) :  "배송지를 추가해주세요!!"}
                 </div>
-            }
-            
+            }            
 
             <div className="label">연락처</div>
             <div className="value">{member.phone}/{member.phone}</div>
@@ -211,14 +252,14 @@ return (
     </div>
 
     <div class="terms">
-        <input type="checkbox" id="terms" />
+        <input type="checkbox" id="terms" ref={terms1Ref}/>
         <label for="terms">구매조건 확인 및 결제대행 서비스 약관 동의</label>
         <br />
-        <input type="checkbox" id="privacy" />
+        <input type="checkbox" id="privacy" ref={terms2Ref}/>
         <label for="privacy">개인정보 국외 이전 동의</label>
     </div>
 
-    <button className="pay-button" >결제하기</button>
+    <button className="pay-button" onClick={handlePayment}>결제하기</button>
     </div>
 );
 }

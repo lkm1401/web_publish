@@ -70,6 +70,7 @@ export function useCart() {  //custom Hook(커스텀훅)
     const calculateTotalPrice = (cartList) => {
         const totalPrice = cartList.reduce((sum, item) => sum + item.price * item.qty, 0);
         setTotalPrice(totalPrice);
+        return totalPrice;
     }
 
 
