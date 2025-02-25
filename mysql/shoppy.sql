@@ -380,20 +380,13 @@ select pid, brand, subject, price, upload_img, detail_imgs,
         concat('http://localhost:9000/', detail_imgs->>'$[0]') as image
 from product_kurly;
 
+use hrdb2019;
+truncate table product_kurly;
+select * from product_kurly;
 
 
 
--- Starting...
--- Prepare Import...
--- Prepare Import done
--- Import data file....
--- - Prepare Import
--- - Begin Import
--- - Row import failed with error: ('Invalid JSON text: "Invalid value." at position 0 in value for column \'product_kurly.upload_img\'.', 3140)
--- - Row import failed with error: ('Invalid JSON text: "The document root must not be followed by other values." at position 22 in value for column \'product_kurly.upload_img\'.', 3140)
--- - Import finished
--- Import data file finished
--- Finished performing tasks.
+
 
 
 
