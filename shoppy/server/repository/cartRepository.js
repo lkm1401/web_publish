@@ -1,6 +1,17 @@
 import { db } from './db.js';
 
 /**
+ * 장바구니 전체 삭제
+ */
+export const clearCart = async({id}) => {
+    const sql = `
+        delete from shoppy_cart where id = ?
+    `;
+    const [result] = await db.execute(sql, [id]);
+    return {"result_rows": result.affectedRows};
+}
+
+/**
  * 장바구니 아이템 삭제
  */
 export const deleteItem = async({cid}) => {

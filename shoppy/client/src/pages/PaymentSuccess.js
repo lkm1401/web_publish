@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState, useContext } from "react";
 import { useSearchParams, useNavigate } from "react-router-dom";
 import { useOrder } from '../hooks/useOrder.js';
+import { useCart } from '../hooks/useCart.js';
 import { AuthContext } from "../auth/AuthContext.js";
 import axios from "axios";
 
@@ -12,6 +13,7 @@ export default function PaymentSuccess() {
     const pg_token = searchParams.get("pg_token");
     const tid = localStorage.getItem("tid");
     const { saveToOrder } = useOrder();
+    const { clearCart } = useCart();
     const hasCheckedLogin = useRef(false); 
     const [isRefresh, setIsRefresh] = useState(true);
 
@@ -24,7 +26,11 @@ export default function PaymentSuccess() {
                     if (pg_token && tid) {
                         try {                            
                             const result_rows = await saveToOrder();
-                            result_rows && console.log("결제 승인 완료:");
+                            if(result_rows) {
+                                const clear_rows = await clearCart();
+                                clear_rows && result_rows && console.log("결제 승인 완료:");
+                            } 
+                            
                         } catch (error) {
                             console.error("결제 승인 실패:", error);
                         }

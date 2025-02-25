@@ -73,6 +73,23 @@ export function useCart() {  //custom Hook(커스텀훅)
         return totalPrice;
     }
 
+    /**
+     * 장바구니 전체 삭제
+     */
+    const clearCart = async() => {
+        const id = localStorage.getItem("user_id");
+        const result = await axios.delete("http://localhost:9000/cart/clear", {data: {"id": id}});
+        result.data.result_rows && getCartList();
+    }
 
-    return { saveToCartList, updateCartList, getCartList, getCount, setCount , deleteCartItem, calculateTotalPrice };
+    return {    
+                saveToCartList, 
+                updateCartList, 
+                getCartList, 
+                getCount, 
+                setCount , 
+                deleteCartItem, 
+                calculateTotalPrice,
+                clearCart
+            };
 }
